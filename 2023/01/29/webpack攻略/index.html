@@ -12,6 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
@@ -19,7 +21,7 @@
     <meta name="description" content="webpack简介简介本质上，webpack 是一个用于现代 JavaScript 应用程序的静态模块打包工具。当 webpack 处理应用程序时，它会在内部从一个或多个入口点构建一个 依赖图(dependency graph)，然后将你项目中所需的每一个模块组合成一个或多个 bundles，它们均为静态资源，用于展示你的内容。 webpack的核心概念为以下模块，后续会对以下概念针对性输出文章。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack攻略">
-<meta property="og:url" content="http://example.com/2023/01/29/webpack%E6%94%BB%E7%95%A5/index.html">
+<meta property="og:url" content="http://serendipity0321.github.com/2023/01/29/webpack%E6%94%BB%E7%95%A5/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="webpack简介简介本质上，webpack 是一个用于现代 JavaScript 应用程序的静态模块打包工具。当 webpack 处理应用程序时，它会在内部从一个或多个入口点构建一个 依赖图(dependency graph)，然后将你项目中所需的每一个模块组合成一个或多个 bundles，它们均为静态资源，用于展示你的内容。 webpack的核心概念为以下模块，后续会对以下概念针对性输出文章。">
 <meta property="og:locale" content="zh_CN">
@@ -71,7 +73,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"serendipity0321.github.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -97,7 +99,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>serendipity&#39;s blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -222,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.7k 字
+          3.6k 字
         
       </span>
     
@@ -293,49 +295,82 @@
 <li>如果采用全局安装，那在与他人协作时，由于每个人的 webpack 版本不同，可能导致打包出的内容不一致</li>
 <li>通常会通过运行一个或多个 npm scripts 以在本地 node_modules 目录中查找安装的 webpack，来运行 webpack，所以在这种情况下可能导致本地全局都有，容易造成混淆</li>
 </ol>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-attr">&quot;scripts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;build&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;webpack&quot;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs json"><span class="hljs-attr">&quot;scripts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+    <span class="hljs-attr">&quot;build&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;webpack&quot;</span>
+<span class="hljs-punctuation">&#125;</span></code></pre></div>
 
 <p>基于以上两点，我们选择在项目内安装，首先新建一个工程目录，并执行 npm 的初始化命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> webpack_init &amp;&amp; <span class="hljs-built_in">cd</span> webpack_init<br>npm init<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> webpack_init &amp;&amp; <span class="hljs-built_in">cd</span> webpack_init
+npm init</code></pre></div>
 
 <p>命令行输入项目的基本信息，如：名称、版本、描述、仓库地址等信息。成功后工程目录中会出现一个 package.json 文件。<br>接下来输入安装webpack的命令：</p>
-<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs q">npm install webpack webpack-cli --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span><br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs q">npm install webpack webpack-cli --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span></code></pre></div>
 
 <p>webpack v4+ 版本都需要手动安装 webpack-cli，webpack-cli 提供了许多命令用于在命令行中运行 webpack。具体包含命令可查看文档[webpack-cli]](<a href="https://leetcode.cn/link/?target=https://webpack.docschina.org/api/cli/">https://webpack.docschina.org/api/cli/</a>) 检查安装是否成功执行 webpack -v ， webpack-cli -v ，显示对应版本则安装成功</p>
 <h2 id="打包第一个应用"><a href="#打包第一个应用" class="headerlink" title="打包第一个应用"></a>打包第一个应用</h2><p>在 webpack_init 文件夹下添加 index.html、src 文件夹下添加 index.js、hello.js 文件</p>
 <p>index.html</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;!doctype <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>demo<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./dist/main.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;!doctype <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>demo<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./dist/main.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre></div>
 
 <p>src&#x2F;index.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> helloWorld <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./hello.js&#x27;</span>;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">component</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">const</span> element = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;div&#x27;</span>); <br>  element.<span class="hljs-property">innerHTML</span> = <span class="hljs-title function_">helloWorld</span>();<br>  <span class="hljs-keyword">return</span> element;<br>&#125;<br><br><span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(<span class="hljs-title function_">component</span>());<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> helloWorld <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./hello.js&#x27;</span>;
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">component</span>(<span class="hljs-params"></span>) &#123;
+  <span class="hljs-keyword">const</span> element = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;div&#x27;</span>); 
+  element.<span class="hljs-property">innerHTML</span> = <span class="hljs-title function_">helloWorld</span>();
+  <span class="hljs-keyword">return</span> element;
+&#125;
+
+<span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(<span class="hljs-title function_">component</span>());</code></pre></div>
 
 <p>src&#x2F;hello.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;hello world!!!&#x27;</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;hello world!!!&#x27;</span>
+&#125;</code></pre></div>
 
 <p>在控制台输入打包命令 npx webpack，</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">npx webpack</span><br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">npx webpack</span></code></pre></div>
 
 <p>因为 npm 会从全局模块中找 webpack ，但是我并非全局安装，而是项目本地安装，所以报错。所以需要 npx 命令运行命令。npx 会先找当前目录下的 node_modules&#x2F;.bin 目录下的二进制可执行文件，如果当前目录下没有 npx 会在 PATH 目录下继续寻找，如果没有会自动下载安装 webpack。此时，第一步手动安装 npm install webpack –save-dev 可省略。执行命令成功后会在项目中增加一个 dist 文件，文件中有一个打包后的 main.js 文件。<br><img src="/../imgs/webpack%E6%94%BB%E7%95%A5/1655453743-XEjonp-2.png" srcset="/img/loading.gif" lazyload alt="2.png"></p>
 <p>此时我们在浏览器中打开 index.html 文件，在页面中看到 hello world!!!<br><img src="/../imgs/webpack%E6%94%BB%E7%95%A5/1655453821-swEKUQ-1.png" srcset="/img/loading.gif" lazyload alt="1.png"></p>
 <p>在上面的命令中，我们采用了 webpack 的默认设置，我们也可以在命令行中指定入口文件、输出文件、打包模式等信息</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">npx webpack <span class="hljs-attribute">--entry</span>=./src/index.js <span class="hljs-attribute">--output-filename</span>=bundle.js <span class="hljs-attribute">--mode</span>=development<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs routeros">npx webpack <span class="hljs-attribute">--entry</span>=./src/index.js <span class="hljs-attribute">--output-filename</span>=bundle.js <span class="hljs-attribute">--mode</span>=development</code></pre></div>
 
 <p>删除 webpack 默认配置打包的内容，重新执行带配置的命令，打包后在 dist 目录下生成了 bundle.js 文件，将 index.html 中引入 js 文件地址 main.js 改为 bundle.js，在浏览器打开 index.html 发现控制台再一次输出了 hello world!!!。</p>
 <h2 id="使用-npm-scripts"><a href="#使用-npm-scripts" class="headerlink" title="使用 npm scripts"></a>使用 npm scripts</h2><p>从上面的命令行配置打包例子来看，每次打包都需要在命令行输入冗长的命令，这样做会很耗时和容易出错，为了使命令更加简洁，可以在 package.json 文件中的”scripts”对象下添加一个打包命令脚本 build。<br>scripts 是 npm 提供的脚本命令功能，所以在这里我们可以直接使用 webpack 命令取代之前的 npx webpack。</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-attr">&quot;scripts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;build&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;webpack&quot;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs json"><span class="hljs-attr">&quot;scripts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+  <span class="hljs-attr">&quot;build&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;webpack&quot;</span>
+<span class="hljs-punctuation">&#125;</span></code></pre></div>
 
 <p>在控制台输入npm命令，打包成功<br><img src="/../imgs/webpack%E6%94%BB%E7%95%A5/1655453846-cPODUe-3.png" srcset="/img/loading.gif" lazyload alt="3.png"></p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">npm <span class="hljs-built_in">run</span> build<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs routeros">npm <span class="hljs-built_in">run</span> build</code></pre></div>
 
 <h2 id="使用配置文件"><a href="#使用配置文件" class="headerlink" title="使用配置文件"></a>使用配置文件</h2><p>在 webpack4 中，可以无需配置采用默认方式打包，直接在控制台输入 npx webpack 即可打包，然后大多数项目需要很复杂的设置，如项目分包、压缩、懒加载等，所以大多数情况下还是需要一个配置文件，webpack 默认加载的配置文件为 webpack.config.js，也可以指定 webpack 配置文件，需要命令行指定。</p>
 <h3 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h3><p>在项目 webpack_init 中新建一个 webpack.config.js 文件</p>
 <p>webpack.config.js</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs lua">const <span class="hljs-built_in">path</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>  entry: <span class="hljs-string">&#x27;./src/index.js&#x27;</span>,<br>  <span class="hljs-built_in">output</span>: &#123;<br>    filename: <span class="hljs-string">&#x27;bundle.js&#x27;</span>,<br>    <span class="hljs-built_in">path</span>: <span class="hljs-built_in">path</span>.resolve(__dirname, <span class="hljs-string">&#x27;dist&#x27;</span>)<br>  &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs lua">const <span class="hljs-built_in">path</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);
+
+<span class="hljs-built_in">module</span>.exports = &#123;
+  entry: <span class="hljs-string">&#x27;./src/index.js&#x27;</span>,
+  <span class="hljs-built_in">output</span>: &#123;
+    filename: <span class="hljs-string">&#x27;bundle.js&#x27;</span>,
+    <span class="hljs-built_in">path</span>: <span class="hljs-built_in">path</span>.resolve(__dirname, <span class="hljs-string">&#x27;dist&#x27;</span>)
+  &#125;
+&#125;;</code></pre></div>
 
 <p>上面通过 module.exports 导出了一个对象，将之前命令行中输入的 key-value 形式的参数放在这个对象中。<br>这个对象包含连个属性，entry 为项目入口文件，output 为打包出口文件，其中 filename 为打包文件名称，path 为文件打包路径。通过调用 node.js 的path模块，将 __dirname(node.js内置全局变量，__dirname 为当前文件所在目录的绝对路径)与输出路径连接起来，得到了最终资源输出路径。</p>
 <p>现在我们去掉 package.json 中 build 后面的参数去掉，只保留 “build”: “webpack”，然后在控制台输入 npm run build，打包成功了<br><img src="/../imgs/webpack%E6%94%BB%E7%95%A5/1655453847-kbCvea-4.png" srcset="/img/loading.gif" lazyload alt="4.png"></p>
 <h3 id="使用不同的配置文件"><a href="#使用不同的配置文件" class="headerlink" title="使用不同的配置文件"></a>使用不同的配置文件</h3><p>出于某种原因，需要根据特定情况使用不同的配置文件，则可以通过在命令行中使用 –config 标志修改<br>删除项目中的 webpack-config.js，新建一个 webpack-config-dev.js，内容和 webpack-config.js 一致。在命令行输入npm run build –config webpack.config.dev.js 或者在 package.json 的 scripts 中增加配置</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-attr">&quot;scripts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;build&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;webpack --config webpack.config.dev.js&quot;</span><br><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs json"><span class="hljs-attr">&quot;scripts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+  <span class="hljs-attr">&quot;build&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;webpack --config webpack.config.dev.js&quot;</span>
+<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span></code></pre></div>
 
 <p>执行打包命令后。打包结果如下<br><img src="/../imgs/webpack%E6%94%BB%E7%95%A5/1655453849-gYWreG-5.png" srcset="/img/loading.gif" lazyload alt="5.png"></p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>在上面我们介绍了</p>
@@ -392,7 +427,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>webpack攻略</div>
-      <div>http://example.com/2023/01/29/webpack攻略/</div>
+      <div>http://serendipity0321.github.com/2023/01/29/webpack攻略/</div>
     </div>
     <div class="license-meta">
       
@@ -435,6 +470,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2023/01/29/%E9%9D%A2%E8%AF%95%E7%9A%84%E5%8C%BA%E5%88%AB/" title="面试的区别">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">面试的区别</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

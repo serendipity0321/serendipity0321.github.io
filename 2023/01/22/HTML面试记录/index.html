@@ -12,6 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
@@ -19,7 +21,7 @@
     <meta name="description" content="语义化 语义化，指对文本内容的结构化（内容语义化），选择合乎语义的标签（代码语义化）。 语义化标签：header、nav、main、article、section、aside、footer等。 优点： 代码结构清晰，易于阅读，有利于维护 方便其他设备解析（如：屏幕阅读器） 有利于搜索引擎优化（SEO），搜索引擎爬虫会根据不同的标签来赋予不同的权重    建议阅读文章：百度ife的h5语义化文章 初">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML面试记录">
-<meta property="og:url" content="http://example.com/2023/01/22/HTML%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:url" content="http://serendipity0321.github.com/2023/01/22/HTML%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="语义化 语义化，指对文本内容的结构化（内容语义化），选择合乎语义的标签（代码语义化）。 语义化标签：header、nav、main、article、section、aside、footer等。 优点： 代码结构清晰，易于阅读，有利于维护 方便其他设备解析（如：屏幕阅读器） 有利于搜索引擎优化（SEO），搜索引擎爬虫会根据不同的标签来赋予不同的权重    建议阅读文章：百度ife的h5语义化文章 初">
 <meta property="og:locale" content="zh_CN">
@@ -71,7 +73,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"serendipity0321.github.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -97,7 +99,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>serendipity&#39;s blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -391,15 +393,25 @@
 <ol>
 <li>创建 canvas 标签</li>
 </ol>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;canvas <span class="hljs-attribute">id</span>=<span class="hljs-string">&quot;myCanvas&quot;</span> <span class="hljs-attribute">width</span>=<span class="hljs-string">&quot;150&quot;</span> <span class="hljs-attribute">height</span>=<span class="hljs-string">&quot;150&quot;</span>&gt;该浏览器不支持canvas&lt;/canvas&gt;<br>复制代码<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs routeros">&lt;canvas <span class="hljs-attribute">id</span>=<span class="hljs-string">&quot;myCanvas&quot;</span> <span class="hljs-attribute">width</span>=<span class="hljs-string">&quot;150&quot;</span> <span class="hljs-attribute">height</span>=<span class="hljs-string">&quot;150&quot;</span>&gt;该浏览器不支持canvas&lt;/canvas&gt;
+复制代码</code></pre></div>
 
 <ol start="2">
 <li>渲染上下文</li>
 </ol>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dart"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;myCanvas&#x27;</span>);<br><span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">&#x27;2d&#x27;</span>);<br>复制代码<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs dart"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;myCanvas&#x27;</span>);
+<span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">&#x27;2d&#x27;</span>);
+复制代码</code></pre></div>
 
 <p>代码第一行通过使用 <code>document.getElementById()</code> 方法获取 <code>&lt;canvas&gt;</code> 元素对应的 DOM 对象，然后可以通过使用它的 <code>getContext()</code> 方法来绘制上下文。 创建 canvas 标签时可以在标签内写上不支持的提示信息；也可以通过 <code>getContext()</code> 方法判读是否支持编程。</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs dart"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;myCanvas&#x27;</span>);<br><span class="hljs-keyword">if</span> (canvas.getContext) &#123;<br>  <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">&#x27;2d&#x27;</span>);<br>  <span class="hljs-comment">// other code</span><br>&#125; <span class="hljs-keyword">else</span> &#123;<br>  <span class="hljs-comment">// 不支持 canvas 的其他代码</span><br>&#125;<br>复制代码<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs dart"><span class="hljs-keyword">var</span> canvas = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;myCanvas&#x27;</span>);
+<span class="hljs-keyword">if</span> (canvas.getContext) &#123;
+  <span class="hljs-keyword">var</span> ctx = canvas.getContext(<span class="hljs-string">&#x27;2d&#x27;</span>);
+  <span class="hljs-comment">// other code</span>
+&#125; <span class="hljs-keyword">else</span> &#123;
+  <span class="hljs-comment">// 不支持 canvas 的其他代码</span>
+&#125;
+复制代码</code></pre></div>
 
 <p>用途：</p>
 <p>canvas 可用于游戏和图表（echarts.js、heightchart.js 都是基于 canvas 来绘图）制作。</p>
@@ -428,7 +440,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>HTML面试记录</div>
-      <div>http://example.com/2023/01/22/HTML面试记录/</div>
+      <div>http://serendipity0321.github.com/2023/01/22/HTML面试记录/</div>
     </div>
     <div class="license-meta">
       

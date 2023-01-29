@@ -12,6 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
@@ -19,7 +21,7 @@
     <meta name="description" content="概述 Introduction设计模式在面试中的考点通常是介绍其原理并说出优缺点。或者对比几个比较相似的模式的异同点。在笔试中可能会出现画出某个设计模式的 UML 图这样的题。虽说面试中占的比重不大，但并不代表它不重要。恰恰相反，设计模式于程序员而言相当重要，它是我们写出优秀程序的保障。设计模式与程序员的架构能力与阅读源码的能力息息相关，非常值得我们深入学习。 面向对象的特点是 可维护、可复用、可">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入浅出设计模式">
-<meta property="og:url" content="http://example.com/2023/01/28/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:url" content="http://serendipity0321.github.com/2023/01/28/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="概述 Introduction设计模式在面试中的考点通常是介绍其原理并说出优缺点。或者对比几个比较相似的模式的异同点。在笔试中可能会出现画出某个设计模式的 UML 图这样的题。虽说面试中占的比重不大，但并不代表它不重要。恰恰相反，设计模式于程序员而言相当重要，它是我们写出优秀程序的保障。设计模式与程序员的架构能力与阅读源码的能力息息相关，非常值得我们深入学习。 面向对象的特点是 可维护、可复用、可">
 <meta property="og:locale" content="zh_CN">
@@ -70,7 +72,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"serendipity0321.github.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -96,7 +98,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>serendipity&#39;s blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -221,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.5k 字
+          5.4k 字
         
       </span>
     
@@ -232,7 +234,7 @@
         
         
         
-          47 分钟
+          45 分钟
         
       </span>
     
@@ -295,19 +297,49 @@
 <ul>
 <li>Java</li>
 </ul>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">FruitFactory</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title class_">Fruit</span> <span class="hljs-title function_">create</span>(<span class="hljs-params"><span class="hljs-built_in">String</span> <span class="hljs-keyword">type</span></span>)&#123;<br>        <span class="hljs-keyword">switch</span> (<span class="hljs-keyword">type</span>)&#123;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;苹果&quot;</span>: <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Apple</span>();<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;梨子&quot;</span>: <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Pear</span>();<br>            <span class="hljs-attr">default</span>: <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IllegalArgumentException</span>(<span class="hljs-string">&quot;暂时没有这种水果&quot;</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs typescript"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">FruitFactory</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-title class_">Fruit</span> <span class="hljs-title function_">create</span>(<span class="hljs-params"><span class="hljs-built_in">String</span> <span class="hljs-keyword">type</span></span>)&#123;
+        <span class="hljs-keyword">switch</span> (<span class="hljs-keyword">type</span>)&#123;
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;苹果&quot;</span>: <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Apple</span>();
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;梨子&quot;</span>: <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Pear</span>();
+            <span class="hljs-attr">default</span>: <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IllegalArgumentException</span>(<span class="hljs-string">&quot;暂时没有这种水果&quot;</span>);
+        &#125;
+    &#125;
+&#125;</code></pre></div>
 
 <p>调用者：</p>
 <ul>
 <li>Java</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-type">FruitFactory</span> <span class="hljs-variable">fruitFactory</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FruitFactory</span>();<br>        <span class="hljs-type">Fruit</span> <span class="hljs-variable">apple</span> <span class="hljs-operator">=</span> fruitFactory.create(<span class="hljs-string">&quot;苹果&quot;</span>);<br>        <span class="hljs-type">Fruit</span> <span class="hljs-variable">pear</span> <span class="hljs-operator">=</span> fruitFactory.create(<span class="hljs-string">&quot;梨子&quot;</span>);<br>        apple.eat();<br>        pear.eat();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span> &#123;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>&#123;
+        <span class="hljs-type">FruitFactory</span> <span class="hljs-variable">fruitFactory</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FruitFactory</span>();
+        <span class="hljs-type">Fruit</span> <span class="hljs-variable">apple</span> <span class="hljs-operator">=</span> fruitFactory.create(<span class="hljs-string">&quot;苹果&quot;</span>);
+        <span class="hljs-type">Fruit</span> <span class="hljs-variable">pear</span> <span class="hljs-operator">=</span> fruitFactory.create(<span class="hljs-string">&quot;梨子&quot;</span>);
+        apple.eat();
+        pear.eat();
+    &#125;
+&#125;</code></pre></div>
 
 <p>事实上，将构建过程封装的好处不仅可以降低耦合，如果某个产品构造方法相当复杂，使用工厂模式可以大大减少代码重复。比如，如果生产一个苹果需要苹果种子、阳光、水分，将工厂修改如下：</p>
 <ul>
 <li>Java</li>
 </ul>
-<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs haxe"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FruitFactory</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> Fruit create(<span class="hljs-keyword">String</span> type) &#123;<br>        <span class="hljs-keyword">switch</span> (type) &#123;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;苹果&quot;</span>:<span class="hljs-type"></span><br>                AppleSeed appleSeed = <span class="hljs-keyword">new</span> <span class="hljs-type">AppleSeed</span>();<br>                Sunlight sunlight = <span class="hljs-keyword">new</span> <span class="hljs-type">Sunlight</span>();<br>                Water water = <span class="hljs-keyword">new</span> <span class="hljs-type">Water</span>();<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-type">Apple</span>(appleSeed, sunlight, water);<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;梨子&quot;</span>:<span class="hljs-type"></span><br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-type">Pear</span>();<br>            <span class="hljs-keyword">default</span>:<span class="hljs-type"></span><br>                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-type">IllegalArgumentException</span>(<span class="hljs-string">&quot;暂时没有这种水果&quot;</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs haxe"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FruitFactory</span> </span>&#123;
+    <span class="hljs-keyword">public</span> Fruit create(<span class="hljs-keyword">String</span> type) &#123;
+        <span class="hljs-keyword">switch</span> (type) &#123;
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;苹果&quot;</span>:<span class="hljs-type"></span>
+                AppleSeed appleSeed = <span class="hljs-keyword">new</span> <span class="hljs-type">AppleSeed</span>();
+                Sunlight sunlight = <span class="hljs-keyword">new</span> <span class="hljs-type">Sunlight</span>();
+                Water water = <span class="hljs-keyword">new</span> <span class="hljs-type">Water</span>();
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-type">Apple</span>(appleSeed, sunlight, water);
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;梨子&quot;</span>:<span class="hljs-type"></span>
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-type">Pear</span>();
+            <span class="hljs-keyword">default</span>:<span class="hljs-type"></span>
+                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-type">IllegalArgumentException</span>(<span class="hljs-string">&quot;暂时没有这种水果&quot;</span>);
+        &#125;
+    &#125;
+&#125;</code></pre></div>
 
 <p>调用者的代码则完全不需要变化，而且调用者不需要在每次需要苹果时，自己去构建苹果种子、阳光、水分以获得苹果。苹果的生产过程再复杂，也只是工厂的事。这就是封装的好处，假如某天科学家发明了让苹果更香甜的肥料，要加入苹果的生产过程中的话，也只需要在工厂中修改，调用者完全不用关心。</p>
 <p>不知不觉中，我们就写出了简单工厂模式的代码。工厂模式一共有三种：</p>
@@ -328,26 +360,50 @@
 <ul>
 <li>Java</li>
 </ul>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">AppleFactory</span> &#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> Fruit <span class="hljs-title">create</span>()</span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Apple();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">AppleFactory</span> &#123;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Fruit <span class="hljs-title">create</span>()</span>&#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Apple();
+    &#125;
+&#125;</code></pre></div>
 
 <p>梨子工厂：</p>
 <ul>
 <li>Java</li>
 </ul>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">PearFactory</span> &#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> Fruit <span class="hljs-title">create</span>()</span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Pear();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">PearFactory</span> &#123;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Fruit <span class="hljs-title">create</span>()</span>&#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Pear();
+    &#125;
+&#125;</code></pre></div>
 
 <p>调用者：</p>
 <ul>
 <li>Java</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-type">AppleFactory</span> <span class="hljs-variable">appleFactory</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">AppleFactory</span>();<br>        <span class="hljs-type">Fruit</span> <span class="hljs-variable">apple</span> <span class="hljs-operator">=</span> appleFactory.create();<br>        <span class="hljs-type">PearFactory</span> <span class="hljs-variable">pearFactory</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PearFactory</span>();<br>        <span class="hljs-type">Fruit</span> <span class="hljs-variable">pear</span> <span class="hljs-operator">=</span> pearFactory.create();<br>        apple.eat();<br>        pear.eat();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span> &#123;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>&#123;
+        <span class="hljs-type">AppleFactory</span> <span class="hljs-variable">appleFactory</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">AppleFactory</span>();
+        <span class="hljs-type">Fruit</span> <span class="hljs-variable">apple</span> <span class="hljs-operator">=</span> appleFactory.create();
+        <span class="hljs-type">PearFactory</span> <span class="hljs-variable">pearFactory</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PearFactory</span>();
+        <span class="hljs-type">Fruit</span> <span class="hljs-variable">pear</span> <span class="hljs-operator">=</span> pearFactory.create();
+        apple.eat();
+        pear.eat();
+    &#125;
+&#125;</code></pre></div>
 
 <p>有读者可能会开喷了，这样和直接 new 出苹果和梨子有什么区别？上文说工厂是为了减少类与类之间的耦合，让调用者尽可能少的和其他类打交道。用简单工厂模式，我们只需要知道 FruitFactory，无需知道 Apple 、Pear 类，很容易看出耦合度降低了。但用工厂方法模式，调用者虽然不需要和 Apple 、Pear 类打交道了，但却需要和 AppleFactory、PearFactory 类打交道。有几种水果就需要知道几个工厂类，耦合度完全没有下降啊，甚至还增加了代码量！</p>
 <p>这位读者请先放下手中的大刀，仔细想一想，工厂模式的第二个优点在工厂方法模式中还是存在的。当构建过程相当复杂时，工厂将构建过程封装起来，调用者可以很方便的直接使用，同样以苹果生产为例：</p>
 <ul>
 <li>Java</li>
 </ul>
-<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs haxe"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppleFactory</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> Fruit create()&#123;<br>        AppleSeed appleSeed = <span class="hljs-keyword">new</span> <span class="hljs-type">AppleSeed</span>();<br>        Sunlight sunlight = <span class="hljs-keyword">new</span> <span class="hljs-type">Sunlight</span>();<br>        Water water = <span class="hljs-keyword">new</span> <span class="hljs-type">Water</span>();<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-type">Apple</span>(appleSeed, sunlight, water);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs haxe"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppleFactory</span> </span>&#123;
+    <span class="hljs-keyword">public</span> Fruit create()&#123;
+        AppleSeed appleSeed = <span class="hljs-keyword">new</span> <span class="hljs-type">AppleSeed</span>();
+        Sunlight sunlight = <span class="hljs-keyword">new</span> <span class="hljs-type">Sunlight</span>();
+        Water water = <span class="hljs-keyword">new</span> <span class="hljs-type">Water</span>();
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-type">Apple</span>(appleSeed, sunlight, water);
+    &#125;
+&#125;</code></pre></div>
 
 <p>调用者无需知道苹果的生产细节，当生产过程需要修改时也无需更改调用端。同时，工厂方法模式解决了简单工厂模式的两个弊端。</p>
 <ul>
@@ -359,32 +415,100 @@
 <ul>
 <li>Java</li>
 </ul>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs scala"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Mask</span> </span>&#123;<br>&#125;<br><br><br>public <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SurgicalMask</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Mask</span> </span>&#123;<br>    <span class="hljs-meta">@NonNull</span><br>    <span class="hljs-meta">@Override</span><br>    public <span class="hljs-type">String</span> toString() &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;这是医用口罩&quot;</span>;<br>    &#125;<br>&#125;<br><br><br>public <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">N95Mask</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Mask</span> </span>&#123;<br>    <span class="hljs-meta">@NonNull</span><br>    <span class="hljs-meta">@Override</span><br>    public <span class="hljs-type">String</span> toString() &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;这是 N95 口罩&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs scala"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Mask</span> </span>&#123;
+&#125;
+
+
+public <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SurgicalMask</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Mask</span> </span>&#123;
+    <span class="hljs-meta">@NonNull</span>
+    <span class="hljs-meta">@Override</span>
+    public <span class="hljs-type">String</span> toString() &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;这是医用口罩&quot;</span>;
+    &#125;
+&#125;
+
+
+public <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">N95Mask</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Mask</span> </span>&#123;
+    <span class="hljs-meta">@NonNull</span>
+    <span class="hljs-meta">@Override</span>
+    public <span class="hljs-type">String</span> toString() &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;这是 N95 口罩&quot;</span>;
+    &#125;
+&#125;</code></pre></div>
 
 <p>请使用简单工厂模式完成以下代码：</p>
 <ul>
 <li>Java</li>
 </ul>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MaskFactory</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title class_">Mask</span> <span class="hljs-title function_">create</span>(<span class="hljs-params"><span class="hljs-built_in">String</span> <span class="hljs-keyword">type</span></span>)&#123;<br>        <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> 使用简单工厂模式实现此处的逻辑</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs typescript"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MaskFactory</span> &#123;
+    <span class="hljs-keyword">public</span> <span class="hljs-title class_">Mask</span> <span class="hljs-title function_">create</span>(<span class="hljs-params"><span class="hljs-built_in">String</span> <span class="hljs-keyword">type</span></span>)&#123;
+        <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> 使用简单工厂模式实现此处的逻辑</span>
+    &#125;
+&#125;</code></pre></div>
 
 <p>使其通过以下客户端测试：</p>
 <ul>
 <li>Java</li>
 </ul>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> &#123;<br><br>    @Test<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span>()</span> &#123;<br>        MaskFactory factory = <span class="hljs-keyword">new</span> MaskFactory();<br>        <span class="hljs-comment">// 输出：这是医用口罩</span><br>        System.<span class="hljs-keyword">out</span>.println(factory.create(<span class="hljs-string">&quot;Surgical&quot;</span>));<br>        <span class="hljs-comment">// 输出：这是 N95 口罩</span><br>        System.<span class="hljs-keyword">out</span>.println(factory.create(<span class="hljs-string">&quot;N95&quot;</span>));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> &#123;
+
+    @Test
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span>()</span> &#123;
+        MaskFactory factory = <span class="hljs-keyword">new</span> MaskFactory();
+        <span class="hljs-comment">// 输出：这是医用口罩</span>
+        System.<span class="hljs-keyword">out</span>.println(factory.create(<span class="hljs-string">&quot;Surgical&quot;</span>));
+        <span class="hljs-comment">// 输出：这是 N95 口罩</span>
+        System.<span class="hljs-keyword">out</span>.println(factory.create(<span class="hljs-string">&quot;N95&quot;</span>));
+    &#125;
+&#125;</code></pre></div>
 
 <p>答案：</p>
 <ul>
 <li>Java</li>
 </ul>
-<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs haxe"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MaskFactory</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> Mask create(<span class="hljs-keyword">String</span> type)&#123;<br>        <span class="hljs-comment">// 使用简单工厂模式实现此处的逻辑</span><br>        <span class="hljs-keyword">switch</span> (type)&#123;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;Surgical&quot;</span>:<span class="hljs-type"></span><br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-type">SurgicalMask</span>();<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;N95&quot;</span>:<span class="hljs-type"></span><br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-type">N95Mask</span>();<br>            <span class="hljs-keyword">default</span>:<span class="hljs-type"></span><br>                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-type">IllegalArgumentException</span>(<span class="hljs-string">&quot;Unsupported mask type&quot;</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs haxe"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MaskFactory</span> </span>&#123;
+    <span class="hljs-keyword">public</span> Mask create(<span class="hljs-keyword">String</span> type)&#123;
+        <span class="hljs-comment">// 使用简单工厂模式实现此处的逻辑</span>
+        <span class="hljs-keyword">switch</span> (type)&#123;
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;Surgical&quot;</span>:<span class="hljs-type"></span>
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-type">SurgicalMask</span>();
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;N95&quot;</span>:<span class="hljs-type"></span>
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-type">N95Mask</span>();
+            <span class="hljs-keyword">default</span>:<span class="hljs-type"></span>
+                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-type">IllegalArgumentException</span>(<span class="hljs-string">&quot;Unsupported mask type&quot;</span>);
+        &#125;
+    &#125;
+&#125;</code></pre></div>
 
 <p>问 2：如何用工厂方法模式实现呢？</p>
 <p>客户端测试代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Client</span> &#123;<br><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">SurgicalMaskFactory</span> <span class="hljs-variable">surgicalMaskFactory</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SurgicalMaskFactory</span>();<br>        <span class="hljs-comment">// 输出：这是医用口罩</span><br>        System.out.println(surgicalMaskFactory.create());<br>        <span class="hljs-type">N95MaskFactory</span> <span class="hljs-variable">N95MaskFactory</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">N95MaskFactory</span>();<br>        <span class="hljs-comment">// 输出：这是 N95 口罩</span><br>        System.out.println(N95MaskFactory.create());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Client</span> &#123;
+
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-type">SurgicalMaskFactory</span> <span class="hljs-variable">surgicalMaskFactory</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SurgicalMaskFactory</span>();
+        <span class="hljs-comment">// 输出：这是医用口罩</span>
+        System.out.println(surgicalMaskFactory.create());
+        <span class="hljs-type">N95MaskFactory</span> <span class="hljs-variable">N95MaskFactory</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">N95MaskFactory</span>();
+        <span class="hljs-comment">// 输出：这是 N95 口罩</span>
+        System.out.println(N95MaskFactory.create());
+    &#125;
+&#125;</code></pre></div>
 
 <p>答案：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SurgicalMaskFactory</span>&#123;<br><br>    <span class="hljs-keyword">public</span> Mask <span class="hljs-title function_">create</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SurgicalMask</span>();<br>    &#125;<br>&#125;<br><br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">N95MaskFactory</span> &#123;<br>    <span class="hljs-keyword">public</span> Mask <span class="hljs-title function_">create</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">N95Mask</span>();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SurgicalMaskFactory</span>&#123;
+
+    <span class="hljs-keyword">public</span> Mask <span class="hljs-title function_">create</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SurgicalMask</span>();
+    &#125;
+&#125;
+
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">N95MaskFactory</span> &#123;
+    <span class="hljs-keyword">public</span> Mask <span class="hljs-title function_">create</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">N95Mask</span>();
+    &#125;
+&#125;</code></pre></div>
 
                 
               </div>
@@ -424,7 +548,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>深入浅出设计模式</div>
-      <div>http://example.com/2023/01/28/深入浅出设计模式/</div>
+      <div>http://serendipity0321.github.com/2023/01/28/深入浅出设计模式/</div>
     </div>
     <div class="license-meta">
       

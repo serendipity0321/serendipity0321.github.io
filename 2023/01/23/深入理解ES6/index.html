@@ -12,6 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
@@ -19,7 +21,7 @@
     <meta name="description" content="ECMAScript简介ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在 2015 年 6 月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。 ECMAScript 和 JavaScript 的关系是，前者是后者的规格，后者是前者的一种实现（另外的 ECMAScript 方言还有 JScr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解ES6">
-<meta property="og:url" content="http://example.com/2023/01/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ES6/index.html">
+<meta property="og:url" content="http://serendipity0321.github.com/2023/01/23/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ES6/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="ECMAScript简介ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在 2015 年 6 月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。 ECMAScript 和 JavaScript 的关系是，前者是后者的规格，后者是前者的一种实现（另外的 ECMAScript 方言还有 JScr">
 <meta property="og:locale" content="zh_CN">
@@ -72,7 +74,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"serendipity0321.github.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -98,7 +100,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>serendipity&#39;s blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -223,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          518 字
+          515 字
         
       </span>
     
@@ -280,7 +282,9 @@
                 <h3 id="ECMAScript简介"><a href="#ECMAScript简介" class="headerlink" title="ECMAScript简介"></a>ECMAScript简介</h3><p>ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在 2015 年 6 月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。</p>
 <p>ECMAScript 和 JavaScript 的关系是，前者是后者的规格，后者是前者的一种实现（另外的 ECMAScript 方言还有 JScript 和ActionScript），日常场合，这两个词是可以互换的。</p>
 <h3 id="let和const命令"><a href="#let和const命令" class="headerlink" title="let和const命令"></a>let和const命令</h3><h4 id=""><a href="#" class="headerlink" title=""></a></h4><p>ES6 新增了<code>let</code>和<code>const</code>命令，用来声明变量。它的用法类似于<code>var</code>，但是所声明的变量，只在<code>let</code>和<code>const</code>命令所在的代码块内有效。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> j=<span class="hljs-number">1</span>;<br><span class="hljs-keyword">let</span> i=<span class="hljs-number">1</span>;<br><span class="hljs-keyword">const</span> k=<span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
+<div class="code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> j=<span class="hljs-number">1</span>;
+<span class="hljs-keyword">let</span> i=<span class="hljs-number">1</span>;
+<span class="hljs-keyword">const</span> k=<span class="hljs-number">1</span>;</code></pre></div>
 
 <p>var：存在变量提升，可以在声明前使用，值为<code>undefined</code>。</p>
 <p>let：存在块级作用域，声明的变量一定要在声明过后使用，不然会报错，不可重复声明。</p>
@@ -313,7 +317,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>深入理解ES6</div>
-      <div>http://example.com/2023/01/23/深入理解ES6/</div>
+      <div>http://serendipity0321.github.com/2023/01/23/深入理解ES6/</div>
     </div>
     <div class="license-meta">
       
