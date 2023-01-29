@@ -1,0 +1,1254 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="微前端介绍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微前端">
+<meta property="og:url" content="http://serendipity0321.github.com/2023/01/29/%E5%BE%AE%E5%89%8D%E7%AB%AF/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="微前端介绍">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://serendipity0321.github.com/imgs/%E5%BE%AE%E5%89%8D%E7%AB%AF/d72b7c899e104645a0f372007e60cf92tplv-k3u1fbpfcp-zoom-in-crop-mark3024000.webp">
+<meta property="og:image" content="http://serendipity0321.github.com/imgs/%E5%BE%AE%E5%89%8D%E7%AB%AF/cd0fda56a473404986f7e1de0cc0e7f3tplv-k3u1fbpfcp-zoom-in-crop-mark3024000.webp">
+<meta property="og:image" content="http://serendipity0321.github.com/imgs/%E5%BE%AE%E5%89%8D%E7%AB%AF/523aefbbc2eb4185abacac1284dd32d3tplv-k3u1fbpfcp-zoom-in-crop-mark3024000.webp">
+<meta property="og:image" content="http://serendipity0321.github.com/imgs/%E5%BE%AE%E5%89%8D%E7%AB%AF/a2ac96c03b4f4e26949d909e08a5d689tplv-k3u1fbpfcp-zoom-in-crop-mark3024000.webp">
+<meta property="og:image" content="http://serendipity0321.github.com/imgs/%E5%BE%AE%E5%89%8D%E7%AB%AF/231d5ee6b248446d80b01d06621c2bbetplv-k3u1fbpfcp-zoom-in-crop-mark3024000.webp">
+<meta property="og:image" content="http://serendipity0321.github.com/imgs/%E5%BE%AE%E5%89%8D%E7%AB%AF/5fa57a448c1f4606af23b4514cecdee8tplv-k3u1fbpfcp-zoom-in-crop-mark3024000.webp">
+<meta property="og:image" content="http://serendipity0321.github.com/imgs/%E5%BE%AE%E5%89%8D%E7%AB%AF/3e9100e7d27846afbb68b7525f1cd979tplv-k3u1fbpfcp-zoom-in-crop-mark3024000.webp">
+<meta property="article:published_time" content="2023-01-29T09:29:32.000Z">
+<meta property="article:modified_time" content="2023-01-29T09:30:38.258Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="微前端">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://serendipity0321.github.com/imgs/%E5%BE%AE%E5%89%8D%E7%AB%AF/d72b7c899e104645a0f372007e60cf92tplv-k3u1fbpfcp-zoom-in-crop-mark3024000.webp">
+  
+  
+  
+  <title>微前端 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"serendipity0321.github.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>serendipity&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="微前端"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-01-29 17:29" pubdate>
+          2023年1月29日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          17k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          144 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">微前端</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>微前端介绍</p>
+<span id="more"></span>
+<blockquote>
+<p><strong>什么是微前端？</strong><br>微前端是一种多个团队通过独立发布功能的方式，来共同构建现代化 web 应用的技术手段及方法策略。</p>
+</blockquote>
+<p>不同于单纯的前端框架&#x2F;工具，微前端是一套架构体系，这个概念最早在2016年底由 ThoughtWorks 提出。 微前端是一种类似于后端微服务的架构，它将微服务的理念应用于浏览器端，将 Web 应用从整个的「单体应用」转变为多个小型前端应用的「聚合体」。</p>
+<p>各个前端应用「原子化」，可以独立运行、开发、部署，从而满足业务的快速变化，以及分布式、多团队并行开发的需求。</p>
+<blockquote>
+<p>微前端的特点</p>
+<ul>
+<li><strong>技术栈无关</strong> 主框架不限制接入应用的技术栈，子应用可自主选择技术栈</li>
+<li><strong>独立开发&#x2F;部署</strong> 各个团队之间仓库独立，单独部署，互不依赖</li>
+<li><strong>增量升级</strong> 当一个应用庞大之后，技术升级或重构相当麻烦，而微应用具备渐进式升级的特性</li>
+<li><strong>独立运行时</strong> 微应用之间运行时互不依赖，有独立的状态管理</li>
+<li><strong>提升效率</strong> 应用越庞大，越难以维护，协作效率越低下。微应用可以很好拆分，提升效率</li>
+</ul>
+</blockquote>
+<p><strong>解决问题的理念有了，那要通过怎样的技术去实现呢？</strong></p>
+<ol>
+<li><strong>iframe</strong> 最早也是最熟悉的解决方案就是通过iframe，因为它可以独立运行另一个项目，这种方案的优势：</li>
+</ol>
+<ul>
+<li>非常简单，无需任何改造</li>
+<li>完美隔离，JS、CSS 都是独立的运行环境</li>
+<li>不限制使用，页面上可以放多个 <code>iframe</code> 来组合业务</li>
+</ul>
+<p>当然也是逃不过事务的两面性，有优点就有缺点：</p>
+<ul>
+<li>无法保持路由状态，刷新后路由状态就丢失（这点也不是完全不能解决，可以讲路由作为参数拼接在链接后，刷新时去参数进行页面跳转）</li>
+<li>完全的隔离导致与子应用的交互变得极其困难</li>
+<li><code>iframe</code> 中的弹窗无法突破其本身</li>
+<li>整个应用全量资源加载，加载太慢</li>
+</ul>
+<p>既然有这么明显的问题，那就会有新的方案被创造出来</p>
+<ol>
+<li><strong>基于</strong> <strong><code>single-spa</code></strong> <strong>路由劫持方案</strong></li>
+</ol>
+<p><code>single-spa</code> 通过劫持路由的方式来做子应用之间的切换，但接入方式需要融合自身的路由，有一定的局限性。</p>
+<p><code>qiankun</code> 孵化自蚂蚁金融科技基于微前端架构的云产品统一接入平台。它对 <code>single-spa</code> 做了一层封装。主要解决了 <code>single-spa</code> 的一些痛点和不足。通过 <code>import-html-entry</code> 包解析 <code>HTML</code> 获取资源路径，然后对资源进行解析、加载。</p>
+<p>通过对执行环境的修改，它实现了 <code>JS 沙箱</code>、<code>样式隔离</code> 等特性。<br>接下来我就好好的讲讲<code>qiankun</code>是怎么落地到生产项目的，中间遇到过哪些坑。</p>
+<h3 id="qiankun"><a href="#qiankun" class="headerlink" title="qiankun"></a>qiankun</h3><p>qiankun官网 <a href="https://link.juejin.cn/?target=https://qiankun.umijs.org/zh/guide">qiankun.umijs.org&#x2F;zh&#x2F;guide</a></p>
+<p>按照官方文档快速搞起来<br><strong>主应用</strong></p>
+<ol>
+<li>安装</li>
+</ol>
+<div class="code-wrapper"><pre><code class="hljs sh">$ yarn add qiankun <span class="hljs-comment"># 或者 npm i qiankun -S</span>
+</code></pre></div>
+
+<ol>
+<li>在主应用注册微应用 main.js</li>
+</ol>
+<p>放在main.js的尾部</p>
+<div class="code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; registerMicroApps, start &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;qiankun&#x27;</span>;
+
+<span class="hljs-title function_">registerMicroApps</span>([
+  &#123;
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;vue app&#x27;</span>,
+    <span class="hljs-attr">entry</span>: <span class="hljs-string">&#x27;//localhost:7100&#x27;</span>,
+    <span class="hljs-attr">container</span>: <span class="hljs-string">&#x27;#container-vue&#x27;</span>,
+    <span class="hljs-attr">activeRule</span>: <span class="hljs-string">&#x27;/micro-vue&#x27;</span>,
+    <span class="hljs-comment">// 传递给子应用的参数</span>
+    <span class="hljs-attr">props</span>: &#123;
+      <span class="hljs-attr">routerBase</span>: <span class="hljs-string">&#x27;/micro-vue&#x27;</span>,
+    &#125;
+  &#125;,
+  &#123;
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;micro-clouds&#x27;</span>,
+    <span class="hljs-attr">entry</span>: <span class="hljs-string">&#x27;//localhost:7000&#x27;</span>,
+    <span class="hljs-attr">activeRule</span>: <span class="hljs-string">&#x27;/micro-clouds&#x27;</span>,
+    <span class="hljs-attr">container</span>: <span class="hljs-string">&#x27;#subapp2&#x27;</span>, <span class="hljs-comment">// 子应用挂载的div</span>
+    <span class="hljs-comment">// 传递给子应用的参数</span>
+    <span class="hljs-attr">props</span>: &#123;
+      <span class="hljs-attr">routerBase</span>: <span class="hljs-string">&#x27;/micro-clouds&#x27;</span>,
+    &#125;
+  &#125;
+]);
+<span class="hljs-comment">// 启动微应用</span>
+<span class="hljs-title function_">start</span>();
+</code></pre></div>
+
+<p>当微应用信息注册完之后，一旦浏览器的 url 发生变化，便会自动触发 qiankun 的匹配逻辑，所有 activeRule 规则匹配上的微应用就会被插入到指定的 container 中，同时依次调用微应用暴露出的生命周期钩子。</p>
+<p>如果微应用不是直接跟路由关联的时候，你也可以选择手动加载微应用的方式：</p>
+<div class="code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; loadMicroApp &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;qiankun&#x27;</span>;
+
+<span class="hljs-title function_">loadMicroApp</span>(&#123;
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;micro-clouds&#x27;</span>,
+  <span class="hljs-attr">entry</span>: <span class="hljs-string">&#x27;//localhost:7000&#x27;</span>,
+  <span class="hljs-attr">activeRule</span>: <span class="hljs-string">&#x27;/micro-clouds&#x27;</span>,
+  <span class="hljs-attr">container</span>: <span class="hljs-string">&#x27;#subapp2&#x27;</span>, <span class="hljs-comment">// 子应用挂载的div</span>
+  <span class="hljs-comment">// 传递给子应用的参数</span>
+  <span class="hljs-attr">props</span>: &#123;
+    <span class="hljs-attr">routerBase</span>: <span class="hljs-string">&#x27;/micro-clouds&#x27;</span>,
+  &#125;
+&#125;);
+</code></pre></div>
+
+<p><strong>微应用</strong><br>main.js</p>
+<div class="code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./public-path&#x27;</span>;
+<span class="hljs-keyword">import</span> &#123; createApp &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span>
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/App.vue&#x27;</span>
+<span class="hljs-keyword">import</span> &#123; createRouter, createWebHistory &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue-router&#x27;</span>;
+<span class="hljs-keyword">import</span> routes <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/router&#x27;</span>
+<span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/store&#x27;</span>
+
+<span class="hljs-keyword">let</span> instance = <span class="hljs-literal">null</span>
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">render</span>(<span class="hljs-params">props = &#123;&#125;</span>) &#123;
+  <span class="hljs-keyword">const</span> &#123; container, routerBase &#125; = props;
+  <span class="hljs-comment">// 实例化vue</span>
+  instance = <span class="hljs-title function_">createApp</span>(<span class="hljs-title class_">App</span>);
+  <span class="hljs-comment">// 路由挂载</span>
+  <span class="hljs-keyword">const</span> router = <span class="hljs-title function_">createRouter</span>(&#123;
+    <span class="hljs-attr">history</span>: <span class="hljs-title function_">createWebHistory</span>(<span class="hljs-string">`<span class="hljs-subst">$&#123;routerBase&#125;</span>`</span>),
+    routes
+  &#125;);
+  instance.<span class="hljs-title function_">use</span>(router);
+  instance.<span class="hljs-title function_">use</span>(store);
+
+  instance.<span class="hljs-title function_">mount</span>(container ? container.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;#app&quot;</span>) : <span class="hljs-string">&quot;#app&quot;</span>);
+&#125;
+
+<span class="hljs-comment">// eslint-disable-next-line no-underscore-dangle</span>
+<span class="hljs-keyword">if</span> (!<span class="hljs-variable language_">window</span>.<span class="hljs-property">__POWERED_BY_QIANKUN__</span>) &#123;
+  <span class="hljs-title function_">render</span>(&#123; <span class="hljs-attr">container</span>: <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-attr">routerBase</span>: <span class="hljs-string">&quot;/micro-clouds&quot;</span> &#125;);
+&#125;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">bootstrap</span>(<span class="hljs-params"></span>) &#123;
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;[vue] vue app bootstraped&#x27;</span>);
+&#125;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">mount</span>(<span class="hljs-params">props</span>) &#123;
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">render</span>(props);
+&#125;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">unmount</span>(<span class="hljs-params"></span>) &#123;
+  instance.<span class="hljs-title function_">unmount</span>();
+&#125;
+</code></pre></div>
+
+<p>public-path.js</p>
+<div class="code-wrapper"><pre><code class="hljs js">(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;
+  <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">window</span>.<span class="hljs-property">__POWERED_BY_QIANKUN__</span>) &#123;
+    <span class="hljs-comment">// eslint-disable-next-line</span>
+    __webpack_public_path__ = <span class="hljs-variable language_">window</span>.<span class="hljs-property">__INJECTED_PUBLIC_PATH_BY_QIANKUN__</span>
+    <span class="hljs-comment">// __webpack_public_path__ = `$&#123;process.env.BASE_URL&#125;/`</span>
+  &#125;
+&#125;)()
+
+</code></pre></div>
+
+<p>到这里我们就把主应用和微应用融合起来了，涉及的代码量也就百八十行，至于跳转可以自己在主应用加几个按钮通过<code>history.pushState(null, item.activeRule, item.activeRule)</code></p>
+<p><img src="/../imgs/%E5%BE%AE%E5%89%8D%E7%AB%AF/d72b7c899e104645a0f372007e60cf92tplv-k3u1fbpfcp-zoom-in-crop-mark3024000.webp" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>这个是我当时模仿的demo： <a href="https://link.juejin.cn/?target=https://github.com/fengxianqi/qiankun-example">github.com&#x2F;fengxianqi&#x2F;…</a></p>
+<p>其实跑通以上demo还是挺简单的，我一开始也是看着qiankun官网，在网上找了个demo比划比划，很简单嘛！如果我这边文章只分享到这里那完全没有必要去分享了，往后看才是实际生产项目的搭法。</p>
+<h3 id="qiankun-vue3-搭建生产项目"><a href="#qiankun-vue3-搭建生产项目" class="headerlink" title="qiankun + vue3 搭建生产项目"></a>qiankun + vue3 搭建生产项目</h3><p>通过上面的demo例子抛转引玉，应该对微前端是怎么跑起来的有了大致的认识。我当时也以为搞定了上面的demo就可以直接用在生产项目了。没料到实际用起来和demo完全是两回事，下面请听我一一解析这当中遇到的坑。</p>
+<h4 id="1-路由"><a href="#1-路由" class="headerlink" title="1. 路由"></a>1. 路由</h4><p>由于demo项目没有用<code>vue-router</code>，直接是通过<code>history.pushState</code>跳转，一切看来都是那么的没有，没有告警没有报红。但在实际的vue项目中，路由的改变，<code>vue-router</code>是会自动去匹配路由的，当匹配到子路由在当前router中没有配置时就会报警报红，如果直接跳转又没法运用到<code>vue-router</code>中的能力，怎么融合路由才能达到要求呢？</p>
+<p>答案是通过一个<code>component</code>组件来承载，它可以使<code>qiankun</code>的代码与基座项目极大的降低耦合，代码可维护性增强，最重要的是可以统一将微应用路由归并到这个组件路由来，相当于接入微前端就像增加了一个普通组件这么简单。</p>
+<p><strong>主应用配置</strong></p>
+<div class="code-wrapper"><pre><code class="hljs css"><span class="hljs-attribute">src</span>/router/index<span class="hljs-selector-class">.js</span>
+&#123;
+    path: <span class="hljs-string">&#x27;/:micro(micro-vue|micro-clouds):endPath(.*)&#x27;</span>,
+    name: <span class="hljs-string">&#x27;MicroApp&#x27;</span>,
+    meta: &#123; title: <span class="hljs-string">&#x27;微前端应用&#x27;</span> &#125;,
+    component: () =&gt; <span class="hljs-built_in">import</span>(<span class="hljs-comment">/* webpackChunkName: &quot;qiankun&quot; */</span><span class="hljs-string">&#x27;@/views/qiankun/MicroApp.vue&#x27;</span>)
+ &#125;,
+</code></pre></div>
+
+<p>通过正则匹配路由，只要是微应用的路由都可以匹配进来，当然需要事先定义好微应用的路由前缀，比如<code>micro-xxx</code>，增加微应用就在这里<code>(micro-vue|micro-clouds)</code>加一个匹配前缀。</p>
+<p>新建<code>MicroApp.vue</code>组件<br><code>src/views/qiankun/MicroApp.vue</code></p>
+<div class="code-wrapper"><pre><code class="hljs js">&lt;template&gt;
+  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;layout-container micro-container&quot;</span> <span class="hljs-attr">v-loading</span>=<span class="hljs-string">&quot;$store.state.app.isLoadingMicro&quot;</span></span></span>
+<span class="hljs-tag"><span class="language-xml">    <span class="hljs-attr">element-loading-text</span>=<span class="hljs-string">&quot;Loading...&quot;</span>&gt;</span></span>
+<span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;subapp1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;subapp2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="language-xml">  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+&lt;/template&gt;
+
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span></span>
+<span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">import</span> &#123;</span></span>
+<span class="language-javascript"><span class="language-xml">  onMounted, watch, reactive, onUnmounted</span></span>
+<span class="language-javascript"><span class="language-xml">&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span></span></span>
+<span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">import</span> &#123; loadMicroApp, addGlobalUncaughtErrorHandler &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;qiankun&#x27;</span></span></span>
+<span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">import</span> &#123; useRoute &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue-router&#x27;</span></span></span>
+<span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">import</span> &#123; microApps, registerApps &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/views/qiankun/micro-app&#x27;</span></span></span>
+<span class="language-javascript"><span class="language-xml"></span></span>
+<span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span></span>
+<span class="language-javascript"><span class="language-xml">  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;MicroApp&#x27;</span>,</span></span>
+<span class="language-javascript"><span class="language-xml">  <span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) &#123;</span></span>
+<span class="language-javascript"><span class="language-xml">    <span class="hljs-keyword">const</span> microList = <span class="hljs-title function_">reactive</span>(&#123;&#125;)</span></span>
+<span class="language-javascript"><span class="language-xml">    <span class="hljs-keyword">const</span> route = <span class="hljs-title function_">useRoute</span>()</span></span>
+<span class="language-javascript"><span class="language-xml">    <span class="hljs-keyword">const</span> state = <span class="hljs-title function_">reactive</span>(&#123;</span></span>
+<span class="language-javascript"><span class="language-xml">      <span class="hljs-attr">elementLink</span>: <span class="hljs-literal">null</span></span></span>
+<span class="language-javascript"><span class="language-xml">    &#125;);</span></span>
+<span class="language-javascript"><span class="language-xml">    <span class="hljs-keyword">const</span> <span class="hljs-title function_">activationHandleChange</span> = <span class="hljs-keyword">async</span> (<span class="hljs-params">path</span>) =&gt; &#123;</span></span>
+<span class="language-javascript"><span class="language-xml">      <span class="hljs-keyword">const</span> activeRules = microApps.<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">app</span>) =&gt;</span> app.<span class="hljs-property">activeRule</span>)</span></span>
+<span class="language-javascript"><span class="language-xml">      <span class="hljs-keyword">const</span> isMicro = activeRules.<span class="hljs-title function_">some</span>(<span class="hljs-function">(<span class="hljs-params">rule</span>) =&gt;</span> path.<span class="hljs-title function_">startsWith</span>(rule))</span></span>
+<span class="language-javascript"><span class="language-xml">      <span class="hljs-keyword">if</span> (!isMicro) <span class="hljs-keyword">return</span></span></span>
+<span class="language-javascript"><span class="language-xml">      <span class="hljs-keyword">const</span> microItem = microApps.<span class="hljs-title function_">find</span>(<span class="hljs-function">(<span class="hljs-params">app</span>) =&gt;</span> path.<span class="hljs-title function_">startsWith</span>(app.<span class="hljs-property">activeRule</span>.<span class="hljs-title function_">toString</span>()))</span></span>
+<span class="language-javascript"><span class="language-xml">      <span class="hljs-keyword">if</span> (!microItem) <span class="hljs-keyword">return</span></span></span>
+<span class="language-javascript"><span class="language-xml">      <span class="hljs-comment">// 如果已经加载过一次，则无需再次加载</span></span></span>
+<span class="language-javascript"><span class="language-xml">      <span class="hljs-keyword">const</span> current = microList[microItem.<span class="hljs-property">activeRule</span>.<span class="hljs-title function_">toString</span>()]</span></span>
+<span class="language-javascript"><span class="language-xml">      <span class="hljs-keyword">if</span> (current) <span class="hljs-keyword">return</span></span></span>
+<span class="language-javascript"><span class="language-xml"></span></span>
+<span class="language-javascript"><span class="language-xml">      <span class="hljs-comment">// 缓存当前子应用</span></span></span>
+<span class="language-javascript"><span class="language-xml">      <span class="hljs-keyword">const</span> micro = <span class="hljs-title function_">loadMicroApp</span>(&#123; ...microItem &#125;)</span></span>
+<span class="language-javascript"><span class="language-xml">      microList[microItem.<span class="hljs-property">activeRule</span>.<span class="hljs-title function_">toString</span>()] = micro</span></span>
+<span class="language-javascript"><span class="language-xml">      <span class="hljs-keyword">try</span> &#123;</span></span>
+<span class="language-javascript"><span class="language-xml">        <span class="hljs-keyword">await</span> micro.<span class="hljs-property">mountPromise</span></span></span>
+<span class="language-javascript"><span class="language-xml">      &#125; <span class="hljs-keyword">catch</span> (e) &#123;</span></span>
+<span class="language-javascript"><span class="language-xml">        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&#x27;=======&#x27;</span>, e)</span></span>
+<span class="language-javascript"><span class="language-xml">      &#125;</span></span>
+<span class="language-javascript"><span class="language-xml">    &#125;</span></span>
+<span class="language-javascript"><span class="language-xml">    <span class="hljs-comment">// qiankun全局异常捕获</span></span></span>
+<span class="language-javascript"><span class="language-xml">    <span class="hljs-title function_">addGlobalUncaughtErrorHandler</span>(<span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(event))</span></span>
+<span class="language-javascript"><span class="language-xml">    <span class="hljs-comment">// 监测路由变化</span></span></span>
+<span class="language-javascript"><span class="language-xml">    <span class="hljs-title function_">watch</span>(<span class="hljs-function">() =&gt;</span> route.<span class="hljs-property">path</span>, <span class="hljs-keyword">async</span> (newValue) =&gt; &#123;</span></span>
+<span class="language-javascript"><span class="language-xml">      <span class="hljs-title function_">activationHandleChange</span>(newValue)</span></span>
+<span class="language-javascript"><span class="language-xml">    &#125;)</span></span>
+<span class="language-javascript"><span class="language-xml">    </span></span>
+<span class="language-javascript"><span class="language-xml">    <span class="hljs-title function_">onMounted</span>(<span class="hljs-keyword">async</span> () =&gt; &#123;</span></span>
+<span class="language-javascript"><span class="language-xml">      <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">window</span>.<span class="hljs-property">qiankunStarted</span>) <span class="hljs-keyword">return</span></span></span>
+<span class="language-javascript"><span class="language-xml">      <span class="hljs-variable language_">window</span>.<span class="hljs-property">qiankunStarted</span> = <span class="hljs-literal">true</span></span></span>
+<span class="language-javascript"><span class="language-xml">      <span class="hljs-title function_">registerApps</span>()</span></span>
+<span class="language-javascript"><span class="language-xml">      <span class="hljs-title function_">activationHandleChange</span>(route.<span class="hljs-property">path</span>)</span></span>
+<span class="language-javascript"><span class="language-xml">    &#125;)</span></span>
+<span class="language-javascript"><span class="language-xml">    <span class="hljs-title function_">onUnmounted</span>(<span class="hljs-function">() =&gt;</span> &#123;</span></span>
+<span class="language-javascript"><span class="language-xml">      <span class="hljs-variable language_">window</span>.<span class="hljs-property">qiankunStarted</span> = <span class="hljs-literal">false</span></span></span>
+<span class="language-javascript"><span class="language-xml">      <span class="hljs-comment">// 离开微应用路由时会卸载开启的微应用</span></span></span>
+<span class="language-javascript"><span class="language-xml">      <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">values</span>(microList).<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">mic</span>) =&gt;</span> &#123;</span></span>
+<span class="language-javascript"><span class="language-xml">        mic.<span class="hljs-title function_">unmount</span>()</span></span>
+<span class="language-javascript"><span class="language-xml">      &#125;)</span></span>
+<span class="language-javascript"><span class="language-xml">    &#125;)</span></span>
+<span class="language-javascript"><span class="language-xml">    <span class="hljs-keyword">return</span> &#123;</span></span>
+<span class="language-javascript"><span class="language-xml">    &#125;</span></span>
+<span class="language-javascript"><span class="language-xml">  &#125;</span></span>
+<span class="language-javascript"><span class="language-xml">&#125;</span></span>
+<span class="language-javascript"><span class="language-xml"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;scss&quot;</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="language-css"></span></span>
+<span class="language-css"><span class="language-xml"><span class="hljs-selector-class">.micro-container</span>&#123;</span></span>
+<span class="language-css"><span class="language-xml">  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">var</span>(--system-container-main-background);</span></span>
+<span class="language-css"><span class="language-xml">&#125;</span></span>
+<span class="language-css"><span class="language-xml"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span>
+
+src/views/qiankun/micro-app.<span class="hljs-property">js</span>
+<span class="hljs-keyword">import</span> &#123; registerMicroApps, start &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;qiankun&#x27;</span>
+<span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/store&#x27;</span>
+<span class="hljs-keyword">import</span> utils <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/assets/js/utils&#x27;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> microApps = [
+  &#123;
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;micro-clouds&#x27;</span>,
+    <span class="hljs-attr">entry</span>: process.<span class="hljs-property">env</span>.<span class="hljs-property">VUE_APP_CLOUDS</span>,
+    <span class="hljs-attr">activeRule</span>: <span class="hljs-string">&#x27;/micro-clouds&#x27;</span>,
+    <span class="hljs-attr">container</span>: <span class="hljs-string">&#x27;#subapp2&#x27;</span>, <span class="hljs-comment">// 子应用挂载的div</span>
+    <span class="hljs-attr">props</span>: &#123;
+      <span class="hljs-attr">routerBase</span>: <span class="hljs-string">&#x27;/micro-clouds&#x27;</span>,
+      <span class="hljs-attr">mainStore</span>: store,
+      <span class="hljs-attr">user</span>: utils.<span class="hljs-title function_">getStorage</span>(<span class="hljs-string">&#x27;user&#x27;</span>)
+    &#125;
+  &#125;
+]
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">registerApps</span> = (<span class="hljs-params"></span>) =&gt; &#123;
+  <span class="hljs-title function_">registerMicroApps</span>(microApps, &#123;
+    <span class="hljs-attr">beforeLoad</span>: <span class="hljs-function">(<span class="hljs-params">app</span>) =&gt;</span> &#123;
+      store.<span class="hljs-title function_">commit</span>(<span class="hljs-string">&#x27;app/loadingMicro&#x27;</span>, <span class="hljs-literal">true</span>)
+      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;before load app.name====&gt;&gt;&gt;&gt;&gt;&#x27;</span>, app.<span class="hljs-property">name</span>)
+    &#125;,
+    <span class="hljs-attr">beforeMount</span>: [
+      <span class="hljs-function">(<span class="hljs-params">app</span>) =&gt;</span> &#123;
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;[LifeCycle] before mount %c%s&#x27;</span>, <span class="hljs-string">&#x27;color: green;&#x27;</span>, app.<span class="hljs-property">name</span>)
+      &#125;
+    ],
+    <span class="hljs-attr">afterMount</span>: [
+      <span class="hljs-function">(<span class="hljs-params">app</span>) =&gt;</span> &#123;
+        store.<span class="hljs-title function_">commit</span>(<span class="hljs-string">&#x27;app/loadingMicro&#x27;</span>, <span class="hljs-literal">false</span>)
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;[LifeCycle] after mount %c%s&#x27;</span>, <span class="hljs-string">&#x27;color: green;&#x27;</span>, app.<span class="hljs-property">name</span>)
+      &#125;
+    ],
+    <span class="hljs-attr">afterUnmount</span>: [
+      <span class="hljs-function">(<span class="hljs-params">app</span>) =&gt;</span> &#123;
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;[LifeCycle] after unmount %c%s&#x27;</span>, <span class="hljs-string">&#x27;color: green;&#x27;</span>, app.<span class="hljs-property">name</span>)
+      &#125;
+    ]
+  &#125;)
+
+  <span class="hljs-title function_">start</span>(&#123;
+    <span class="hljs-attr">sandbox</span>: &#123;
+      <span class="hljs-comment">// 默认开启预加载</span>
+      <span class="hljs-attr">prefetch</span>: <span class="hljs-string">&#x27;all&#x27;</span>,
+      <span class="hljs-comment">// qiankun提供的样式隔离方法（严格模式）</span>
+      <span class="hljs-attr">strictStyleIsolation</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">experimentalStyleIsolation</span>: <span class="hljs-literal">true</span>
+    &#125;
+  &#125;)
+&#125;
+</code></pre></div>
+
+<p><strong>微应用配置</strong><br><code>mian.js</code></p>
+<div class="code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./public-path&#x27;</span>;
+<span class="hljs-keyword">import</span> &#123; createApp &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span>
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">ElementPlus</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;element-plus&#x27;</span>
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">NProgress</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/assets/js/nprogress&#x27;</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> <span class="hljs-title class_">ELIcons</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@element-plus/icons-vue&#x27;</span>
+<span class="hljs-keyword">import</span> zhCn <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;element-plus/es/locale/lang/zh-cn&#x27;</span>
+<span class="hljs-keyword">import</span> draggable <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vuedraggable&#x27;</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;element-plus/dist/index.css&#x27;</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;normalize.css&#x27;</span> <span class="hljs-comment">// css初始化</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;@/assets/style/common.scss&#x27;</span> <span class="hljs-comment">// 公共css</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;@/assets/style/iconfont.css&#x27;</span>
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/App.vue&#x27;</span>
+<span class="hljs-keyword">import</span> &#123; createRouter, createWebHistory &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue-router&#x27;</span>;
+<span class="hljs-keyword">import</span> routes <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/router&#x27;</span>
+<span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@/store&#x27;</span>
+
+<span class="hljs-keyword">let</span> instance = <span class="hljs-literal">null</span>
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">render</span>(<span class="hljs-params">props = &#123;&#125;</span>) &#123;
+  <span class="hljs-keyword">const</span> &#123; container, routerBase &#125; = props;
+  
+  instance = <span class="hljs-title function_">createApp</span>(<span class="hljs-title class_">App</span>);
+  <span class="hljs-keyword">const</span> router = <span class="hljs-title function_">createRouter</span>(&#123;
+    <span class="hljs-attr">history</span>: <span class="hljs-title function_">createWebHistory</span>(<span class="hljs-string">`<span class="hljs-subst">$&#123;routerBase&#125;</span>`</span>),
+    routes
+  &#125;);
+  instance.<span class="hljs-title function_">use</span>(router);
+  instance.<span class="hljs-title function_">use</span>(<span class="hljs-title class_">ElementPlus</span>, &#123;
+    <span class="hljs-attr">locale</span>: zhCn
+  &#125;);
+  instance.<span class="hljs-title function_">use</span>(store);
+  instance.<span class="hljs-title function_">component</span>(<span class="hljs-string">&#x27;draggable&#x27;</span>, draggable)
+  <span class="hljs-comment">/* eslint-disable */</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> [key, component] <span class="hljs-keyword">of</span> <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">entries</span>(<span class="hljs-title class_">ELIcons</span>)) &#123;
+    instance.<span class="hljs-title function_">component</span>(key, component);
+  &#125;
+
+  instance.<span class="hljs-title function_">mount</span>(container ? container.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;#app&quot;</span>) : <span class="hljs-string">&quot;#app&quot;</span>);
+
+  <span class="hljs-comment">// eslint-disable-next-line no-underscore-dangle</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">window</span>.<span class="hljs-property">__POWERED_BY_QIANKUN__</span>) &#123;
+    router.<span class="hljs-title function_">afterEach</span>(<span class="hljs-function">(<span class="hljs-params">to</span>) =&gt;</span> &#123;
+      <span class="hljs-keyword">const</span> matched = to.<span class="hljs-property">matched</span>.<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> &#123;
+        <span class="hljs-keyword">return</span> &#123;
+          ...item,
+          <span class="hljs-attr">path</span>: <span class="hljs-string">`<span class="hljs-subst">$&#123;routerBase&#125;</span><span class="hljs-subst">$&#123;item.path&#125;</span>`</span>,
+          <span class="hljs-attr">redirect</span>: <span class="hljs-string">`<span class="hljs-subst">$&#123;routerBase&#125;</span><span class="hljs-subst">$&#123;item.path&#125;</span>`</span>,
+        &#125;;
+      &#125;)
+      props.<span class="hljs-property">mainStore</span>.<span class="hljs-title function_">dispatch</span>(<span class="hljs-string">&quot;app/getMicroBreadcrumb&quot;</span>, [
+        ...matched
+      ]);
+    &#125;);
+  &#125;
+
+  router.<span class="hljs-title function_">beforeEach</span>(<span class="hljs-keyword">async</span> (to, <span class="hljs-keyword">from</span>, next) =&gt; &#123;
+    <span class="hljs-title class_">NProgress</span>.<span class="hljs-title function_">start</span>();
+    <span class="hljs-keyword">if</span> (store.<span class="hljs-property">getters</span>[<span class="hljs-string">&quot;user/isLogin&quot;</span>]) &#123;
+      <span class="hljs-title function_">next</span>();
+    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (store.<span class="hljs-property">state</span>.<span class="hljs-property">app</span>.<span class="hljs-property">whiteList</span>.<span class="hljs-title function_">includes</span>(to.<span class="hljs-property">path</span>)) &#123;
+      <span class="hljs-comment">// 白名单页面</span>
+      <span class="hljs-title function_">next</span>();
+    &#125; <span class="hljs-keyword">else</span> &#123;
+      <span class="hljs-title function_">next</span>(<span class="hljs-string">&quot;/login&quot;</span>); <span class="hljs-comment">// 全部重定向到登录页</span>
+    &#125;
+  &#125;);
+
+  router.<span class="hljs-title function_">afterEach</span>(<span class="hljs-function">(<span class="hljs-params">to</span>) =&gt;</span> &#123;
+    <span class="hljs-keyword">const</span> keepAliveComponentsName = store.<span class="hljs-property">getters</span>[<span class="hljs-string">&quot;keepAlive/keepAliveComponentsName&quot;</span>] || [];
+    <span class="hljs-keyword">const</span> &#123; name &#125; = to.<span class="hljs-property">matched</span>[to.<span class="hljs-property">matched</span>.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>].<span class="hljs-property">components</span>.<span class="hljs-property">default</span>;
+    <span class="hljs-keyword">if</span> (to.<span class="hljs-property">meta</span> &amp;&amp; to.<span class="hljs-property">meta</span>.<span class="hljs-property">cache</span> &amp;&amp; name &amp;&amp; !keepAliveComponentsName.<span class="hljs-title function_">includes</span>(name)) &#123;
+      store.<span class="hljs-title function_">commit</span>(<span class="hljs-string">&quot;keepAlive/addKeepAliveComponentsName&quot;</span>, name);
+    &#125;
+    <span class="hljs-title class_">NProgress</span>.<span class="hljs-title function_">done</span>();
+  &#125;);
+&#125;
+
+<span class="hljs-comment">// eslint-disable-next-line no-underscore-dangle</span>
+<span class="hljs-keyword">if</span> (!<span class="hljs-variable language_">window</span>.<span class="hljs-property">__POWERED_BY_QIANKUN__</span>) &#123;
+  <span class="hljs-title function_">render</span>(&#123; <span class="hljs-attr">container</span>: <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-attr">routerBase</span>: <span class="hljs-string">&quot;/micro-clouds&quot;</span> &#125;);
+&#125;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">bootstrap</span>(<span class="hljs-params"></span>) &#123;
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;[vue] vue app bootstraped&#x27;</span>);
+&#125;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">mount</span>(<span class="hljs-params">props</span>) &#123;
+  <span class="hljs-comment">// 标记当前启动形式为微服务启动</span>
+  store.<span class="hljs-title function_">commit</span>(<span class="hljs-string">&quot;app/microChange&quot;</span>, <span class="hljs-literal">true</span>);
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">render</span>(props);
+&#125;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">unmount</span>(<span class="hljs-params"></span>) &#123;
+  instance.<span class="hljs-title function_">unmount</span>();
+&#125;
+
+public-path.<span class="hljs-property">js</span>
+(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;
+  <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">window</span>.<span class="hljs-property">__POWERED_BY_QIANKUN__</span>) &#123;
+    __webpack_public_path__ = <span class="hljs-variable language_">window</span>.<span class="hljs-property">__INJECTED_PUBLIC_PATH_BY_QIANKUN__</span>;
+  &#125;
+&#125;());
+
+vue.<span class="hljs-property">config</span>.<span class="hljs-property">js</span>
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>)
+
+<span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = &#123;
+  <span class="hljs-attr">publicPath</span>: process.<span class="hljs-property">env</span>.<span class="hljs-property">NODE_ENV</span> === <span class="hljs-string">&#x27;development&#x27;</span> ? <span class="hljs-string">&#x27;/&#x27;</span> : <span class="hljs-string">&#x27;/micro-clouds&#x27;</span>,
+  <span class="hljs-attr">configureWebpack</span>: &#123;
+    <span class="hljs-attr">output</span>: &#123;
+      <span class="hljs-attr">library</span>: <span class="hljs-string">&#x27;micro-clouds-[name]&#x27;</span>,
+      <span class="hljs-attr">libraryTarget</span>: <span class="hljs-string">&#x27;umd&#x27;</span>,
+      <span class="hljs-attr">jsonpFunction</span>: <span class="hljs-string">&#x27;webpackJsonp_[name]&#x27;</span>
+    &#125;,
+  &#125;,
+  <span class="hljs-attr">devServer</span>: &#123;
+    <span class="hljs-attr">port</span>: <span class="hljs-number">4003</span>,
+    <span class="hljs-attr">disableHostCheck</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">headers</span>: &#123;
+      <span class="hljs-string">&#x27;Access-Control-Allow-Origin&#x27;</span>: <span class="hljs-string">&#x27;*&#x27;</span> <span class="hljs-comment">// 主应用获取子应用时跨域响应头</span>
+    &#125;,
+    <span class="hljs-attr">proxy</span>: &#123;
+      <span class="hljs-string">&#x27;/api&#x27;</span>: &#123;
+        <span class="hljs-attr">target</span>: process.<span class="hljs-property">env</span>.<span class="hljs-property">VUE_APP_TEST</span>,
+        <span class="hljs-attr">changeOrigin</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">pathRewrite</span>: &#123;
+          <span class="hljs-string">&#x27;^/api&#x27;</span>: <span class="hljs-string">&#x27;&#x27;</span>
+        &#125;
+      &#125;
+    &#125;
+  &#125;
+&#125;
+
+</code></pre></div>
+
+<p>到这为止，一个完整的微前端架构就搭建好了，下面来介绍各个细节的交互是怎么处理的。</p>
+<h4 id="2-父子应用耦合以及单独使用"><a href="#2-父子应用耦合以及单独使用" class="headerlink" title="2. 父子应用耦合以及单独使用"></a>2. 父子应用耦合以及单独使用</h4><p>简单讲就是为了满足更多更灵活的使用要求，咱们设计要能满足主应用与微应用耦合在一起使用，也可以子应用单独使用，不仅满足了用户的需求，还可以方便开发人员调试。（联调子应用时子应用一定是能独立启动的，并且有自己的登录、菜单功能，说白了就是一个完整的系统）</p>
+<p>为了区分微前端运行还是单独运行，我们需要在子应用中插入微前端标识。</p>
+<div class="code-wrapper"><pre><code class="hljs js"># 单独启动子应用时会通过这里来启动项目
+
+<span class="hljs-keyword">if</span> (!<span class="hljs-variable language_">window</span>.<span class="hljs-property">__POWERED_BY_QIANKUN__</span>) &#123;
+  <span class="hljs-title function_">render</span>(&#123; <span class="hljs-attr">container</span>: <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-attr">routerBase</span>: <span class="hljs-string">&quot;/micro-clouds&quot;</span> &#125;);
+&#125;
+
+# 这是子应用中微前端的钩子函数，如果是通过微前端启动，就通过这里来启动项目
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">mount</span>(<span class="hljs-params">props</span>) &#123;
+  <span class="hljs-comment">// 标记当前启动形式为微服务启动</span>
+  store.<span class="hljs-title function_">commit</span>(<span class="hljs-string">&quot;app/microChange&quot;</span>, <span class="hljs-literal">true</span>);
+  <span class="hljs-comment">// props是主应用传过来的参数</span>
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">render</span>(props);
+&#125;
+</code></pre></div>
+
+<p>区分好了之后，就需要将子应用中的菜单、头部状态栏隐藏，只留下内容区，连内容区周围的间隙都要去掉，因为主应用内容区也有间隙，避免样式冲突。</p>
+<p><img src="/../imgs/%E5%BE%AE%E5%89%8D%E7%AB%AF/cd0fda56a473404986f7e1de0cc0e7f3tplv-k3u1fbpfcp-zoom-in-crop-mark3024000.webp" srcset="/img/loading.gif" lazyload alt="截屏2022-06-29 下午12.19.13.png"></p>
+<h4 id="3-父子应用通信"><a href="#3-父子应用通信" class="headerlink" title="3. 父子应用通信"></a>3. 父子应用通信</h4><p>原则上应该尽可能得降低父子应用之间的耦合，以免子应用单独使用时无法正常运行，也会增加维护成本。但是像登录信息的传递是有必要的，父应用登录了将登录信息传到子应用，避免子应用检测到无登录状态跳转到登录页面。</p>
+<div class="code-wrapper"><pre><code class="hljs js"># 主应用
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> microApps = [
+  &#123;
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;micro-clouds&#x27;</span>,
+    <span class="hljs-attr">entry</span>: process.<span class="hljs-property">env</span>.<span class="hljs-property">VUE_APP_CLOUDS</span>,
+    <span class="hljs-attr">activeRule</span>: <span class="hljs-string">&#x27;/micro-clouds&#x27;</span>,
+    <span class="hljs-attr">container</span>: <span class="hljs-string">&#x27;#subapp2&#x27;</span>, <span class="hljs-comment">// 子应用挂载的div</span>
+    <span class="hljs-attr">props</span>: &#123;
+      <span class="hljs-attr">routerBase</span>: <span class="hljs-string">&#x27;/micro-clouds&#x27;</span>,
+      <span class="hljs-comment">// 父应用的store传递给子应用</span>
+      <span class="hljs-attr">mainStore</span>: store,
+      <span class="hljs-comment">// 父应用传递给子应用的登录信息</span>
+      <span class="hljs-attr">user</span>: utils.<span class="hljs-title function_">getStorage</span>(<span class="hljs-string">&#x27;user&#x27;</span>)
+    &#125;
+  &#125;
+]
+
+# 子应用接受父应用传过来的登录信息并写入storage中
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">mount</span>(<span class="hljs-params">props</span>) &#123;
+  <span class="hljs-comment">// 父级传过来的登录信息写进子系统缓存中</span>
+  utils.<span class="hljs-title function_">setStorage</span>(<span class="hljs-string">&quot;user&quot;</span>, props.<span class="hljs-property">user</span>);
+  <span class="hljs-comment">// 标记当前启动形式为微服务启动</span>
+  store.<span class="hljs-title function_">commit</span>(<span class="hljs-string">&quot;app/microChange&quot;</span>, <span class="hljs-literal">true</span>);
+  <span class="hljs-keyword">await</span> <span class="hljs-title function_">render</span>(props);
+&#125;
+</code></pre></div>
+
+<h4 id="4-面包屑怎么融合父子应用中的路由"><a href="#4-面包屑怎么融合父子应用中的路由" class="headerlink" title="4. 面包屑怎么融合父子应用中的路由"></a>4. 面包屑怎么融合父子应用中的路由</h4><p>现在的后台应用基本都有面包屑要么就是有一个tabs标签栏，在非微前端应用中，是一个非常简单的问题，直接<code>to.matched</code>就能查找出当前的路由嵌套关系，面包屑遍历出来就OK。但是在微前端中怎么知道子应用中的路由嵌套关系，那么就涉及父子应用的通信，当子应用监听到路由变化时上报子应用的<code>to.match</code>给父应用。由于这里涉及到主子应用的<code>to.match</code>切换，当打开的是主应用的页面就用主应用的<code>to.match</code>，打开的是子应用的页面就用子应用的<code>to.match</code>，所以我这里统一用<code>vuex</code>来处理</p>
+<div class="code-wrapper"><pre><code class="hljs js"># 主应用vuex
+<span class="hljs-keyword">const</span> actions = &#123;
+    <span class="hljs-comment">// 处理父应用的to.match</span>
+    <span class="hljs-title function_">getBreadcrumb</span>(<span class="hljs-params">&#123; commit &#125;, matched</span>) &#123;
+        <span class="hljs-keyword">const</span> levelList = matched.<span class="hljs-title function_">filter</span>(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> item.<span class="hljs-property">meta</span> &amp;&amp; item.<span class="hljs-property">meta</span>.<span class="hljs-property">title</span> &amp;&amp; item.<span class="hljs-property">meta</span>.<span class="hljs-property">breadcrumb</span> !== <span class="hljs-literal">false</span>);
+        <span class="hljs-title function_">commit</span>(<span class="hljs-string">&#x27;setBreadcrumb&#x27;</span>, <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(levelList)));
+    &#125;,
+    <span class="hljs-comment">// 处理微应用的to.match</span>
+    <span class="hljs-title function_">getMicroBreadcrumb</span>(<span class="hljs-params">&#123; commit &#125;, matchedList</span>) &#123;
+        <span class="hljs-keyword">const</span> microLevel = matchedList.<span class="hljs-title function_">filter</span>(<span class="hljs-function">(<span class="hljs-params">ele</span>) =&gt;</span> ele.<span class="hljs-property">meta</span> &amp;&amp; ele.<span class="hljs-property">meta</span>.<span class="hljs-property">title</span> &amp;&amp; ele.<span class="hljs-property">meta</span>.<span class="hljs-property">breadcrumb</span> !== <span class="hljs-literal">false</span>);
+        <span class="hljs-comment">/*</span>
+<span class="hljs-comment">         * 为了解决这个告警采用 JSON.parse(JSON.stringify(microLevel))   vue3.0需要注意的地方</span>
+<span class="hljs-comment">         * runtime-core.esm-bundler.js:198 [Vue warn]: Avoid app logic that relies on enumerating keys on a component instance.</span>
+<span class="hljs-comment">         * The keys will be empty in production mode to avoid performance overhead.</span>
+<span class="hljs-comment">         */</span>
+        <span class="hljs-title function_">commit</span>(<span class="hljs-string">&#x27;setMicroBreadcrumb&#x27;</span>, <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(microLevel)));
+  &#125;
+&#125;
+
+# 主应用面包屑组件中
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">getBreadcrumb</span> = <span class="hljs-keyword">async</span> (<span class="hljs-params"></span>) =&gt; &#123;
+  <span class="hljs-comment">// 判断是微应用就去微应用上报的to.match</span>
+  <span class="hljs-keyword">if</span> (route.<span class="hljs-property">path</span>.<span class="hljs-title function_">startsWith</span>(<span class="hljs-string">&#x27;/micro&#x27;</span>)) &#123;
+    <span class="hljs-comment">// 这里需要做一个vuex异步处理，否则取不到子应用上报的to.match</span>
+    store.<span class="hljs-title function_">subscribe</span>(<span class="hljs-function">(<span class="hljs-params">mutation, state</span>) =&gt;</span> &#123;
+      <span class="hljs-keyword">if</span> (mutation.<span class="hljs-property">type</span> === <span class="hljs-string">&#x27;app/setMicroBreadcrumb&#x27;</span>) &#123;
+        levelList.<span class="hljs-property">value</span> = store.<span class="hljs-property">state</span>.<span class="hljs-property">app</span>.<span class="hljs-property">microBreadcrumbs</span>
+      &#125;
+    &#125;)
+  &#125; <span class="hljs-keyword">else</span> &#123;
+    <span class="hljs-keyword">await</span> store.<span class="hljs-title function_">dispatch</span>(<span class="hljs-string">&#x27;app/getBreadcrumb&#x27;</span>, route.<span class="hljs-property">matched</span>)
+    levelList.<span class="hljs-property">value</span> = store.<span class="hljs-property">state</span>.<span class="hljs-property">app</span>.<span class="hljs-property">breadcrumbs</span>
+  &#125;
+&#125;
+
+# 子应用上报to.<span class="hljs-property">match</span>给父应用
+# 子应用main.<span class="hljs-property">js</span>
+
+# 好好回想一下，在父应用中传递给子应用的props中就有一个<span class="hljs-string">`mainStore`</span>，这个就是父应用的store，可以直接在子应用中使用<span class="hljs-string">`props.mainStore.dispatch(&quot;app/getMicroBreadcrumb&quot;, [ ...matched ]);`</span>
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">render</span>(<span class="hljs-params">props = &#123;&#125;</span>) &#123;
+    ...
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">window</span>.<span class="hljs-property">__POWERED_BY_QIANKUN__</span>) &#123;
+        router.<span class="hljs-title function_">afterEach</span>(<span class="hljs-function">(<span class="hljs-params">to</span>) =&gt;</span> &#123;
+          <span class="hljs-comment">// 你可能发现这里为啥要改造`path、redirect`，路径前面拼接了一个`routerBase`</span>
+          <span class="hljs-comment">// 是因为在父应用中，如果子应用路由不带子应用的前缀标识路由是没法跳转进子应用页面的!!!</span>
+          <span class="hljs-keyword">const</span> matched = to.<span class="hljs-property">matched</span>.<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> &#123;
+            <span class="hljs-keyword">return</span> &#123;
+              ...item,
+              <span class="hljs-attr">path</span>: <span class="hljs-string">`<span class="hljs-subst">$&#123;routerBase&#125;</span><span class="hljs-subst">$&#123;item.path&#125;</span>`</span>,
+              <span class="hljs-attr">redirect</span>: <span class="hljs-string">`<span class="hljs-subst">$&#123;routerBase&#125;</span><span class="hljs-subst">$&#123;item.path&#125;</span>`</span>,
+            &#125;;
+          &#125;)
+          props.<span class="hljs-property">mainStore</span>.<span class="hljs-title function_">dispatch</span>(<span class="hljs-string">&quot;app/getMicroBreadcrumb&quot;</span>, [
+            ...matched
+          ]);
+        &#125;);
+    &#125;
+    ...
+&#125;
+</code></pre></div>
+
+<p>到这里基本上配置完成了，后面是一些遇到的样式bug，一定要实践，光看可能效果不大</p>
+<h4 id="5-父子应用中样式冲突的问题"><a href="#5-父子应用中样式冲突的问题" class="headerlink" title="5. 父子应用中样式冲突的问题"></a>5. 父子应用中样式冲突的问题</h4><p><img src="/../imgs/%E5%BE%AE%E5%89%8D%E7%AB%AF/523aefbbc2eb4185abacac1284dd32d3tplv-k3u1fbpfcp-zoom-in-crop-mark3024000.webp" srcset="/img/loading.gif" lazyload alt="截屏2022-06-29 下午2.45.44.png"></p>
+<p>当在父应用打开子应用时出现样式问题，正常在<code>vue + element-plus</code>的项目中，是这么引组件的样式</p>
+<p><img src="/../imgs/%E5%BE%AE%E5%89%8D%E7%AB%AF/a2ac96c03b4f4e26949d909e08a5d689tplv-k3u1fbpfcp-zoom-in-crop-mark3024000.webp" srcset="/img/loading.gif" lazyload alt="截屏2022-06-29 下午2.52.36.png"> 通过审查元素发现这个弹窗的dom节点的class样式少了一些属性，也就是光有class少了样式值，所以导致样式问题。目测是import引入样式的没法作用到子应用节点，改成在<code>public/index.html</code>通过link的方式引用</p>
+<p><img src="/../imgs/%E5%BE%AE%E5%89%8D%E7%AB%AF/231d5ee6b248446d80b01d06621c2bbetplv-k3u1fbpfcp-zoom-in-crop-mark3024000.webp" srcset="/img/loading.gif" lazyload alt="截屏2022-06-29 下午2.58.35.png"></p>
+<p>成功解决样式问题，需要注意的是当遇到样式问题时可以从 引入方式、append-to-body属性（element-plus组件）着手排查。</p>
+<p>配置完整个微前端架构，看似百八十行代码，其实遇到的问题还是蛮多的，跟撸个demo完全是两回事，网上可查的资料又少，官方文档只是介绍了那几个api的使用，干完这票确实提升不少，值得去尝试，我认为这是构架师必备技能。</p>
+<h4 id="6-qiankun加载子应用的协议会转成http的问题"><a href="#6-qiankun加载子应用的协议会转成http的问题" class="headerlink" title="6. qiankun加载子应用的协议会转成http的问题"></a>6. qiankun加载子应用的协议会转成http的问题</h4><p>前面由于都是在本地以及测试环境验证过，因为都是http协议所以没有暴露出这个问题。当到沙盒以及生产环境时，子应用页面加载不出来，我也没有改动代码，测试和生产是同一份代码，一直报这个错误</p>
+<p><img src="/../imgs/%E5%BE%AE%E5%89%8D%E7%AB%AF/5fa57a448c1f4606af23b4514cecdee8tplv-k3u1fbpfcp-zoom-in-crop-mark3024000.webp" srcset="/img/loading.gif" lazyload alt="截屏2022-07-19 下午6.18.03.png"></p>
+<p>也就是主应用是 <code>https</code> 协议，子应用是<code>http</code>协议，导致了这个问题。现在问题清楚了，又有另外一个疑问，我的主应用指向子应用的路由是 <code>https</code> 啊，为什么被改成了 <code>http</code>，这个问题我不太清楚是不是<code>qiankun</code>这家伙干的，官方也没说。</p>
+<p>解决办法：</p>
+<p>public&#x2F;index.html 头部加上这个</p>
+<div class="code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;Content-Security-Policy&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;upgrade-insecure-requests&quot;</span>&gt;</span>
+</code></pre></div>
+
+<p>如果是统一加上这个，测试环境和本地环境又不行了，得区分开发，怎么办？</p>
+<p>我们都知道，打包后生成的<code>index.html</code>是由 <code>html-webpack-plugin</code> 插件生成的，沿着这条线索找，插件文档果然有<code>meta</code>这个配置项<a href="https://link.juejin.cn/?target=https://github.com/jantimon/html-webpack-plugin%23configuration">github.com&#x2F;jantimon&#x2F;ht…</a></p>
+<p>那么在<code>vue-cli</code>生成的项目中没有单独使用<code>html-webpack-plugin</code>，而是在 <code>vue.config.js</code>里的pages入口这里配置，具体代码：</p>
+<div class="code-wrapper"><pre><code class="hljs css">pages: &#123;
+    index: &#123;
+      entry: <span class="hljs-string">&#x27;src/main.js&#x27;</span>,
+      template: <span class="hljs-string">&#x27;public/index.html&#x27;</span>,
+      filename: <span class="hljs-string">&#x27;index.html&#x27;</span>,
+      title: <span class="hljs-string">&#x27;采贝中台&#x27;</span>,
+      meta: process.env.NODE_ENV === <span class="hljs-string">&#x27;development&#x27;</span> || process.env.NODE_ENV === <span class="hljs-string">&#x27;test&#x27;</span>
+      ? &#123;&#125;
+      : &#123;
+        &#x27;<span class="hljs-attribute">Content</span>-Security-Policy&#x27;: &#123; &#x27;http-equiv&#x27;: <span class="hljs-string">&#x27;Content-Security-Policy&#x27;</span>, content: <span class="hljs-string">&#x27;upgrade-insecure-requests&#x27;</span> &#125;
+      &#125;
+    &#125;
+&#125;,
+</code></pre></div>
+
+<p>完美解决！</p>
+<h3 id="项目部署"><a href="#项目部署" class="headerlink" title="项目部署"></a>项目部署</h3><p>部署方式很多种，我这里只介绍我在项目中的实践。</p>
+<p><img src="/../imgs/%E5%BE%AE%E5%89%8D%E7%AB%AF/3e9100e7d27846afbb68b7525f1cd979tplv-k3u1fbpfcp-zoom-in-crop-mark3024000.webp" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>主应用：<a href="https://link.juejin.cn/?target=http://main.xxx.com/home">main.xxx.com&#x2F;home</a><br>子应用A: <a href="https://link.juejin.cn/?target=http://clouds.xxx.com/projectA/home">clouds.xxx.com&#x2F;projectA&#x2F;ho…</a><br>子应用B: <a href="https://link.juejin.cn/?target=http://clouds.xxx.com/projectB/home">clouds.xxx.com&#x2F;projectB&#x2F;ho…</a><br>子应用C: <a href="https://link.juejin.cn/?target=http://clouds.xxx.com/projectC/home">clouds.xxx.com&#x2F;projectC&#x2F;ho…</a></p>
+<p>现在的部署都流行CICD，docker + k8s，所以我采用的是每个项目都单独部署一个docker，最后通过 <code>域名 + 项目前缀</code>进入项目，nginx配置如下：</p>
+<div class="code-wrapper"><pre><code class="hljs nginx"><span class="hljs-comment"># 主应用</span>
+<span class="hljs-section">location</span> / &#123;
+    <span class="hljs-attribute">root</span>      /usr/share/nginx/html;
+    <span class="hljs-attribute">index</span>     index.html;  <span class="hljs-comment"># 入口文件</span>
+    <span class="hljs-attribute">try_files</span> <span class="hljs-variable">$uri</span> <span class="hljs-variable">$uri</span>/ /index.html;
+&#125;
+
+<span class="hljs-comment"># 子应用</span>
+<span class="hljs-section">location</span> /micro-projectA &#123;
+    <span class="hljs-attribute">add_header</span> Access-Control-Allow-Origin *;
+    <span class="hljs-attribute">add_header</span> Access-Control-Allow-Methods <span class="hljs-string">&#x27;GET&#x27;</span>;
+    <span class="hljs-attribute">add_header</span> Access-Control-Allow-Headers <span class="hljs-string">&#x27;DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization&#x27;</span>;
+
+    <span class="hljs-attribute">alias</span>     /usr/share/nginx/html;
+    <span class="hljs-attribute">try_files</span> <span class="hljs-variable">$uri</span> <span class="hljs-variable">$uri</span>/ /micro-projectA/index.html;
+&#125;
+
+<span class="hljs-section">location</span> / &#123;
+    <span class="hljs-attribute">add_header</span> Access-Control-Allow-Origin *;
+    <span class="hljs-attribute">add_header</span> Access-Control-Allow-Methods <span class="hljs-string">&#x27;GET&#x27;</span>;
+    <span class="hljs-attribute">add_header</span> Access-Control-Allow-Headers <span class="hljs-string">&#x27;DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization&#x27;</span>;
+
+    <span class="hljs-attribute">root</span> /usr/share/nginx/html;
+    <span class="hljs-attribute">try_files</span> <span class="hljs-variable">$uri</span> <span class="hljs-variable">$uri</span>/ /index.html;
+&#125;
+</code></pre></div>
+
+<p>具体阿里云云效流水线搭建、部署、域名、负载均衡等相关的操作可以翻开我其他文章来看</p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7034419195639136269">记一次gitlab仓库迁移阿里云云效以及相关的流水线改造全过程</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7023635481225068580">来屡屡前端包部署以及nginx配置</a></p>
+<h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><p><a href="https://link.juejin.cn/?target=https://gitee.com/spring_zou/vue-qiankun">gitee.com&#x2F;spring_zou&#x2F;…</a></p>
+<p>分类：</p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/frontend">前端</a></p>
+<p>标签：</p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/tag/%E5%BE%AE%E6%9C%8D%E5%8A%A1">微服务</a><a target="_blank" rel="noopener" href="https://juejin.cn/tag/%E5%89%8D%E7%AB%AF">前端</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%89%8D%E7%AB%AF/">#前端</a>
+      
+        <a href="/tags/%E5%BE%AE%E5%89%8D%E7%AB%AF/">#微前端</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>微前端</div>
+      <div>http://serendipity0321.github.com/2023/01/29/微前端/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年1月29日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/01/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">计算机网络</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/01/29/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E6%9C%BA%E5%88%B6/" title="事件循环机制">
+                        <span class="hidden-mobile">事件循环机制</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
