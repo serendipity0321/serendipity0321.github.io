@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2022/12/31/6DMRKqvGUXHLpCB.png">
 <meta property="article:published_time" content="2023-01-28T01:54:41.000Z">
-<meta property="article:modified_time" content="2023-01-29T02:49:08.107Z">
+<meta property="article:modified_time" content="2023-01-31T14:48:40.857Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://s2.loli.net/2022/12/31/6DMRKqvGUXHLpCB.png">
@@ -234,7 +234,7 @@
         
         
         
-          264 分钟
+          265 分钟
         
       </span>
     
@@ -345,7 +345,7 @@
 
 <h4 id="3、为什么要使用深拷贝？"><a href="#3、为什么要使用深拷贝？" class="headerlink" title="3、为什么要使用深拷贝？"></a>3、为什么要使用深拷贝？</h4><p>我们希望在改变新的数组（对象）的时候，不改变原数组（对象）</p>
 <h4 id="4、赋值和浅拷贝的区别？"><a href="#4、赋值和浅拷贝的区别？" class="headerlink" title="4、赋值和浅拷贝的区别？"></a>4、赋值和浅拷贝的区别？</h4><p>当我们把一个对象赋值给一个新的变量时，赋的其实是该对象的在栈中的地址，而不是堆中的数据。也就是两个对象指向的是同一个存储空间，无论哪个对象发生改变，其实都是改变的存储空间的内容，因此，两个对象是联动的。</p>
-<p>浅拷贝是按位拷贝对象，它会创建一个新对象，这个对象有着原始对象属性值的一份精确拷贝。</p>
+<p><strong>JavaScript 数组复制操作创建浅拷贝。（所有 JavaScript 对象的标准内置复制操作都会创建浅拷贝，而不是深拷贝）。<br>浅拷贝是按位拷贝对象，它会创建一个新对象，这个对象有着原始对象属性值的一份精确拷贝。</strong></p>
 <h3 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h3><p>浅拷贝是一点一点地拷贝一个对象。它将创建一个新对象。此对象具有原始对象属性值的精确副本。如果属性是基本类型，它将复制基本类型的值；如果属性是内存地址（引用类型），则复制内存地址。因此，如果一个对象更改地址，另一个对象将受到影响。也就是说，默认复制构造函数只复制浅层复制中的对象（依次复制成员），即只复制对象空间，而不复制资源。</p>
 <div class="code-wrapper"><pre><code class="hljs pgsql">var obj1 =&#123;
  <span class="hljs-type">name</span>:<span class="hljs-string">&#x27;张三&#x27;</span>,
