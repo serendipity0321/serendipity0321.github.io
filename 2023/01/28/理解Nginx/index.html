@@ -1,0 +1,717 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Nginx是什么？Nginx (engine x) 是一个轻量级、高性能的HTTP和反向代理服务器,同时也是一个通用代理服务器(TCP&#x2F;UDP&#x2F;IMAP&#x2F;POP3&#x2F;SMTP),最初由俄罗斯人Igor Sysoev编写。 简单的说：  Nginx是一个拥有高性能HTTP和反向代理服务器，其特点是占用内存少，并发能力强，并且在现实中，nginx的并发能力要比在同">
+<meta property="og:type" content="article">
+<meta property="og:title" content="理解Nginx">
+<meta property="og:url" content="http://serendipity0321.github.com/2023/01/28/%E7%90%86%E8%A7%A3Nginx/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Nginx是什么？Nginx (engine x) 是一个轻量级、高性能的HTTP和反向代理服务器,同时也是一个通用代理服务器(TCP&#x2F;UDP&#x2F;IMAP&#x2F;POP3&#x2F;SMTP),最初由俄罗斯人Igor Sysoev编写。 简单的说：  Nginx是一个拥有高性能HTTP和反向代理服务器，其特点是占用内存少，并发能力强，并且在现实中，nginx的并发能力要比在同">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b03812eb40b047be8052ee9288f6798e~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp">
+<meta property="og:image" content="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c6c634ec69f54d5ab76644d8dd78b0c2~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp">
+<meta property="og:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0f9e589ff2224234ad1413e4c4c58cce~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp">
+<meta property="og:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a91e7a373df14e90891e6f4f62a629d7~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp">
+<meta property="og:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3d8225778b6543f697208f3a32484dec~tplv-k3u1fbpfcp-no-mark:160:160:160:120.awebp">
+<meta property="og:image" content="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c802eb3fdc3a41a29229d496ebd0ef67~tplv-k3u1fbpfcp-no-mark:420:420:300:420.awebp">
+<meta property="og:image" content="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/288aed1ab1f044f08f541cfd12b5c221~tplv-k3u1fbpfcp-no-mark:420:420:300:420.awebp">
+<meta property="og:image" content="https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/c794682f2184652c07e62d648e048460.svg">
+<meta property="og:image" content="https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/3d482c7a948bac826e155953b2a28a9e.svg">
+<meta property="article:published_time" content="2023-01-27T17:12:48.000Z">
+<meta property="article:modified_time" content="2023-02-04T05:47:53.398Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Nginx">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b03812eb40b047be8052ee9288f6798e~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp">
+  
+  
+  
+  <title>理解Nginx - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"serendipity0321.github.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>serendipity&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="理解Nginx"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-01-28 01:12" pubdate>
+          2023年1月28日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          21 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">理解Nginx</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="Nginx是什么？"><a href="#Nginx是什么？" class="headerlink" title="Nginx是什么？"></a>Nginx是什么？</h2><p><code>Nginx</code> (engine x) 是一个<strong>轻量级、高性能的HTTP</strong>和<strong>反向代理服务器</strong>,同时也是一个<strong>通用代理服务器</strong>(TCP&#x2F;UDP&#x2F;IMAP&#x2F;POP3&#x2F;SMTP),最初由俄罗斯人Igor Sysoev编写。</p>
+<p>简单的说：</p>
+<ul>
+<li><code>Nginx</code>是一个拥有高性能HTTP和反向代理服务器，其特点是<code>占用内存少</code>，<code>并发能力强</code>，并且在现实中，nginx的并发能力要比在同类型的网页服务器中表现要好</li>
+<li><code>Nginx</code>专为<code>性能优化</code>而开发，最重要的要求便是<code>性能</code>，且十分注重效率，有报告nginx能支持高达50000个并发连接数</li>
+</ul>
+<h2 id="正向代理和反向代理"><a href="#正向代理和反向代理" class="headerlink" title="正向代理和反向代理"></a>正向代理和反向代理</h2><p>Nginx 是一个反向代理服务器，那么反向代理是什么呢？我们先看看什么叫做正向代理</p>
+<p><strong>正向代理</strong>：局域网中的电脑用户想要直接访问网络是不可行的，只能通过代理服务器（Server）来访问，这种代理服务就被称为正向代理。</p>
+<p>就好比我们俩在一块，直接对话即可，但如果我和你分隔两地，我们要想对话，必须借助一个通讯设备（如：电话）来沟通，那么这个通讯设备就是”代理服务器”，这种行为称为“正向代理”</p>
+<p>那么反向代理是什么呢？</p>
+<p><strong>反向代理</strong>：客户端无法感知代理，因为客户端访问网络不需要配置，只要把请求发送到反向代理服务器，由<strong>反向代理服务器去选择目标服务器</strong>获取数据，然后再返回到客户端，此时反向代理服务器和目标服务器对外就是一个服务器，暴露的是代理服务器地址，隐藏了真实服务器IP地址。</p>
+<p>在正向代理中，我向你打电话，你能看到向你打电话的电话号码，由电话号码知道是我给你打的，那么此时我用<code>虚拟电话</code>给你打过去，你看到的不再是我的手机号，而是<code>虚拟号码</code>,你便不知道是我给你打的，这种行为变叫做”反向代理”。</p>
+<p>在以上述的例子简单的说下：</p>
+<ul>
+<li>正向代理：我通过我的手机（proxy Server）去给你打电话，相当于<strong>我和我的手机</strong>是一个整体，与你的手机（Server）是分开的</li>
+<li>反向代理：我通过我的手机（proxy Server）通过软件转化为虚拟号码去给你打电话，此时相当于<strong>我的手机和你的手机</strong>是一个整体，和我是分开的</li>
+</ul>
+<h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><p><strong>负载均衡</strong>：是高可用网络基础架构的关键组件，通常用于将工作<strong>负载分布到多个服务器</strong>来提高网站、应用、数据库或其他服务的性能和可靠性。</p>
+<p>如果没有负载均衡，客户端与服务端的操作通常是：<strong>客户端请求服务端，然后服务端去数据库查询数据，将返回的数据带给客户端</strong>：</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b03812eb40b047be8052ee9288f6798e~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>但随着客户端越来越多，数据，访问量飞速增长，这种情况显然无法满足，我们从上图发现，客户端的请求和相应都是通过服务端的，那么我们加大服务端的量，让多个服务端分担，是不是就能解决这个问题了呢？</p>
+<p>但此时对于客户端而言，他去访问这个地址就是固定的，才不会去管那个服务端有时间，你只要给我返回出数据就OK了，所以我们就需要一个“管理者“，将这些服务端找个老大过来，客户端直接找老大，再由老大分配谁处理谁的数据，从而减轻服务端的压力，而这个”老大“就是<strong>反向代理服务器</strong>，而端口号就是这些服务端的工号。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c6c634ec69f54d5ab76644d8dd78b0c2~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>像这样，当有15个请求时，反向代理服务器会平均分配给服务端，也就是各处理5个，这个过程就称之为：<strong>负载均衡</strong></p>
+<h2 id="动静分离"><a href="#动静分离" class="headerlink" title="动静分离"></a>动静分离</h2><p>当客户端发起请求时，正常的情况是这样的：</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0f9e589ff2224234ad1413e4c4c58cce~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>就好比你去找客服，一般先是先说一大堆官方的话，你问什么，他都会这么说，那么这个就叫<strong>静态资源（可以理解为是html，css）</strong></p>
+<p>而回答具体的问题时，每个回答都是不同的，而这些不同的就叫做<strong>动态资源（会改变，可以理解为是变量）</strong></p>
+<p>在未分离的时候，可以理解为每个客服都要先说出官方的话，在打出具体的回答，这无异加大了客服的工作量，所以为了更好的有效利用客服的时间，我们把这些官方的话分离出来，找个机器人，让他代替客服去说，这样就减轻了客服的工作量。</p>
+<p>也就是说，我们将动态资源和静态资源分离出来，交给不同的服务器去解析，这样就加快了解析的速度，从而降低由单个服务器的压力</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a91e7a373df14e90891e6f4f62a629d7~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<h2 id="安装-Nginx"><a href="#安装-Nginx" class="headerlink" title="安装 Nginx"></a>安装 Nginx</h2><p>关于 nginx 如何安装，这里就不做过多的介绍了，感兴趣的小伙伴看看这篇文章：<a href="https://link.juejin.cn/?target=https://blog.csdn.net/yujing1314/article/details/97267369" title="https://blog.csdn.net/yujing1314/article/details/97267369">【Linux】中如何安装nginx</a></p>
+<p>这里让我们看看一些常用的命令：</p>
+<ul>
+<li>查看版本：<code>./nginx -v</code></li>
+<li>启动：<code>./nginx</code></li>
+<li>关闭：<code>./nginx -s stop</code>(推荐) 或 <code>./nginx -s quit</code></li>
+<li>重新加载nginx配置：<code>./nginx -s reload</code></li>
+</ul>
+<h2 id="Nginx-的配置文件"><a href="#Nginx-的配置文件" class="headerlink" title="Nginx 的配置文件"></a>Nginx 的配置文件</h2><p>配置文件分为三个模块：</p>
+<ul>
+<li>全局块：从配置文件开始到events块之间，主要是设置一些<strong>影响nginx服务器整体运行的配置指令</strong>。（按道理说：并发处理服务的配置时，值越大，可支持的并发处理量越多，但此时会受到硬件、软件等设备等的制约）</li>
+<li>events块：影响<strong>nginx服务器与用户的网络连接</strong>，常用的设置包括是否开启对多workprocess下的网络连接进行序列化，是否允许同时接收多个网络连接等等</li>
+<li>http块：如反向代理和负载均衡都在此配置</li>
+</ul>
+<h2 id="location-的匹配规则"><a href="#location-的匹配规则" class="headerlink" title="location 的匹配规则"></a>location 的匹配规则</h2><p>共有四种方式：</p>
+<div class="code-wrapper"><pre><code class="hljs gherkin">    location[ = |<span class="hljs-string"> ~ </span>|<span class="hljs-string"> ~* </span>|<span class="hljs-string"> ^~ ] url &#123;</span>
+<span class="hljs-string">    </span>
+<span class="hljs-string">    &#125;</span>
+<span class="hljs-string">复制代码</span></code></pre></div>
+
+<ul>
+<li><code>=</code> ：<code>精确匹配</code>，用于<strong>不含正则表达式</strong>的url前，要求字符串与url<strong>严格匹配</strong>，完全相等时，才能停止向下搜索并处理请求</li>
+<li><code>^~</code>：用于<strong>不含正则表达式</strong>的url前，要求ngin服务器找到表示<strong>url和字符串匹配度最高</strong>的location后，立即使用此location处理请求，而不再匹配</li>
+<li><code>~</code> ：<code>最佳匹配</code>，用于表示url<strong>包含正则表达式</strong>，并且<strong>区分</strong>大小写。</li>
+<li><code>~*</code>：与<code>~</code>一样，只是<strong>不区分</strong>大小写</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>如果 <code>url</code> 包含正则表达式，则不需要 <code>~</code> 作为开头表示</li>
+<li>nginx的匹配具有<code>优先顺序</code>，一旦匹配上就会立马退出，不再进行向下匹配</li>
+</ul>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>关于具体的配置可以参考：<a target="_blank" rel="noopener" href="https://juejin.cn/post/7052952117425733663" title="https://juejin.cn/post/7052952117425733663">写给前端的nginx教程</a></p>
+<h3 id="其他好文"><a href="#其他好文" class="headerlink" title="其他好文"></a>其他好文</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7088304364078497800" title="https://juejin.cn/post/7088304364078497800">一篇让你完全够用TS的指南</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7068935394191998990" title="https://juejin.cn/post/7068935394191998990">🔥花一个小时，迅速了解ES6~ES12的全部特性</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7063657010885034020" title="https://juejin.cn/post/7063657010885034020">10分钟，打造一个专属于你的cli</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7077805900055969823" title="https://juejin.cn/post/7077805900055969823">通过开水果店，帮你全面了解package.json文件的作用</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7052204193968291870" title="https://juejin.cn/post/7052204193968291870">打造开箱即用的 react 移动端框架</a></li>
+</ul>
+<p>致此，有关Nginx相关的知识就已经完成了，相信对于前端而言已经足够了，喜欢的点个赞👍🏻支持下吧(●￣(ｴ)￣●)</p>
+<p>文章被收录于专栏：</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3d8225778b6543f697208f3a32484dec~tplv-k3u1fbpfcp-no-mark:160:160:160:120.awebp" srcset="/img/loading.gif" lazyload alt="cover"></p>
+<p>前端八股文</p>
+<p>八股文包含： node、 cli、webpack、git、网络、浏览器、性能优化、等一些实用的插件等</p>
+<p>相关小册</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c802eb3fdc3a41a29229d496ebd0ef67~tplv-k3u1fbpfcp-no-mark:420:420:300:420.awebp" srcset="/img/loading.gif" lazyload alt="「从前端到全栈」封面"></p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/288aed1ab1f044f08f541cfd12b5c221~tplv-k3u1fbpfcp-no-mark:420:420:300:420.awebp" srcset="/img/loading.gif" lazyload alt="「NestJS 项目实战」封面"></p>
+<p><img src="https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/c794682f2184652c07e62d648e048460.svg" srcset="/img/loading.gif" lazyload> 1k+</p>
+<p><img src="https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/3d482c7a948bac826e155953b2a28a9e.svg" srcset="/img/loading.gif" lazyload> 收藏</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Nginx/">#Nginx</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>理解Nginx</div>
+      <div>http://serendipity0321.github.com/2023/01/28/理解Nginx/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年1月28日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/01/28/%E6%89%8B%E6%92%95%E4%BB%A3%E7%A0%81-%E5%89%8D%E7%AB%AF/" title="手撕代码-前端">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">手撕代码-前端</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/01/27/%E8%B7%A8%E5%9F%9F%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/" title="跨域方式实现原理">
+                        <span class="hidden-mobile">跨域方式实现原理</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

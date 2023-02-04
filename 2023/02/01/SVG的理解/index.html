@@ -1,0 +1,965 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一、概述SVG 是一种基于 XML 语法的图像格式，全称是可缩放矢量图（Scalable Vector Graphics）。其他图像格式都是基于像素处理的，SVG 则是属于对图像的形状描述，所以它本质上是文本文件，体积较小，且不管放大多少倍都不会失真。  SVG 文件可以直接插入网页，成为 DOM 的一部分，然后用 JavaScript 和 CSS 进行操作。  &lt;!DOCTYPE html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SVG的理解">
+<meta property="og:url" content="http://serendipity0321.github.com/2023/02/01/SVG%E7%9A%84%E7%90%86%E8%A7%A3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、概述SVG 是一种基于 XML 语法的图像格式，全称是可缩放矢量图（Scalable Vector Graphics）。其他图像格式都是基于像素处理的，SVG 则是属于对图像的形状描述，所以它本质上是文本文件，体积较小，且不管放大多少倍都不会失真。  SVG 文件可以直接插入网页，成为 DOM 的一部分，然后用 JavaScript 和 CSS 进行操作。  &lt;!DOCTYPE html">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.wangbase.com/blogimg/asset/201808/bg2018080601.jpg">
+<meta property="article:published_time" content="2023-02-01T07:38:55.000Z">
+<meta property="article:modified_time" content="2023-02-01T07:39:28.323Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.wangbase.com/blogimg/asset/201808/bg2018080601.jpg">
+  
+  
+  
+  <title>SVG的理解 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"serendipity0321.github.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>serendipity&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="SVG的理解"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-02-01 15:38" pubdate>
+          2023年2月1日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          11k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          96 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">SVG的理解</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p>SVG 是一种基于 XML 语法的图像格式，全称是可缩放矢量图（Scalable Vector Graphics）。其他图像格式都是基于像素处理的，SVG 则是属于对图像的形状描述，所以它本质上是文本文件，体积较小，且不管放大多少倍都不会失真。</p>
+<p><img src="https://www.wangbase.com/blogimg/asset/201808/bg2018080601.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>SVG 文件可以直接插入网页，成为 DOM 的一部分，然后用 JavaScript 和 CSS 进行操作。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">svg</span></span>
+<span class="hljs-tag"><span class="hljs-attr">id</span>=<span class="hljs-string">&quot;mysvg&quot;</span></span>
+<span class="hljs-tag"><span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span></span>
+<span class="hljs-tag"><span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 0 800 600&quot;</span></span>
+<span class="hljs-tag"><span class="hljs-attr">preserveAspectRatio</span>=<span class="hljs-string">&quot;xMidYMid meet&quot;</span></span>
+<span class="hljs-tag">&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;mycircle&quot;</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">&quot;400&quot;</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">&quot;300&quot;</span> <span class="hljs-attr">r</span>=<span class="hljs-string">&quot;50&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre></div>
+</blockquote>
+<p>上面是 SVG 代码直接插入网页的例子。</p>
+<p>SVG 代码也可以写在一个独立文件中，然后用<code>&lt;img&gt;</code>、<code>&lt;object&gt;</code>、<code>&lt;embed&gt;</code>、<code>&lt;iframe&gt;</code>等标签插入网页。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs routeros">&lt;img <span class="hljs-attribute">src</span>=<span class="hljs-string">&quot;circle.svg&quot;</span>&gt;
+&lt;object <span class="hljs-attribute">id</span>=<span class="hljs-string">&quot;object&quot;</span> <span class="hljs-attribute">data</span>=<span class="hljs-string">&quot;circle.svg&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-string">&quot;image/svg+xml&quot;</span>&gt;&lt;/object&gt;
+&lt;embed <span class="hljs-attribute">id</span>=<span class="hljs-string">&quot;embed&quot;</span> <span class="hljs-attribute">src</span>=<span class="hljs-string">&quot;icon.svg&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-string">&quot;image/svg+xml&quot;</span>&gt;
+&lt;iframe <span class="hljs-attribute">id</span>=<span class="hljs-string">&quot;iframe&quot;</span> <span class="hljs-attribute">src</span>=<span class="hljs-string">&quot;icon.svg&quot;</span>&gt;&lt;/iframe&gt;</code></pre></div>
+</blockquote>
+<p>CSS 也可以使用 SVG 文件。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-class">.logo</span> &#123;
+<span class="hljs-attribute">background</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">icon.svg</span>);
+&#125;</code></pre></div>
+</blockquote>
+<p>SVG 文件还可以转为 BASE64 编码，然后作为 Data URI 写入网页。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs routeros">&lt;img <span class="hljs-attribute">src</span>=<span class="hljs-string">&quot;data:image/svg+xml;base64,[data]&quot;</span>&gt;</code></pre></div>
+</blockquote>
+<h2 id="二、语法"><a href="#二、语法" class="headerlink" title="二、语法"></a>二、语法</h2><h3 id="lt-svg-gt-标签"><a href="#lt-svg-gt-标签" class="headerlink" title="&lt;svg&gt;标签"></a><code>&lt;svg&gt;</code>标签</h3><p>SVG 代码都放在顶层标签<code>&lt;svg&gt;</code>之中。下面是一个例子。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs abnf">&lt;svg width<span class="hljs-operator">=</span><span class="hljs-string">&quot;100%&quot;</span> height<span class="hljs-operator">=</span><span class="hljs-string">&quot;100%&quot;</span>&gt;
+&lt;circle id<span class="hljs-operator">=</span><span class="hljs-string">&quot;mycircle&quot;</span> cx<span class="hljs-operator">=</span><span class="hljs-string">&quot;50&quot;</span> cy<span class="hljs-operator">=</span><span class="hljs-string">&quot;50&quot;</span> r<span class="hljs-operator">=</span><span class="hljs-string">&quot;50&quot;</span> /&gt;
+&lt;/svg&gt;</code></pre></div>
+</blockquote>
+<p><code>&lt;svg&gt;</code>的<code>width</code>属性和<code>height</code>属性，指定了 SVG 图像在 HTML 元素中所占据的宽度和高度。除了相对单位，也可以采用绝对单位（单位：像素）。如果不指定这两个属性，SVG 图像默认大小是300像素（宽） x 150像素（高）。</p>
+<p>如果只想展示 SVG 图像的一部分，就要指定<code>viewBox</code>属性。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs abnf">&lt;svg width<span class="hljs-operator">=</span><span class="hljs-string">&quot;100&quot;</span> height<span class="hljs-operator">=</span><span class="hljs-string">&quot;100&quot;</span> viewBox<span class="hljs-operator">=</span><span class="hljs-string">&quot;50 50 50 50&quot;</span>&gt;
+&lt;circle id<span class="hljs-operator">=</span><span class="hljs-string">&quot;mycircle&quot;</span> cx<span class="hljs-operator">=</span><span class="hljs-string">&quot;50&quot;</span> cy<span class="hljs-operator">=</span><span class="hljs-string">&quot;50&quot;</span> r<span class="hljs-operator">=</span><span class="hljs-string">&quot;50&quot;</span> /&gt;
+&lt;/svg&gt;</code></pre></div>
+</blockquote>
+<p><code>&lt;viewBox&gt;</code>属性的值有四个数字，分别是左上角的横坐标和纵坐标、视口的宽度和高度。上面代码中，SVG 图像是100像素宽 x 100像素高，<code>viewBox</code>属性指定视口从<code>(50, 50)</code>这个点开始。所以，实际看到的是右下角的四分之一圆。</p>
+<p>注意，视口必须适配所在的空间。上面代码中，视口的大小是 50 x 50，由于 SVG 图像的大小是 100 x 100，所以视口会放大去适配 SVG 图像的大小，即放大了四倍。</p>
+<p>如果不指定<code>width</code>属性和<code>height</code>属性，只指定<code>viewBox</code>属性，则相当于只给定 SVG 图像的长宽比。这时，SVG 图像的默认大小将等于所在的 HTML 元素的大小。</p>
+<h3 id="lt-circle-gt-标签"><a href="#lt-circle-gt-标签" class="headerlink" title="&lt;circle&gt;标签"></a><code>&lt;circle&gt;</code>标签</h3><p><code>&lt;circle&gt;</code>标签代表圆形。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs abnf">&lt;svg width<span class="hljs-operator">=</span><span class="hljs-string">&quot;300&quot;</span> height<span class="hljs-operator">=</span><span class="hljs-string">&quot;180&quot;</span>&gt;
+&lt;circle cx<span class="hljs-operator">=</span><span class="hljs-string">&quot;30&quot;</span>  cy<span class="hljs-operator">=</span><span class="hljs-string">&quot;50&quot;</span> r<span class="hljs-operator">=</span><span class="hljs-string">&quot;25&quot;</span> /&gt;
+&lt;circle cx<span class="hljs-operator">=</span><span class="hljs-string">&quot;90&quot;</span>  cy<span class="hljs-operator">=</span><span class="hljs-string">&quot;50&quot;</span> r<span class="hljs-operator">=</span><span class="hljs-string">&quot;25&quot;</span> class<span class="hljs-operator">=</span><span class="hljs-string">&quot;red&quot;</span> /&gt;
+&lt;circle cx<span class="hljs-operator">=</span><span class="hljs-string">&quot;150&quot;</span> cy<span class="hljs-operator">=</span><span class="hljs-string">&quot;50&quot;</span> r<span class="hljs-operator">=</span><span class="hljs-string">&quot;25&quot;</span> class<span class="hljs-operator">=</span><span class="hljs-string">&quot;fancy&quot;</span> /&gt;
+&lt;/svg&gt;</code></pre></div>
+</blockquote>
+<p>上面的代码定义了三个圆。<code>&lt;circle&gt;</code>标签的<code>cx</code>、<code>cy</code>、<code>r</code>属性分别为横坐标、纵坐标和半径，单位为像素。坐标都是相对于<code>&lt;svg&gt;</code>画布的左上角原点。</p>
+<p><code>class</code>属性用来指定对应的 CSS 类。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs processing">.<span class="hljs-property">red</span> &#123;
+<span class="hljs-built_in">fill</span>: <span class="hljs-built_in">red</span>;
+&#125;
+
+.<span class="hljs-property">fancy</span> &#123;
+<span class="hljs-built_in">fill</span>: none;
+<span class="hljs-built_in">stroke</span>: black;
+<span class="hljs-built_in">stroke</span>-<span class="hljs-built_in">width</span>: <span class="hljs-number">3</span>pt;
+&#125;</code></pre></div>
+</blockquote>
+<p>SVG 的 CSS 属性与网页元素有所不同。</p>
+<blockquote>
+<ul>
+<li>fill：填充色</li>
+<li>stroke：描边色</li>
+<li>stroke-width：边框宽度</li>
+</ul>
+</blockquote>
+<h3 id="lt-line-gt-标签"><a href="#lt-line-gt-标签" class="headerlink" title="&lt;line&gt;标签"></a><code>&lt;line&gt;</code>标签</h3><p><code>&lt;line&gt;</code>标签用来绘制直线。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs abnf">&lt;svg width<span class="hljs-operator">=</span><span class="hljs-string">&quot;300&quot;</span> height<span class="hljs-operator">=</span><span class="hljs-string">&quot;180&quot;</span>&gt;
+&lt;line x1<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> y1<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> x2<span class="hljs-operator">=</span><span class="hljs-string">&quot;200&quot;</span> y2<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> style<span class="hljs-operator">=</span><span class="hljs-string">&quot;stroke:rgb(0,0,0);stroke-width:5&quot;</span> /&gt;
+&lt;/svg&gt;</code></pre></div>
+</blockquote>
+<p>上面代码中，<code>&lt;line&gt;</code>标签的<code>x1</code>属性和<code>y1</code>属性，表示线段起点的横坐标和纵坐标；<code>x2</code>属性和<code>y2</code>属性，表示线段终点的横坐标和纵坐标；<code>style</code>属性表示线段的样式。</p>
+<h3 id="lt-polyline-gt-标签"><a href="#lt-polyline-gt-标签" class="headerlink" title="&lt;polyline&gt;标签"></a><code>&lt;polyline&gt;</code>标签</h3><p><code>&lt;polyline&gt;</code>标签用于绘制一根折线。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs abnf">&lt;svg width<span class="hljs-operator">=</span><span class="hljs-string">&quot;300&quot;</span> height<span class="hljs-operator">=</span><span class="hljs-string">&quot;180&quot;</span>&gt;
+&lt;polyline points<span class="hljs-operator">=</span><span class="hljs-string">&quot;3,3 30,28 3,53&quot;</span> fill<span class="hljs-operator">=</span><span class="hljs-string">&quot;none&quot;</span> stroke<span class="hljs-operator">=</span><span class="hljs-string">&quot;black&quot;</span> /&gt;
+&lt;/svg&gt;</code></pre></div>
+</blockquote>
+<p><code>&lt;polyline&gt;</code>的<code>points</code>属性指定了每个端点的坐标，横坐标与纵坐标之间与逗号分隔，点与点之间用空格分隔。</p>
+<h3 id="lt-rect-gt-标签"><a href="#lt-rect-gt-标签" class="headerlink" title="&lt;rect&gt;标签"></a><code>&lt;rect&gt;</code>标签</h3><p><code>&lt;rect&gt;</code>标签用于绘制矩形。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs abnf">&lt;svg width<span class="hljs-operator">=</span><span class="hljs-string">&quot;300&quot;</span> height<span class="hljs-operator">=</span><span class="hljs-string">&quot;180&quot;</span>&gt;
+&lt;rect x<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> y<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> height<span class="hljs-operator">=</span><span class="hljs-string">&quot;100&quot;</span> width<span class="hljs-operator">=</span><span class="hljs-string">&quot;200&quot;</span> style<span class="hljs-operator">=</span><span class="hljs-string">&quot;stroke: #70d5dd; fill: #dd524b&quot;</span> /&gt;
+&lt;/svg&gt;</code></pre></div>
+</blockquote>
+<p><code>&lt;rect&gt;</code>的<code>x</code>属性和<code>y</code>属性，指定了矩形左上角端点的横坐标和纵坐标；<code>width</code>属性和<code>height</code>属性指定了矩形的宽度和高度（单位像素）。</p>
+<h3 id="lt-ellipse-gt-标签"><a href="#lt-ellipse-gt-标签" class="headerlink" title="&lt;ellipse&gt;标签"></a><code>&lt;ellipse&gt;</code>标签</h3><p><code>&lt;ellipse&gt;</code>标签用于绘制椭圆。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs abnf">&lt;svg width<span class="hljs-operator">=</span><span class="hljs-string">&quot;300&quot;</span> height<span class="hljs-operator">=</span><span class="hljs-string">&quot;180&quot;</span>&gt;
+&lt;ellipse cx<span class="hljs-operator">=</span><span class="hljs-string">&quot;60&quot;</span> cy<span class="hljs-operator">=</span><span class="hljs-string">&quot;60&quot;</span> ry<span class="hljs-operator">=</span><span class="hljs-string">&quot;40&quot;</span> rx<span class="hljs-operator">=</span><span class="hljs-string">&quot;20&quot;</span> stroke<span class="hljs-operator">=</span><span class="hljs-string">&quot;black&quot;</span> stroke-width<span class="hljs-operator">=</span><span class="hljs-string">&quot;5&quot;</span> fill<span class="hljs-operator">=</span><span class="hljs-string">&quot;silver&quot;</span>/&gt;
+&lt;/svg&gt;</code></pre></div>
+</blockquote>
+<p><code>&lt;ellipse&gt;</code>的<code>cx</code>属性和<code>cy</code>属性，指定了椭圆中心的横坐标和纵坐标（单位像素）；<code>rx</code>属性和<code>ry</code>属性，指定了椭圆横向轴和纵向轴的半径（单位像素）。</p>
+<h3 id="lt-polygon-gt-标签"><a href="#lt-polygon-gt-标签" class="headerlink" title="&lt;polygon&gt;标签"></a><code>&lt;polygon&gt;</code>标签</h3><p><code>&lt;polygon&gt;</code>标签用于绘制多边形。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs abnf">&lt;svg width<span class="hljs-operator">=</span><span class="hljs-string">&quot;300&quot;</span> height<span class="hljs-operator">=</span><span class="hljs-string">&quot;180&quot;</span>&gt;
+&lt;polygon fill<span class="hljs-operator">=</span><span class="hljs-string">&quot;green&quot;</span> stroke<span class="hljs-operator">=</span><span class="hljs-string">&quot;orange&quot;</span> stroke-width<span class="hljs-operator">=</span><span class="hljs-string">&quot;1&quot;</span> points<span class="hljs-operator">=</span><span class="hljs-string">&quot;0,0 100,0 100,100 0,100 0,0&quot;</span>/&gt;
+&lt;/svg&gt;</code></pre></div>
+</blockquote>
+<p><code>&lt;polygon&gt;</code>的<code>points</code>属性指定了每个端点的坐标，横坐标与纵坐标之间与逗号分隔，点与点之间用空格分隔。</p>
+<h3 id="lt-path-gt-标签"><a href="#lt-path-gt-标签" class="headerlink" title="&lt;path&gt;标签"></a><code>&lt;path&gt;</code>标签</h3><p><code>&lt;path&gt;</code>标签用于制路径。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;300&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;180&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">&quot;</span></span>
+<span class="hljs-string"><span class="hljs-tag">M 18,3</span></span>
+<span class="hljs-string"><span class="hljs-tag">L 46,3</span></span>
+<span class="hljs-string"><span class="hljs-tag">L 46,40</span></span>
+<span class="hljs-string"><span class="hljs-tag">L 61,40</span></span>
+<span class="hljs-string"><span class="hljs-tag">L 32,68</span></span>
+<span class="hljs-string"><span class="hljs-tag">L 3,40</span></span>
+<span class="hljs-string"><span class="hljs-tag">L 18,40</span></span>
+<span class="hljs-string"><span class="hljs-tag">Z</span></span>
+<span class="hljs-string"><span class="hljs-tag">&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span></code></pre></div>
+</blockquote>
+<p><code>&lt;path&gt;</code>的<code>d</code>属性表示绘制顺序，它的值是一个长字符串，每个字母表示一个绘制动作，后面跟着坐标。</p>
+<blockquote>
+<ul>
+<li>M：移动到（moveto）</li>
+<li>L：画直线到（lineto）</li>
+<li>Z：闭合路径</li>
+</ul>
+</blockquote>
+<h3 id="lt-text-gt-标签"><a href="#lt-text-gt-标签" class="headerlink" title="&lt;text&gt;标签"></a><code>&lt;text&gt;</code>标签</h3><p><code>&lt;text&gt;</code>标签用于绘制文本。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs abnf">&lt;svg width<span class="hljs-operator">=</span><span class="hljs-string">&quot;300&quot;</span> height<span class="hljs-operator">=</span><span class="hljs-string">&quot;180&quot;</span>&gt;
+&lt;text x<span class="hljs-operator">=</span><span class="hljs-string">&quot;50&quot;</span> y<span class="hljs-operator">=</span><span class="hljs-string">&quot;25&quot;</span>&gt;Hello World&lt;/text&gt;
+&lt;/svg&gt;</code></pre></div>
+</blockquote>
+<p><code>&lt;text&gt;</code>的<code>x</code>属性和<code>y</code>属性，表示文本区块基线（baseline）起点的横坐标和纵坐标。文字的样式可以用<code>class</code>或<code>style</code>属性指定。</p>
+<h3 id="lt-use-gt-标签"><a href="#lt-use-gt-标签" class="headerlink" title="&lt;use&gt;标签"></a><code>&lt;use&gt;</code>标签</h3><p><code>&lt;use&gt;</code>标签用于复制一个形状。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs abnf">&lt;svg viewBox<span class="hljs-operator">=</span><span class="hljs-string">&quot;0 0 30 10&quot;</span> xmlns<span class="hljs-operator">=</span><span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span>&gt;
+&lt;circle id<span class="hljs-operator">=</span><span class="hljs-string">&quot;myCircle&quot;</span> cx<span class="hljs-operator">=</span><span class="hljs-string">&quot;5&quot;</span> cy<span class="hljs-operator">=</span><span class="hljs-string">&quot;5&quot;</span> r<span class="hljs-operator">=</span><span class="hljs-string">&quot;4&quot;</span>/&gt;
+
+&lt;use href<span class="hljs-operator">=</span><span class="hljs-string">&quot;#myCircle&quot;</span> x<span class="hljs-operator">=</span><span class="hljs-string">&quot;10&quot;</span> y<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> fill<span class="hljs-operator">=</span><span class="hljs-string">&quot;blue&quot;</span> /&gt;
+&lt;use href<span class="hljs-operator">=</span><span class="hljs-string">&quot;#myCircle&quot;</span> x<span class="hljs-operator">=</span><span class="hljs-string">&quot;20&quot;</span> y<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> fill<span class="hljs-operator">=</span><span class="hljs-string">&quot;white&quot;</span> stroke<span class="hljs-operator">=</span><span class="hljs-string">&quot;blue&quot;</span> /&gt;
+&lt;/svg&gt;</code></pre></div>
+</blockquote>
+<p><code>&lt;use&gt;</code>的<code>href</code>属性指定所要复制的节点，<code>x</code>属性和<code>y</code>属性是<code>&lt;use&gt;</code>左上角的坐标。另外，还可以指定<code>width</code>和<code>height</code>坐标。</p>
+<h3 id="lt-g-gt-标签"><a href="#lt-g-gt-标签" class="headerlink" title="&lt;g&gt;标签"></a><code>&lt;g&gt;</code>标签</h3><p><code>&lt;g&gt;</code>标签用于将多个形状组成一个组（group），方便复用。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs abnf">&lt;svg width<span class="hljs-operator">=</span><span class="hljs-string">&quot;300&quot;</span> height<span class="hljs-operator">=</span><span class="hljs-string">&quot;100&quot;</span>&gt;
+&lt;g id<span class="hljs-operator">=</span><span class="hljs-string">&quot;myCircle&quot;</span>&gt;
+&lt;text x<span class="hljs-operator">=</span><span class="hljs-string">&quot;25&quot;</span> y<span class="hljs-operator">=</span><span class="hljs-string">&quot;20&quot;</span>&gt;圆形&lt;/text&gt;
+&lt;circle cx<span class="hljs-operator">=</span><span class="hljs-string">&quot;50&quot;</span> cy<span class="hljs-operator">=</span><span class="hljs-string">&quot;50&quot;</span> r<span class="hljs-operator">=</span><span class="hljs-string">&quot;20&quot;</span>/&gt;
+&lt;/g&gt;
+
+&lt;use href<span class="hljs-operator">=</span><span class="hljs-string">&quot;#myCircle&quot;</span> x<span class="hljs-operator">=</span><span class="hljs-string">&quot;100&quot;</span> y<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> fill<span class="hljs-operator">=</span><span class="hljs-string">&quot;blue&quot;</span> /&gt;
+&lt;use href<span class="hljs-operator">=</span><span class="hljs-string">&quot;#myCircle&quot;</span> x<span class="hljs-operator">=</span><span class="hljs-string">&quot;200&quot;</span> y<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> fill<span class="hljs-operator">=</span><span class="hljs-string">&quot;white&quot;</span> stroke<span class="hljs-operator">=</span><span class="hljs-string">&quot;blue&quot;</span> /&gt;
+&lt;/svg&gt;</code></pre></div>
+</blockquote>
+<h3 id="lt-defs-gt-标签"><a href="#lt-defs-gt-标签" class="headerlink" title="&lt;defs&gt;标签"></a><code>&lt;defs&gt;</code>标签</h3><p><code>&lt;defs&gt;</code>标签用于自定义形状，它内部的代码不会显示，仅供引用。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs abnf">&lt;svg width<span class="hljs-operator">=</span><span class="hljs-string">&quot;300&quot;</span> height<span class="hljs-operator">=</span><span class="hljs-string">&quot;100&quot;</span>&gt;
+&lt;defs&gt;
+&lt;g id<span class="hljs-operator">=</span><span class="hljs-string">&quot;myCircle&quot;</span>&gt;
+&lt;text x<span class="hljs-operator">=</span><span class="hljs-string">&quot;25&quot;</span> y<span class="hljs-operator">=</span><span class="hljs-string">&quot;20&quot;</span>&gt;圆形&lt;/text&gt;
+&lt;circle cx<span class="hljs-operator">=</span><span class="hljs-string">&quot;50&quot;</span> cy<span class="hljs-operator">=</span><span class="hljs-string">&quot;50&quot;</span> r<span class="hljs-operator">=</span><span class="hljs-string">&quot;20&quot;</span>/&gt;
+&lt;/g&gt;
+&lt;/defs&gt;
+
+&lt;use href<span class="hljs-operator">=</span><span class="hljs-string">&quot;#myCircle&quot;</span> x<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> y<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> /&gt;
+&lt;use href<span class="hljs-operator">=</span><span class="hljs-string">&quot;#myCircle&quot;</span> x<span class="hljs-operator">=</span><span class="hljs-string">&quot;100&quot;</span> y<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> fill<span class="hljs-operator">=</span><span class="hljs-string">&quot;blue&quot;</span> /&gt;
+&lt;use href<span class="hljs-operator">=</span><span class="hljs-string">&quot;#myCircle&quot;</span> x<span class="hljs-operator">=</span><span class="hljs-string">&quot;200&quot;</span> y<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> fill<span class="hljs-operator">=</span><span class="hljs-string">&quot;white&quot;</span> stroke<span class="hljs-operator">=</span><span class="hljs-string">&quot;blue&quot;</span> /&gt;
+&lt;/svg&gt;</code></pre></div>
+</blockquote>
+<h3 id="lt-pattern-gt-标签"><a href="#lt-pattern-gt-标签" class="headerlink" title="&lt;pattern&gt;标签"></a><code>&lt;pattern&gt;</code>标签</h3><p><code>&lt;pattern&gt;</code>标签用于自定义一个形状，该形状可以被引用来平铺一个区域。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs abnf">&lt;svg width<span class="hljs-operator">=</span><span class="hljs-string">&quot;500&quot;</span> height<span class="hljs-operator">=</span><span class="hljs-string">&quot;500&quot;</span>&gt;
+&lt;defs&gt;
+&lt;pattern id<span class="hljs-operator">=</span><span class="hljs-string">&quot;dots&quot;</span> x<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> y<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> width<span class="hljs-operator">=</span><span class="hljs-string">&quot;100&quot;</span> height<span class="hljs-operator">=</span><span class="hljs-string">&quot;100&quot;</span> patternUnits<span class="hljs-operator">=</span><span class="hljs-string">&quot;userSpaceOnUse&quot;</span>&gt;
+&lt;circle fill<span class="hljs-operator">=</span><span class="hljs-string">&quot;#bee9e8&quot;</span> cx<span class="hljs-operator">=</span><span class="hljs-string">&quot;50&quot;</span> cy<span class="hljs-operator">=</span><span class="hljs-string">&quot;50&quot;</span> r<span class="hljs-operator">=</span><span class="hljs-string">&quot;35&quot;</span> /&gt;
+&lt;/pattern&gt;
+&lt;/defs&gt;
+&lt;rect x<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> y<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> width<span class="hljs-operator">=</span><span class="hljs-string">&quot;100%&quot;</span> height<span class="hljs-operator">=</span><span class="hljs-string">&quot;100%&quot;</span> fill<span class="hljs-operator">=</span><span class="hljs-string">&quot;url(#dots)&quot;</span> /&gt;
+&lt;/svg&gt;</code></pre></div>
+</blockquote>
+<p>上面代码中，<code>&lt;pattern&gt;</code>标签将一个圆形定义为<code>dots</code>模式。<code>patternUnits=&quot;userSpaceOnUse&quot;</code>表示<code>&lt;pattern&gt;</code>的宽度和长度是实际的像素值。然后，指定这个模式去填充下面的矩形。</p>
+<h3 id="lt-image-gt-标签"><a href="#lt-image-gt-标签" class="headerlink" title="&lt;image&gt;标签"></a><code>&lt;image&gt;</code>标签</h3><p><code>&lt;image&gt;</code>标签用于插入图片文件。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs arduino">&lt;svg viewBox=<span class="hljs-string">&quot;0 0 100 100&quot;</span> width=<span class="hljs-string">&quot;100&quot;</span> height=<span class="hljs-string">&quot;100&quot;</span>&gt;
+&lt;image xlink:href=<span class="hljs-string">&quot;path/to/image.jpg&quot;</span>
+width=<span class="hljs-string">&quot;50%&quot;</span> height=<span class="hljs-string">&quot;50%&quot;</span>/&gt;
+&lt;/svg&gt;</code></pre></div>
+</blockquote>
+<p>上面代码中，<code>&lt;image&gt;</code>的<code>xlink:href</code>属性表示图像的来源。</p>
+<h3 id="lt-animate-gt-标签"><a href="#lt-animate-gt-标签" class="headerlink" title="&lt;animate&gt;标签"></a><code>&lt;animate&gt;</code>标签</h3><p><code>&lt;animate&gt;</code>标签用于产生动画效果。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs abnf">&lt;svg width<span class="hljs-operator">=</span><span class="hljs-string">&quot;500px&quot;</span> height<span class="hljs-operator">=</span><span class="hljs-string">&quot;500px&quot;</span>&gt;
+&lt;rect x<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> y<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> width<span class="hljs-operator">=</span><span class="hljs-string">&quot;100&quot;</span> height<span class="hljs-operator">=</span><span class="hljs-string">&quot;100&quot;</span> fill<span class="hljs-operator">=</span><span class="hljs-string">&quot;#feac5e&quot;</span>&gt;
+&lt;animate attributeName<span class="hljs-operator">=</span><span class="hljs-string">&quot;x&quot;</span> from<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> to<span class="hljs-operator">=</span><span class="hljs-string">&quot;500&quot;</span> dur<span class="hljs-operator">=</span><span class="hljs-string">&quot;2s&quot;</span> repeatCount<span class="hljs-operator">=</span><span class="hljs-string">&quot;indefinite&quot;</span> /&gt;
+&lt;/rect&gt;
+&lt;/svg&gt;</code></pre></div>
+</blockquote>
+<p>上面代码中，矩形会不断移动，产生动画效果。</p>
+<p><code>&lt;animate&gt;</code>的属性含义如下。</p>
+<blockquote>
+<ul>
+<li>attributeName：发生动画效果的属性名。</li>
+<li>from：单次动画的初始值。</li>
+<li>to：单次动画的结束值。</li>
+<li>dur：单次动画的持续时间。</li>
+<li>repeatCount：动画的循环模式。</li>
+</ul>
+</blockquote>
+<p>可以在多个属性上面定义动画。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs abnf">&lt;animate attributeName<span class="hljs-operator">=</span><span class="hljs-string">&quot;x&quot;</span> from<span class="hljs-operator">=</span><span class="hljs-string">&quot;0&quot;</span> to<span class="hljs-operator">=</span><span class="hljs-string">&quot;500&quot;</span> dur<span class="hljs-operator">=</span><span class="hljs-string">&quot;2s&quot;</span> repeatCount<span class="hljs-operator">=</span><span class="hljs-string">&quot;indefinite&quot;</span> /&gt;
+&lt;animate attributeName<span class="hljs-operator">=</span><span class="hljs-string">&quot;width&quot;</span> to<span class="hljs-operator">=</span><span class="hljs-string">&quot;500&quot;</span> dur<span class="hljs-operator">=</span><span class="hljs-string">&quot;2s&quot;</span> repeatCount<span class="hljs-operator">=</span><span class="hljs-string">&quot;indefinite&quot;</span> /&gt;</code></pre></div>
+</blockquote>
+<h3 id="lt-animateTransform-gt-标签"><a href="#lt-animateTransform-gt-标签" class="headerlink" title="&lt;animateTransform&gt;标签"></a><code>&lt;animateTransform&gt;</code>标签</h3><p><code>&lt;animate&gt;</code>标签对 CSS 的<code>transform</code>属性不起作用，如果需要变形，就要使用<code>&lt;animateTransform&gt;</code>标签。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs abnf">&lt;svg width<span class="hljs-operator">=</span><span class="hljs-string">&quot;500px&quot;</span> height<span class="hljs-operator">=</span><span class="hljs-string">&quot;500px&quot;</span>&gt;
+&lt;rect x<span class="hljs-operator">=</span><span class="hljs-string">&quot;250&quot;</span> y<span class="hljs-operator">=</span><span class="hljs-string">&quot;250&quot;</span> width<span class="hljs-operator">=</span><span class="hljs-string">&quot;50&quot;</span> height<span class="hljs-operator">=</span><span class="hljs-string">&quot;50&quot;</span> fill<span class="hljs-operator">=</span><span class="hljs-string">&quot;#4bc0c8&quot;</span>&gt;
+&lt;animateTransform attributeName<span class="hljs-operator">=</span><span class="hljs-string">&quot;transform&quot;</span> type<span class="hljs-operator">=</span><span class="hljs-string">&quot;rotate&quot;</span> begin<span class="hljs-operator">=</span><span class="hljs-string">&quot;0s&quot;</span> dur<span class="hljs-operator">=</span><span class="hljs-string">&quot;10s&quot;</span> from<span class="hljs-operator">=</span><span class="hljs-string">&quot;0 200 200&quot;</span> to<span class="hljs-operator">=</span><span class="hljs-string">&quot;360 400 400&quot;</span> repeatCount<span class="hljs-operator">=</span><span class="hljs-string">&quot;indefinite&quot;</span> /&gt;
+&lt;/rect&gt;
+&lt;/svg&gt;</code></pre></div>
+</blockquote>
+<p>上面代码中，<code>&lt;animateTransform&gt;</code>的效果为旋转（<code>rotate</code>），这时<code>from</code>和<code>to</code>属性值有三个数字，第一个数字是角度值，第二个值和第三个值是旋转中心的坐标。<code>from=&quot;0 200 200&quot;</code>表示开始时，角度为0，围绕<code>(200, 200)</code>开始旋转；<code>to=&quot;360 400 400&quot;</code>表示结束时，角度为360，围绕<code>(400, 400)</code>旋转。</p>
+<h2 id="三、JavaScript-操作"><a href="#三、JavaScript-操作" class="headerlink" title="三、JavaScript 操作"></a>三、JavaScript 操作</h2><h3 id="DOM-操作"><a href="#DOM-操作" class="headerlink" title="DOM 操作"></a>DOM 操作</h3><p>如果 SVG 代码直接写在 HTML 网页之中，它就成为网页 DOM 的一部分，可以直接用 DOM 操作。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs abnf">&lt;svg
+<span class="hljs-attribute">id</span><span class="hljs-operator">=</span><span class="hljs-string">&quot;mysvg&quot;</span>
+<span class="hljs-attribute">xmlns</span><span class="hljs-operator">=</span><span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span>
+<span class="hljs-attribute">viewBox</span><span class="hljs-operator">=</span><span class="hljs-string">&quot;0 0 800 600&quot;</span>
+<span class="hljs-attribute">preserveAspectRatio</span><span class="hljs-operator">=</span><span class="hljs-string">&quot;xMidYMid meet&quot;</span>
+&gt;
+&lt;circle id<span class="hljs-operator">=</span><span class="hljs-string">&quot;mycircle&quot;</span> cx<span class="hljs-operator">=</span><span class="hljs-string">&quot;400&quot;</span> cy<span class="hljs-operator">=</span><span class="hljs-string">&quot;300&quot;</span> r<span class="hljs-operator">=</span><span class="hljs-string">&quot;50&quot;</span> /&gt;
+&lt;svg&gt;</code></pre></div>
+</blockquote>
+<p>上面代码插入网页之后，就可以用 CSS 定制样式。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs css">circle &#123;
+stroke-<span class="hljs-attribute">width</span>: <span class="hljs-number">5</span>;
+stroke: <span class="hljs-number">#f00</span>;
+fill: <span class="hljs-number">#ff0</span>;
+&#125;
+
+circle<span class="hljs-selector-pseudo">:hover</span> &#123;
+stroke: <span class="hljs-number">#090</span>;
+fill: <span class="hljs-number">#fff</span>;
+&#125;</code></pre></div>
+</blockquote>
+<p>然后，可以用 JavaScript 代码操作 SVG。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs arcade"><span class="hljs-keyword">var</span> mycircle = document.getElementById(<span class="hljs-string">&#x27;mycircle&#x27;</span>);
+
+mycircle.addEventListener(<span class="hljs-string">&#x27;click&#x27;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) &#123;
+<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(<span class="hljs-string">&#x27;circle clicked - enlarging&#x27;</span>);
+mycircle.setAttribute(<span class="hljs-string">&#x27;r&#x27;</span>, <span class="hljs-number">60</span>);
+&#125;, <span class="hljs-literal">false</span>);</code></pre></div>
+</blockquote>
+<p>上面代码指定，如果点击图形，就改写<code>circle</code>元素的<code>r</code>属性。</p>
+<h3 id="获取-SVG-DOM"><a href="#获取-SVG-DOM" class="headerlink" title="获取 SVG DOM"></a>获取 SVG DOM</h3><p>使用<code>&lt;object&gt;</code>、<code>&lt;iframe&gt;</code>、<code>&lt;embed&gt;</code>标签插入 SVG 文件，可以获取 SVG DOM。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs dart"><span class="hljs-keyword">var</span> svgObject = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;object&#x27;</span>).contentDocument;
+<span class="hljs-keyword">var</span> svgIframe = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;iframe&#x27;</span>).contentDocument;
+<span class="hljs-keyword">var</span> svgEmbed = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;embed&#x27;</span>).getSVGDocument();</code></pre></div>
+</blockquote>
+<p>注意，如果使用<code>&lt;img&gt;</code>标签插入 SVG 文件，就无法获取 SVG DOM。</p>
+<h3 id="读取-SVG-源码"><a href="#读取-SVG-源码" class="headerlink" title="读取 SVG 源码"></a>读取 SVG 源码</h3><p>由于 SVG 文件就是一段 XML 文本，因此可以通过读取 XML 代码的方式，读取 SVG 源码。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;svg-container&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">svg</span></span>
+<span class="hljs-tag"><span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span></span>
+<span class="hljs-tag"><span class="hljs-attr">xmlns:xlink</span>=<span class="hljs-string">&quot;http://www.w3.org/1999/xlink&quot;</span></span>
+<span class="hljs-tag"><span class="hljs-attr">xml:space</span>=<span class="hljs-string">&quot;preserve&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;500&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;440&quot;</span></span>
+<span class="hljs-tag">  &gt;</span>
+<span class="hljs-comment">&lt;!-- svg code --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></div>
+</blockquote>
+<p>使用<code>XMLSerializer</code>实例的<code>serializeToString()</code>方法，获取 SVG 元素的代码。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs reasonml">var svgString = <span class="hljs-keyword">new</span> <span class="hljs-constructor">XMLSerializer()</span>
+.serialize<span class="hljs-constructor">ToString(<span class="hljs-params">document</span>.<span class="hljs-params">querySelector</span>(&#x27;<span class="hljs-params">svg</span>&#x27;)</span>);</code></pre></div>
+</blockquote>
+<h3 id="SVG-图像转为-Canvas-图像"><a href="#SVG-图像转为-Canvas-图像" class="headerlink" title="SVG 图像转为 Canvas 图像"></a>SVG 图像转为 Canvas 图像</h3><p>首先，需要新建一个<code>Image</code>对象，将 SVG 图像指定到该<code>Image</code>对象的<code>src</code>属性。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs php"><span class="hljs-keyword">var</span> img = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Image</span>();
+<span class="hljs-keyword">var</span> svg = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Blob</span>([svgString], &#123;type: <span class="hljs-string">&quot;image/svg+xml;charset=utf-8&quot;</span>&#125;);
+
+<span class="hljs-keyword">var</span> DOMURL = <span class="hljs-built_in">self</span>.URL || <span class="hljs-built_in">self</span>.webkitURL || <span class="hljs-built_in">self</span>;
+<span class="hljs-keyword">var</span> url = DOMURL.<span class="hljs-title function_ invoke__">createObjectURL</span>(svg);
+
+img.src = url;</code></pre></div>
+</blockquote>
+<p>然后，当图像加载完成后，再将它绘制到<code>&lt;canvas&gt;</code>元素。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs javascript">img.<span class="hljs-property">onload</span> = <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;
+<span class="hljs-keyword">var</span> canvas = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;canvas&#x27;</span>);
+<span class="hljs-keyword">var</span> ctx = canvas.<span class="hljs-title function_">getContext</span>(<span class="hljs-string">&#x27;2d&#x27;</span>);
+ctx.<span class="hljs-title function_">drawImage</span>(img, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+&#125;;</code></pre></div>
+</blockquote>
+<h2 id="四、实例：折线图"><a href="#四、实例：折线图" class="headerlink" title="四、实例：折线图"></a>四、实例：折线图</h2><p>下面将一张数据表格画成折线图。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs subunit">Date |Amount
+-----|------
+2014<span class="hljs-string">-01</span><span class="hljs-string">-01</span> | $10
+2014<span class="hljs-string">-02</span><span class="hljs-string">-01</span> | $20
+2014<span class="hljs-string">-03</span><span class="hljs-string">-01</span> | $40
+2014<span class="hljs-string">-04</span><span class="hljs-string">-01</span> | $80</code></pre></div>
+</blockquote>
+<p>上面的图形，可以画成一个坐标系，<code>Date</code>作为横轴，<code>Amount</code>作为纵轴，四行数据画成一个数据点。</p>
+<blockquote>
+<div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;350&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;160&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">g</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;layer&quot;</span> <span class="hljs-attr">transform</span>=<span class="hljs-string">&quot;translate(60,10)&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">r</span>=<span class="hljs-string">&quot;5&quot;</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">&quot;0&quot;</span>   <span class="hljs-attr">cy</span>=<span class="hljs-string">&quot;105&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">r</span>=<span class="hljs-string">&quot;5&quot;</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">&quot;90&quot;</span>  <span class="hljs-attr">cy</span>=<span class="hljs-string">&quot;90&quot;</span>  /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">r</span>=<span class="hljs-string">&quot;5&quot;</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">&quot;180&quot;</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">&quot;60&quot;</span>  /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">r</span>=<span class="hljs-string">&quot;5&quot;</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">&quot;270&quot;</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">&quot;0&quot;</span>   /&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">g</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;y axis&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">line</span> <span class="hljs-attr">x1</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">y1</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">x2</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">y2</span>=<span class="hljs-string">&quot;120&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">x</span>=<span class="hljs-string">&quot;-40&quot;</span> <span class="hljs-attr">y</span>=<span class="hljs-string">&quot;105&quot;</span> <span class="hljs-attr">dy</span>=<span class="hljs-string">&quot;5&quot;</span>&gt;</span>$10<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">x</span>=<span class="hljs-string">&quot;-40&quot;</span> <span class="hljs-attr">y</span>=<span class="hljs-string">&quot;0&quot;</span>   <span class="hljs-attr">dy</span>=<span class="hljs-string">&quot;5&quot;</span>&gt;</span>$80<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">g</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;x axis&quot;</span> <span class="hljs-attr">transform</span>=<span class="hljs-string">&quot;translate(0, 120)&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">line</span> <span class="hljs-attr">x1</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">y1</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">x2</span>=<span class="hljs-string">&quot;270&quot;</span> <span class="hljs-attr">y2</span>=<span class="hljs-string">&quot;0&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">x</span>=<span class="hljs-string">&quot;-30&quot;</span>   <span class="hljs-attr">y</span>=<span class="hljs-string">&quot;20&quot;</span>&gt;</span>January 2014<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">x</span>=<span class="hljs-string">&quot;240&quot;</span> <span class="hljs-attr">y</span>=<span class="hljs-string">&quot;20&quot;</span>&gt;</span>April<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">g</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span></code></pre></div>
+</blockquote>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>SVG的理解</div>
+      <div>http://serendipity0321.github.com/2023/02/01/SVG的理解/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年2月1日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/02/01/Node%20Webpack%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" title="Node Webpack 性能优化">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Node Webpack 性能优化</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/02/01/CSS%E5%B8%83%E5%B1%80%E4%B9%8BGrid/" title="CSS布局之Grid">
+                        <span class="hidden-mobile">CSS布局之Grid</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
