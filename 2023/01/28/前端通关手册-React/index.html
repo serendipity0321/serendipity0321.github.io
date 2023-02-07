@@ -1,285 +1,162 @@
-
-
-<!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
-  <meta name="keywords" content="">
-  
-    <meta name="description" content="概述Hello, React :-)React 是用于构建用户界面的 JavaScript 库，React 核心只关注视图，不断优化算法，改进性能，提高开发和交互体验。 React 迭代稳定，重视兼容和过渡，在国内外，尤其是南方，都有相当多的公司在使用 React。 渐进式的思想同样表现在 React 的学习曲线上，能够与传统的 Web 技术共存，灵活的 JSX 语法等都会让 React 上手很快">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>前端通关手册-React | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="概述Hello, React :-)React 是用于构建用户界面的 JavaScript 库，React 核心只关注视图，不断优化算法，改进性能，提高开发和交互体验。 React 迭代稳定，重视兼容和过渡，在国内外，尤其是南方，都有相当多的公司在使用 React。 渐进式的思想同样表现在 React 的学习曲线上，能够与传统的 Web 技术共存，灵活的 JSX 语法等都会让 React 上手很快">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端通关手册-React">
 <meta property="og:url" content="http://serendipity0321.github.com/2023/01/28/%E5%89%8D%E7%AB%AF%E9%80%9A%E5%85%B3%E6%89%8B%E5%86%8C-React/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="概述Hello, React :-)React 是用于构建用户界面的 JavaScript 库，React 核心只关注视图，不断优化算法，改进性能，提高开发和交互体验。 React 迭代稳定，重视兼容和过渡，在国内外，尤其是南方，都有相当多的公司在使用 React。 渐进式的思想同样表现在 React 的学习曲线上，能够与传统的 Web 技术共存，灵活的 JSX 语法等都会让 React 上手很快">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.loli.net/2022/12/31/PA1GoNTluzsaipH.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/10/08/xzepUwCs3gKPWy2.jpg">
 <meta property="article:published_time" content="2023-01-28T07:30:59.000Z">
 <meta property="article:modified_time" content="2023-01-29T02:48:52.562Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="React">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://s2.loli.net/2022/12/31/PA1GoNTluzsaipH.jpg">
-  
-  
-  
-  <title>前端通关手册-React - Hexo</title>
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
-
-
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
-  
-
-
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"serendipity0321.github.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
-
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/10/08/xzepUwCs3gKPWy2.jpg"><link rel="shortcut icon" href="https://s2.loli.net/2022/10/08/k5M7H1NdmnZgtlY.png"><link rel="canonical" href="http://serendipity0321.github.com/2023/01/28/%E5%89%8D%E7%AB%AF%E9%80%9A%E5%85%B3%E6%89%8B%E5%86%8C-React/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: John Doe","link":"链接: ","source":"来源: Hexo","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
     }
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '前端通关手册-React',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-29 10:48:52'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-
-
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-
-<body>
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
   
-
-  <header>
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-
-<div class="header-inner" style="height: 70vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>serendipity&#39;s blog</strong>
-    </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                <span>首页</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>归档</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                <span>分类</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                <span>标签</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                <span>关于</span>
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <i class="iconfont icon-search"></i>
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
-              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
-            </a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  
-
-<div id="banner" class="banner" parallax=true
-     style="background: url('https://s2.loli.net/2022/12/31/PA1GoNTluzsaipH.jpg') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="前端通关手册-React"></span>
-          
-        </div>
-
-        
-          
-  <div class="mt-3">
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-    
-      <span class="post-meta">
-        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-01-28 15:30" pubdate>
-          2023年1月28日 下午
-        </time>
-      </span>
-    
-  </div>
-
-  <div class="mt-1">
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-chart"></i>
-        
-          43k 字
-        
-      </span>
-    
-
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-clock-fill"></i>
-        
-        
-        
-          356 分钟
-        
-      </span>
-    
-
-    
-    
-  </div>
-
-
-        
-      </div>
-
-      
-    </div>
-  </div>
-</div>
-
-</div>
-
-  </header>
-
-  <main>
-    
-      
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-
-    </div>
-
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">前端通关手册-React</h1>
-            
-            
-              <div class="markdown-body">
-                
-                <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><h3 id="Hello-React"><a href="#Hello-React" class="headerlink" title="Hello, React :-)"></a>Hello, React :-)</h3><p>React 是用于构建用户界面的 JavaScript 库，React 核心只关注视图，不断优化算法，改进性能，提高开发和交互体验。</p>
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2022/10/02/SRY7qntDHQe5l9F.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">51</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2022/10/08/xzepUwCs3gKPWy2.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Hexo"><img class="site-icon" src="https://s2.loli.net/2022/10/09/HjKDX7pioRmTVhe.png"/><span class="site-name">Hexo</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">前端通关手册-React</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-28T07:30:59.000Z" title="发表于 2023-01-28 15:30:59">2023-01-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-29T02:48:52.562Z" title="更新于 2023-01-29 10:48:52">2023-01-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/leetcode/">leetcode</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="前端通关手册-React"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><h3 id="Hello-React"><a href="#Hello-React" class="headerlink" title="Hello, React :-)"></a>Hello, React :-)</h3><p>React 是用于构建用户界面的 JavaScript 库，React 核心只关注视图，不断优化算法，改进性能，提高开发和交互体验。</p>
 <p>React 迭代稳定，重视兼容和过渡，在国内外，尤其是南方，都有相当多的公司在使用 React。</p>
 <p>渐进式的思想同样表现在 React 的学习曲线上，能够与传统的 Web 技术共存，灵活的 JSX 语法等都会让 React 上手很快， 而庞大生态赋予了 React 更强能力的同时，也让开发者感叹花费了更多时间在社区里遨游。</p>
 <h3 id="React-应用"><a href="#React-应用" class="headerlink" title="React 应用"></a>React 应用</h3><p>React 在前端开发领域应用广泛，使用 React 可以构建 Web，插件，单页应用，App，小程序，桌面端，服务端等，微服务，Serverless，低代码，虚拟现实等都有 React 的用武之地。</p>
@@ -478,7 +355,7 @@
 <li><p>JSX 是 JavaScript 的语法扩展，生成 React 元素</p>
 </li>
 <li><p>JSX 是</p>
-<div class="code-wrapper"><pre><code class="hljs jsx"><span class="hljs-title class_">React</span>.<span class="hljs-title function_">createElement</span>(component, props, ...children)</code></pre></div>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">React</span>.<span class="title function_">createElement</span>(component, props, ...children)</span><br></pre></td></tr></table></figure>
 
 <p>函数的语法糖</p>
 <ul>
@@ -513,10 +390,7 @@
 <li><p>JavaScript</p>
 </li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs jsx"><span class="hljs-title function_">render</span>(<span class="hljs-params"></span>) &#123;
-	<span class="hljs-keyword">if</span> (condition) <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> /&gt;</span></span>
-	<span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>
-&#125;</code></pre></div>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">if</span> (condition) <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> /&gt;</span></span></span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>三元运算符</p>
@@ -524,9 +398,7 @@
 <li><p>JavaScript</p>
 </li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs jsx"><span class="hljs-title function_">render</span>(<span class="hljs-params"></span>) &#123;
-	<span class="hljs-keyword">return</span> condition ? <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> /&gt;</span></span> : <span class="hljs-literal">null</span>
-&#125;</code></pre></div>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> condition ? <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> /&gt;</span></span> : <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>逻辑运算符</p>
@@ -534,9 +406,7 @@
 <li><p>plain</p>
 </li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs jsx"><span class="hljs-title function_">render</span>(<span class="hljs-params"></span>) &#123;
-	<span class="hljs-keyword">return</span> condition &amp;&amp; <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> /&gt;</span></span>
-&#125;</code></pre></div>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> condition &amp;&amp; <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> /&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>条件渲染组件</p>
@@ -544,42 +414,22 @@
 <li><p>JavaScript</p>
 </li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs jsx">render () &#123;
-	<span class="hljs-keyword">const</span> <span class="hljs-title function_">Condition</span> = props =&gt; &#123;
-		<span class="hljs-keyword">const</span> &#123; <span class="hljs-title class_">If</span>, children &#125; = props
-		<span class="hljs-keyword">return</span> <span class="hljs-title class_">If</span> &amp;&amp; children
-	&#125;
-	<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Condition</span> <span class="hljs-attr">If</span>=<span class="hljs-string">&#123;true&#125;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Condition</span>&gt;</span></span>
-	&#125;</code></pre></div>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">render () &#123;</span><br><span class="line">	<span class="keyword">const</span> <span class="title function_">Condition</span> = props =&gt; &#123;</span><br><span class="line">		<span class="keyword">const</span> &#123; <span class="title class_">If</span>, children &#125; = props</span><br><span class="line">		<span class="keyword">return</span> <span class="title class_">If</span> &amp;&amp; children</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Condition</span> <span class="attr">If</span>=<span class="string">&#123;true&#125;</span>&gt;</span><span class="tag">&lt;<span class="name">div</span> /&gt;</span><span class="tag">&lt;/<span class="name">Condition</span>&gt;</span></span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="如何在-JSX-中循环控制？"><a href="#如何在-JSX-中循环控制？" class="headerlink" title="如何在 JSX 中循环控制？"></a>如何在 JSX 中循环控制？</h3><ul>
 <li>map 将数组每一项转成 UI，flatMap filter 等能返回数组的循环方法也被支持</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs JavaScript"><span class="hljs-title function_">render</span>(<span class="hljs-params"></span>) &#123;
-	<span class="hljs-keyword">const</span> &#123; data &#125; = props
-	<span class="hljs-keyword">return</span> data.<span class="hljs-title function_">map</span>(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">b</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&#123;item.id&#125;</span>&gt;</span>&#123;item.text&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span></span>)
-&#125;</code></pre></div>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">const</span> &#123; data &#125; = props</span><br><span class="line">	<span class="keyword">return</span> data.<span class="title function_">map</span>(<span class="function"><span class="params">item</span> =&gt;</span> <span class="language-xml"><span class="tag">&lt;<span class="name">b</span> <span class="attr">id</span>=<span class="string">&#123;item.id&#125;</span>&gt;</span>&#123;item.text&#125;<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>使用 javaScript 的循环（for &#x2F; while &#x2F; do while），将结果存储到变量，将变量代入 JSX</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs JavaScript"><span class="hljs-title function_">render</span>(<span class="hljs-params"></span>) &#123;
-	<span class="hljs-keyword">const</span> &#123; data &#125; = props
-	<span class="hljs-keyword">const</span> datas = <span class="hljs-title class_">Array</span>(data.<span class="hljs-property">length</span>)
-	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; data.<span class="hljs-property">length</span>; i++) &#123;
-		<span class="hljs-keyword">const</span> item = data[i]
-		datas[i] = <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">b</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&#123;item.id&#125;</span>&gt;</span>&#123;item.text&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span></span>
-	&#125;
-	<span class="hljs-keyword">return</span> datas
-&#125;</code></pre></div>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">const</span> &#123; data &#125; = props</span><br><span class="line">	<span class="keyword">const</span> datas = <span class="title class_">Array</span>(data.<span class="property">length</span>)</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; data.<span class="property">length</span>; i++) &#123;</span><br><span class="line">		<span class="keyword">const</span> item = data[i]</span><br><span class="line">		datas[i] = <span class="language-xml"><span class="tag">&lt;<span class="name">b</span> <span class="attr">id</span>=<span class="string">&#123;item.id&#125;</span>&gt;</span>&#123;item.text&#125;<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> datas</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>使用 lodash 等第三方库或自定义可以返回数组的方法，以 lodash 为例</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs JavaScript"><span class="hljs-title function_">render</span>(<span class="hljs-params"></span>) &#123;
-	<span class="hljs-keyword">const</span> &#123; data &#125; = props
-	<span class="hljs-keyword">return</span> _.<span class="hljs-title function_">times</span>(data.<span class="hljs-property">length</span>, <span class="hljs-function"><span class="hljs-params">i</span> =&gt;</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">b</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&#123;data[i].id&#125;</span>&gt;</span>&#123;data[i].text&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span></span>)
-&#125;</code></pre></div>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">const</span> &#123; data &#125; = props</span><br><span class="line">	<span class="keyword">return</span> _.<span class="title function_">times</span>(data.<span class="property">length</span>, <span class="function"><span class="params">i</span> =&gt;</span> <span class="language-xml"><span class="tag">&lt;<span class="name">b</span> <span class="attr">id</span>=<span class="string">&#123;data[i].id&#125;</span>&gt;</span>&#123;data[i].text&#125;<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="为什么-JSX-中-class-变成了-className"><a href="#为什么-JSX-中-class-变成了-className" class="headerlink" title="为什么 JSX 中 class 变成了 className ?"></a>为什么 JSX 中 class 变成了 className ?</h3><ul>
 <li>JSX 语法上更接近 JavaScript 而不是 HTML<ul>
@@ -843,17 +693,12 @@
 <li>状态是一个 JavaScript 对象，状态名称即对象的属性名称</li>
 <li>从 ECMAScript 2015 开始，对象初始化语法开始支持计算属性名。在 [] 放入表达式，计算结果当做属性名。例如</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs JavaScript"><span class="hljs-keyword">const</span> h = &#123;&#125;
-<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>
-h[i + <span class="hljs-number">1</span>] = i <span class="hljs-comment">// h = &#123;&#x27;1&#x27;: 0&#125;</span></code></pre></div>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> h = &#123;&#125;</span><br><span class="line"><span class="keyword">let</span> i = <span class="number">0</span></span><br><span class="line">h[i + <span class="number">1</span>] = i <span class="comment">// h = &#123;&#x27;1&#x27;: 0&#125;</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>计算属性名支持对象字面量，例：</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs JavaScript"><span class="hljs-keyword">const</span> &#123; i &#125; = props <span class="hljs-comment">// props = &#123; i : 0 &#125;</span>
-<span class="hljs-variable language_">this</span>.<span class="hljs-property">state</span> = &#123;
-	[i + <span class="hljs-number">1</span>] : i
-&#125; <span class="hljs-comment">// this.state = &#123; &#x27;1&#x27; : 0 &#125;</span></code></pre></div>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; i &#125; = props <span class="comment">// props = &#123; i : 0 &#125;</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">	[i + <span class="number">1</span>] : i</span><br><span class="line">&#125; <span class="comment">// this.state = &#123; &#x27;1&#x27; : 0 &#125;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="setState-支持哪些用法？"><a href="#setState-支持哪些用法？" class="headerlink" title="setState 支持哪些用法？"></a>setState 支持哪些用法？</h3><h4 id="面试高频指数：★-★-☆-☆-☆"><a href="#面试高频指数：★-★-☆-☆-☆" class="headerlink" title="面试高频指数：★ ★ ☆ ☆ ☆"></a>面试高频指数：★ ★ ☆ ☆ ☆</h4><ul>
 <li>setState(updater, [callback])<ul>
@@ -887,12 +732,7 @@ h[i + <span class="hljs-number">1</span>] = i <span class="hljs-comment">// h = 
 </li>
 </ul>
 <p>示例：</p>
-<div class="code-wrapper"><pre><code class="hljs JavaScript">getData = <span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> &#123;
-	<span class="hljs-keyword">const</span> &#123; time &#125; = data
-	<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setState</span>(<span class="hljs-function"><span class="hljs-params">state</span> =&gt;</span> &#123;
-		<span class="hljs-keyword">return</span> state.<span class="hljs-property">time</span> === time ?  <span class="hljs-literal">null</span> : &#123; time &#125;
-	&#125;)
-&#125;</code></pre></div>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">getData = <span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">const</span> &#123; time &#125; = data</span><br><span class="line">	<span class="variable language_">this</span>.<span class="title function_">setState</span>(<span class="function"><span class="params">state</span> =&gt;</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> state.<span class="property">time</span> === time ?  <span class="literal">null</span> : &#123; time &#125;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="当-State-值为-Object-时，如何优化？"><a href="#当-State-值为-Object-时，如何优化？" class="headerlink" title="当 State 值为 Object 时，如何优化？"></a>当 State 值为 Object 时，如何优化？</h3><h4 id="面试高频指数：★-★-☆-☆-☆-2"><a href="#面试高频指数：★-★-☆-☆-☆-2" class="headerlink" title="面试高频指数：★ ★ ☆ ☆ ☆"></a>面试高频指数：★ ★ ☆ ☆ ☆</h4><ul>
 <li>避免使用 Object 作为 State 值，使用 PureComponent 的浅比较的自动优化失效</li>
@@ -1104,21 +944,9 @@ h[i + <span class="hljs-number">1</span>] = i <span class="hljs-comment">// h = 
 </ul>
 </li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Eventbus</span> &#123;
-	<span class="hljs-title function_">constructor</span> () &#123;
-		<span class="hljs-variable language_">this</span>.<span class="hljs-property">fns</span> = []
-	&#125;
-	emit (type, ...args) &#123;
-		<span class="hljs-keyword">const</span> fns = <span class="hljs-variable language_">this</span>.<span class="hljs-property">fns</span>[type]
-		<span class="hljs-keyword">if</span> (fns) fns.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">fn</span> =&gt;</span> fn.<span class="hljs-title function_">apply</span>(<span class="hljs-variable language_">this</span>, args))
-	&#125;
-	addListener (type, fn) &#123;
-		<span class="hljs-keyword">const</span> fns = <span class="hljs-variable language_">this</span>.<span class="hljs-property">fns</span>[type]
-		fns ? fns.<span class="hljs-title function_">push</span>(fn) : (<span class="hljs-variable language_">this</span>.<span class="hljs-property">fns</span>[type] = [fn])
-	&#125;
-&#125;</code></pre></div>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> <span class="title class_">Eventbus</span> &#123;</span><br><span class="line">	<span class="title function_">constructor</span> () &#123;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">fns</span> = []</span><br><span class="line">	&#125;</span><br><span class="line">	emit (type, ...args) &#123;</span><br><span class="line">		<span class="keyword">const</span> fns = <span class="variable language_">this</span>.<span class="property">fns</span>[type]</span><br><span class="line">		<span class="keyword">if</span> (fns) fns.<span class="title function_">forEach</span>(<span class="function"><span class="params">fn</span> =&gt;</span> fn.<span class="title function_">apply</span>(<span class="variable language_">this</span>, args))</span><br><span class="line">	&#125;</span><br><span class="line">	addListener (type, fn) &#123;</span><br><span class="line">		<span class="keyword">const</span> fns = <span class="variable language_">this</span>.<span class="property">fns</span>[type]</span><br><span class="line">		fns ? fns.<span class="title function_">push</span>(fn) : (<span class="variable language_">this</span>.<span class="property">fns</span>[type] = [fn])</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<div class="code-wrapper"><pre><code class="hljs asciidoc"><span class="hljs-bullet">* </span>使用 Node.js 的 events</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 使用 Node.js 的 events</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>使用状态管理，举例说明特点<ul>
@@ -1197,13 +1025,7 @@ h[i + <span class="hljs-number">1</span>] = i <span class="hljs-comment">// h = 
 <li><p>JavaScript</p>
 </li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title class_">MyContext</span> = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">createContext</span>(defaultValue)
-<span class="hljs-keyword">class</span> <span class="hljs-title class_">NewClass</span> extend <span class="hljs-title class_">React</span>.<span class="hljs-property">Component</span> &#123;
-	<span class="hljs-title function_">render</span>(<span class="hljs-params"></span>) &#123;
-		<span class="hljs-keyword">const</span> value = <span class="hljs-variable language_">this</span>.<span class="hljs-property">context</span>
-	&#125;
-&#125;
-<span class="hljs-title class_">NewClass</span>.<span class="hljs-property">contextType</span> = <span class="hljs-title class_">MyContext</span></code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const MyContext = React.createContext(defaultValue)</span><br><span class="line">class NewClass extend React.Component &#123;</span><br><span class="line">	render() &#123;</span><br><span class="line">		const value = this.context</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">NewClass.contextType = MyContext</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>类组件参考 proposal-class-fields 提案</p>
@@ -1211,13 +1033,7 @@ h[i + <span class="hljs-number">1</span>] = i <span class="hljs-comment">// h = 
 <li><p>JavaScript</p>
 </li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs csharp"><span class="hljs-keyword">const</span> MyContext = React.createContext(defaultValue)
-<span class="hljs-keyword">class</span> <span class="hljs-title">NewClass</span> <span class="hljs-title">extend</span> <span class="hljs-title">React.Component</span> &#123;
-	<span class="hljs-keyword">static</span> contextType = <span class="hljs-function">MyContext</span>
-<span class="hljs-function">	<span class="hljs-title">render</span>()</span> &#123;
-		<span class="hljs-keyword">const</span> <span class="hljs-keyword">value</span> = <span class="hljs-keyword">this</span>.context
-	&#125;
-&#125;</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const MyContext = React.createContext(defaultValue)</span><br><span class="line">class NewClass extend React.Component &#123;</span><br><span class="line">	static contextType = MyContext</span><br><span class="line">	render() &#123;</span><br><span class="line">		const value = this.context</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>在 React 组件中，使用 this.context 访问通过 contextType 指定的 Context</li>
@@ -1233,44 +1049,24 @@ h[i + <span class="hljs-number">1</span>] = i <span class="hljs-comment">// h = 
 </li>
 </ul>
 <p>context 使用参考标识（reference identity) 来决定渲染时机，当 Provider 接收 value 为对象字面量时，每次 value 都会被赋值新对象，建议将 value 状态提升到父节点的 state 里</p>
-<div class="code-wrapper"><pre><code class="hljs asciidoc"><span class="hljs-bullet">* </span>拆分 Context</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 拆分 Context</span><br></pre></td></tr></table></figure>
 
 <p>将原来同一个 Context 频繁变化的值拆分出来，分别放入不同的 Context</p>
-<div class="code-wrapper"><pre><code class="hljs asciidoc"><span class="hljs-bullet">* </span>记忆化</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 记忆化</span><br></pre></td></tr></table></figure>
 
 <p>使用 React.memo 或 useMemo 包裹组件，指定需要比较的值，只有值变化时重新渲染</p>
-<div class="code-wrapper"><pre><code class="hljs asciidoc"><span class="hljs-bullet">* </span>使用 createContext 的第二参数，不稳定，不推荐</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 使用 createContext 的第二参数，不稳定，不推荐</span><br></pre></td></tr></table></figure>
 
 <p>createContext 为函数，两个形参分别为更新前后值，接收 Number 类型作为返回值</p>
 <p>在订阅 context 变化的组件上，使用 unstable_observedBits 设置重新渲染组件的条件</p>
 <ul>
 <li>JavaScript</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> &#123; <span class="hljs-title class_">Consumer</span>, <span class="hljs-title class_">Provider</span> &#125; = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">createContext</span>(<span class="hljs-literal">null</span>, <span class="hljs-function">(<span class="hljs-params">prev, next</span>) =&gt;</span> &#123;
-	<span class="hljs-keyword">if</span> (prev.<span class="hljs-property">value1</span> !== next.<span class="hljs-property">value1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
-	<span class="hljs-keyword">if</span> (prev.<span class="hljs-property">value2</span> !== next.<span class="hljs-property">value2</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">10</span>
-&#125;)
-<span class="hljs-keyword">const</span> <span class="hljs-title class_">Consumer1</span> =&gt; &#123; <span class="hljs-comment">// 只有当 value1 变化重新渲染</span>
-	<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Consumer</span> <span class="hljs-attr">unstable_observedBits</span>=<span class="hljs-string">&#123;1&#125;</span> <span class="hljs-attr">children</span>=<span class="hljs-string">&#123;value</span> =&gt;</span> (</span>
-<span class="language-xml"><span class="hljs-tag">&lt;&gt;</span>&#123;value&#125;<span class="hljs-tag">&lt;/&gt;</span></span>
-)&#125;
-/&gt;
-&#125;
-<span class="hljs-keyword">const</span> <span class="hljs-title class_">Consumer2</span> =&gt; &#123;<span class="hljs-comment">// 只有当 value2 变化重新渲染</span>
-<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Consumer</span> <span class="hljs-attr">unstable_oberverdBits</span>=<span class="hljs-string">&#123;10&#125;</span> <span class="hljs-attr">children</span>=<span class="hljs-string">&#123;value</span> =&gt;</span> (</span>
-<span class="language-xml"><span class="hljs-tag">&lt;&gt;</span>&#123;value&#125;<span class="hljs-tag">&lt;/&gt;</span></span>
-)&#125;
-/&gt;
-&#125;
-* 使用第三方库
-    * use-context-selector
-        * 使用 createContext 创建支持 useContextSelector 的特殊 context
-        * 使用 useContextSelector 选择 context 某个值，当且仅当该值变化时，重新渲染
-    * <span class="hljs-title class_">React</span> <span class="hljs-title class_">Tracke</span></code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">const &#123; Consumer, Provider &#125; = React.createContext(null, (prev, next) =&gt; &#123;</span><br><span class="line">	if (prev.value1 !== next.value1) return 1</span><br><span class="line">	if (prev.value2 !== next.value2) return 10</span><br><span class="line">&#125;)</span><br><span class="line">const Consumer1 =&gt; &#123; // 只有当 value1 变化重新渲染</span><br><span class="line">	return &lt;Consumer unstable_observedBits=&#123;1&#125; children=&#123;value =&gt; (</span><br><span class="line">&lt;&gt;&#123;value&#125;&lt;/&gt;</span><br><span class="line">)&#125;</span><br><span class="line">/&gt;</span><br><span class="line">&#125;</span><br><span class="line">const Consumer2 =&gt; &#123;// 只有当 value2 变化重新渲染</span><br><span class="line">return &lt;Consumer unstable_oberverdBits=&#123;10&#125; children=&#123;value =&gt; (</span><br><span class="line">&lt;&gt;&#123;value&#125;&lt;/&gt;</span><br><span class="line">)&#125;</span><br><span class="line">/&gt;</span><br><span class="line">&#125;</span><br><span class="line">* 使用第三方库</span><br><span class="line">    * use-context-selector</span><br><span class="line">        * 使用 createContext 创建支持 useContextSelector 的特殊 context</span><br><span class="line">        * 使用 useContextSelector 选择 context 某个值，当且仅当该值变化时，重新渲染</span><br><span class="line">    * React Tracke</span><br></pre></td></tr></table></figure>
 
 <h3 id="什么是-Ref-转发？"><a href="#什么是-Ref-转发？" class="headerlink" title="什么是 Ref 转发？"></a>什么是 Ref 转发？</h3><h4 id="面试高频指数：★-★-☆-☆-☆-7"><a href="#面试高频指数：★-★-☆-☆-☆-7" class="headerlink" title="面试高频指数：★ ★ ☆ ☆ ☆"></a>面试高频指数：★ ★ ☆ ☆ ☆</h4><ul>
 <li><p>Ref 转发可以将</p>
-<div class="code-wrapper"><pre><code class="hljs angelscript"><span class="hljs-built_in">ref</span></code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ref</span><br></pre></td></tr></table></figure>
 
 <p>传递到子组件</p>
 <ul>
@@ -1291,7 +1087,7 @@ h[i + <span class="hljs-number">1</span>] = i <span class="hljs-comment">// h = 
 </ul>
 </li>
 <li><p>由</p>
-<div class="code-wrapper"><pre><code class="hljs reasonml"><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">React</span>.</span></span>forwardRef</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">React.forwardRef</span><br></pre></td></tr></table></figure>
 
 <p>实现 Ref 转发，可以使用函数决定 ref 转发组件显示的内容</p>
 <ul>
@@ -1301,35 +1097,22 @@ h[i + <span class="hljs-number">1</span>] = i <span class="hljs-comment">// h = 
 <li><p>JavaScript</p>
 </li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs reasonml">const newComponent = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">React</span>.</span></span>forward<span class="hljs-constructor">Ref(<span class="hljs-params">function</span> <span class="hljs-params">myName</span>(<span class="hljs-params">props</span>, <span class="hljs-params">ref</span>)</span> &#123;
-	return &lt;innerComponent &#123;...props&#125; forwardedRef=&#123;<span class="hljs-built_in">ref</span>&#125; /&gt;
-&#125;)
-<span class="hljs-comment">// DevTools DisplayName: ForwardRef(myName)</span><span class="hljs-operator"></span>
-<span class="hljs-operator">* </span>设置函数的 displayName 来包含被包裹组件的名称</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const newComponent = React.forwardRef(function myName(props, ref) &#123;</span><br><span class="line">	return &lt;innerComponent &#123;...props&#125; forwardedRef=&#123;ref&#125; /&gt;</span><br><span class="line">&#125;)</span><br><span class="line">// DevTools DisplayName: ForwardRef(myName)</span><br><span class="line">* 设置函数的 displayName 来包含被包裹组件的名称</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>JavaScript</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs reasonml"><span class="hljs-keyword">function</span> my<span class="hljs-constructor">Name(<span class="hljs-params">props</span>, <span class="hljs-params">ref</span>)</span> &#123;
-	return &lt;innerComponent &#123;...props&#125; forwardedRef=&#123;<span class="hljs-built_in">ref</span>&#125;
-&#125;
-myName.displayName = &#x27;myDisplayName&#x27;
-const newComponent = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">React</span>.</span></span>forward<span class="hljs-constructor">Ref(<span class="hljs-params">myName</span>)</span>
-<span class="hljs-comment">// DevTools DisplayName: ForwardRef(myDisplayName)</span></code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function myName(props, ref) &#123;</span><br><span class="line">	return &lt;innerComponent &#123;...props&#125; forwardedRef=&#123;ref&#125;</span><br><span class="line">&#125;</span><br><span class="line">myName.displayName = &#x27;myDisplayName&#x27;</span><br><span class="line">const newComponent = React.forwardRef(myName)</span><br><span class="line">// DevTools DisplayName: ForwardRef(myDisplayName)</span><br></pre></td></tr></table></figure>
 
 <h2 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h2><h3 id="React-返回空对象有哪些方法？"><a href="#React-返回空对象有哪些方法？" class="headerlink" title="React 返回空对象有哪些方法？"></a>React 返回空对象有哪些方法？</h3><ul>
 <li>false &#x2F; true &#x2F; null &#x2F; undefined 将被忽略，不被渲染</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs JavaScript"><span class="hljs-title function_">render</span>(<span class="hljs-params"></span>) &#123;
-	<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span> / <span class="hljs-literal">true</span> / <span class="hljs-literal">null</span> /<span class="hljs-literal">undefined</span>
-&#125;</code></pre></div>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span> / <span class="literal">true</span> / <span class="literal">null</span> /<span class="literal">undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>React.Fragment &#x2F; &lt;&gt;</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs JavaScript"><span class="hljs-title function_">render</span>(<span class="hljs-params"></span>) &#123;
-	<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">React.Fragment</span> /&gt;</span></span> <span class="hljs-regexp">/ &lt;/</span>&gt;
-&#125;</code></pre></div>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">React.Fragment</span> /&gt;</span></span> <span class="regexp">/ &lt;/</span>&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="如何优化不必要的渲染？"><a href="#如何优化不必要的渲染？" class="headerlink" title="如何优化不必要的渲染？"></a>如何优化不必要的渲染？</h3><h4 id="面试高频指数：★-★-★-★-★-1"><a href="#面试高频指数：★-★-★-★-★-1" class="headerlink" title="面试高频指数：★ ★ ★ ★ ★"></a>面试高频指数：★ ★ ★ ★ ★</h4><ul>
 <li><p>优化状态 state</p>
@@ -1444,10 +1227,10 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <li><p>使用 <code>MutationObserver</code> 代替定时器</p>
 </li>
 <li><p>使用</p>
-<div class="code-wrapper"><pre><code class="hljs arcade"><span class="hljs-built_in">Intersection</span> Observer</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Intersection Observer</span><br></pre></td></tr></table></figure>
 
 <p>代替</p>
-<div class="code-wrapper"><pre><code class="hljs dart"><span class="hljs-built_in">window</span>.scroll</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.scroll</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>懒加载图片<ul>
@@ -1498,9 +1281,7 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <li><p>JavaScript</p>
 </li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">newComponent</span>(<span class="hljs-params"></span>) &#123;
-	<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">dangerouslySetInnerHTML</span>=<span class="hljs-string">&#123;&#123;__html:</span> &#x27;&lt;<span class="hljs-attr">b</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>&#x27;&#125;&#125; /&gt;</span>
-&#125;</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function newComponent() &#123;</span><br><span class="line">	return &lt;div dangerouslySetInnerHTML=&#123;&#123;__html: &#x27;&lt;b&gt;1&lt;/b&gt;&#x27;&#125;&#125; /&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>代码直接设置 HTML 存在风险，很容易无意中使用户暴露于跨站脚本（XSS）攻击</li>
@@ -1547,18 +1328,8 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <ul>
 <li><p>包含组件及其输入、输出信息的 JavaScript 对象</p>
 <ul>
-<li><div class="code-wrapper"><pre><code class="hljs">type
-<pre><code class="hljs autohotkey">
-   
-
-  是执行会被堆栈结构跟踪的函数
-
-  - 复合函数、组件类 class 或字符串
-
-- `key` 决定协调算法 Fiber 是否可重用
-
-- ```
-  child</code></pre></div>
+<li><pre><code>type
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">  是执行会被堆栈结构跟踪的函数</span><br><span class="line"></span><br><span class="line">  - 复合函数、组件类 class 或字符串</span><br><span class="line"></span><br><span class="line">- `key` 决定协调算法 Fiber 是否可重用</span><br><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  child</span><br></pre></td></tr></table></figure>
 
  
 
@@ -1568,23 +1339,8 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 - 函数组件 的`return` 返回值
 </code></pre>
 </li>
-<li><div class="code-wrapper"><pre><code class="hljs">sibling
-<pre><code class="hljs markdown">
-   
-
-  指向
-
-<span class="hljs-bullet">  -</span> 类组件 class 或函数组件返回数组，其中包含多个子节点的情况
-
-<span class="hljs-bullet">-</span> <span class="hljs-code">`return`</span> 返回父 fiber
-
-<span class="hljs-bullet">-</span> 属性，即函数参数，以下两者相等，则 fiber 可复用
-
-<span class="hljs-bullet">  -</span> <span class="hljs-code">`pendingProps`</span> fiber 开始时设置
-<span class="hljs-bullet">  -</span> <span class="hljs-code">`memoizedProps`</span> fiber 结束时设置
-
-<span class="hljs-bullet">-</span> <span class="hljs-code">```</span>
-<span class="hljs-code">  pengdingWorkProiority</span></code></pre></div>
+<li><pre><code>sibling
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">  指向</span><br><span class="line"></span><br><span class="line">  - 类组件 class 或函数组件返回数组，其中包含多个子节点的情况</span><br><span class="line"></span><br><span class="line">- `return` 返回父 fiber</span><br><span class="line"></span><br><span class="line">- 属性，即函数参数，以下两者相等，则 fiber 可复用</span><br><span class="line"></span><br><span class="line">  - `pendingProps` fiber 开始时设置</span><br><span class="line">  - `memoizedProps` fiber 结束时设置</span><br><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  pengdingWorkProiority</span><br></pre></td></tr></table></figure>
 
  
 
@@ -1596,12 +1352,7 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 </code></pre>
 </li>
 <li><p>&#96;&#96;&#96;<br>alternate</p>
-<div class="code-wrapper"><pre><code class="hljs autohotkey">
-  - `flush` 渲染输出结果到屏幕
-  - `work-in-progress` 进行中的 fiber 代表未返回堆栈结构的 fiber
-
-- ```
-  output</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  - `flush` 渲染输出结果到屏幕</span><br><span class="line">  - `work-in-progress` 进行中的 fiber 代表未返回堆栈结构的 fiber</span><br><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  output</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><code>host component</code> 是 React 应用的叶子节点，浏览器环境是小写 HTML 标签</li>
@@ -1628,16 +1379,16 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <li><p>更新当前节点状态和属性</p>
 </li>
 <li><p>调用</p>
-<div class="code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">shouldComponentUpdate</span></code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shouldComponentUpdate</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>返回</p>
-<div class="code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">ture</span></code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ture</span><br></pre></td></tr></table></figure>
 
 <p>需要更新</p>
 <ul>
 <li><p>调用</p>
-<div class="code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">render</span></code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">render</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>返回子节点，并创建对应 <code>fiber</code></li>
@@ -1672,7 +1423,7 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/leetbook/read/react-interview/nafqor/">∨∧Page 2</a></p>
 </li>
 <li><ul>
-<li><a target="_blank" rel="noopener" href="https://leetcode.cn/"><img src="/../imgs/%E5%89%8D%E7%AB%AF%E9%80%9A%E5%85%B3%E6%89%8B%E5%86%8C-React/logo-dark-cn.c42314a8.svg+xml" srcset="/img/loading.gif" lazyload alt="logo"></a></li>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/"><img src="/../imgs/%E5%89%8D%E7%AB%AF%E9%80%9A%E5%85%B3%E6%89%8B%E5%86%8C-React/logo-dark-cn.c42314a8.svg+xml" alt="logo"></a></li>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/leetbook/">学习</a></li>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/problemset/all/">题库</a></li>
 <li><a target="_blank" rel="noopener" href="https://leetcode.cn/circle/">讨论</a></li>
@@ -1686,7 +1437,7 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <li></li>
 <li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/two-sum/">-</a></p>
 </li>
-<li><p><img src="/../imgs/%E5%89%8D%E7%AB%AF%E9%80%9A%E5%85%B3%E6%89%8B%E5%86%8C-React/avatar_1645205761.webp" srcset="/img/loading.gif" lazyload alt="img"><img src="/../imgs/%E5%89%8D%E7%AB%AF%E9%80%9A%E5%85%B3%E6%89%8B%E5%86%8C-React/plus-light.594ca211.svg+xml" srcset="/img/loading.gif" lazyload alt="img"></p>
+<li><p><img src="/../imgs/%E5%89%8D%E7%AB%AF%E9%80%9A%E5%85%B3%E6%89%8B%E5%86%8C-React/avatar_1645205761.webp" alt="img"><img src="/../imgs/%E5%89%8D%E7%AB%AF%E9%80%9A%E5%85%B3%E6%89%8B%E5%86%8C-React/plus-light.594ca211.svg+xml" alt="img"></p>
 </li>
 <li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/leetbook/detail/react-interview/">返回</a></p>
 </li>
@@ -1869,9 +1620,7 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 </li>
 <li>不调用 super，参考 proposal-class-fields 提案，可以将 state 等实例属性写在 class 内</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs JavaScript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyComponent</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">React.Component</span> &#123;
-	state = &#123; time : <span class="hljs-number">0</span> &#125;
-&#125;</code></pre></div>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyComponent</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">	state = &#123; time : <span class="number">0</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="对比-React-Hook-与生命周期"><a href="#对比-React-Hook-与生命周期" class="headerlink" title="对比 React Hook 与生命周期"></a>对比 React Hook 与生命周期</h3><h4 id="面试高频指数：★-★-☆-☆-☆-12"><a href="#面试高频指数：★-★-☆-☆-☆-12" class="headerlink" title="面试高频指数：★ ★ ☆ ☆ ☆"></a>面试高频指数：★ ★ ☆ ☆ ☆</h4><ul>
 <li><p>什么是 React Hook</p>
@@ -1889,10 +1638,10 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <li><p>React 没有提供将可复用性行为“附加”到组件的途径</p>
 </li>
 <li><p>使用</p>
-<div class="code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">render props</span></code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">render props</span><br></pre></td></tr></table></figure>
 
 <p>和</p>
-<div class="code-wrapper"><pre><code class="hljs">高阶组件</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">高阶组件</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>需要重新组织组件结构，使得代码难以理解</li>
@@ -2101,31 +1850,12 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <li><p>JavaScript</p>
 </li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs actionscript"><span class="hljs-keyword">const</span> throttle = (fn, delay) =&gt; &#123;
-	let timer = <span class="hljs-literal">null</span>
-	<span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-rest_arg">...args</span>)</span> &#123;
-		<span class="hljs-keyword">if</span> (timer) <span class="hljs-keyword">return</span>
-		timer = setTimeout(() =&gt; &#123;
-			timer = <span class="hljs-literal">null</span>
-			fn.apply(<span class="hljs-keyword">this</span>, args)
-		&#125;, (delay + <span class="hljs-string">&#x27;&#x27;</span>) | <span class="hljs-number">0</span> || <span class="hljs-number">1000</span> / <span class="hljs-number">60</span>)
-	&#125;
-&#125;
-    * 原生  + React Hook</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const throttle = (fn, delay) =&gt; &#123;</span><br><span class="line">	let timer = null</span><br><span class="line">	return function (...args) &#123;</span><br><span class="line">		if (timer) return</span><br><span class="line">		timer = setTimeout(() =&gt; &#123;</span><br><span class="line">			timer = null</span><br><span class="line">			fn.apply(this, args)</span><br><span class="line">		&#125;, (delay + &#x27;&#x27;) | 0 || 1000 / 60)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">    * 原生  + React Hook</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>JavaScript</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs zephir"><span class="hljs-keyword">const</span> useThrottle (<span class="hljs-function"><span class="hljs-keyword">fn</span>, <span class="hljs-title">delay</span>) =&gt; </span>&#123;
-	<span class="hljs-keyword">const</span> ref = useRef(<span class="hljs-function"><span class="hljs-keyword">fn</span>)</span>
-<span class="hljs-function">	<span class="hljs-title">useEffect</span><span class="hljs-params">(<span class="hljs-params">()</span> =&gt; &#123;</span></span>
-<span class="hljs-params"><span class="hljs-function">		ref.current = fn</span></span>
-<span class="hljs-params"><span class="hljs-function">	&#125;)</span></span>
-<span class="hljs-function"><span class="hljs-title">return</span> <span class="hljs-title">useCallback</span><span class="hljs-params">(</span></span>
-<span class="hljs-params"><span class="hljs-function">throttle<span class="hljs-params">(<span class="hljs-params">(...args)</span> =&gt; ref.current<span class="hljs-params">(...args)</span>, delay)</span>,</span></span>
-<span class="hljs-params"><span class="hljs-function">[delay]</span></span>
-<span class="hljs-params"><span class="hljs-function">)</span></span>
-<span class="hljs-function">&#125;</span></code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const useThrottle (fn, delay) =&gt; &#123;</span><br><span class="line">	const ref = useRef(fn)</span><br><span class="line">	useEffect(() =&gt; &#123;</span><br><span class="line">		ref.current = fn</span><br><span class="line">	&#125;)</span><br><span class="line">return useCallback(</span><br><span class="line">throttle((...args) =&gt; ref.current(...args), delay),</span><br><span class="line">[delay]</span><br><span class="line">)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>防抖</p>
@@ -2142,31 +1872,12 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <li><p>JavaScript</p>
 </li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs actionscript"><span class="hljs-keyword">const</span> debounce = (fn, delay) =&gt; &#123;
-	let timer = <span class="hljs-literal">null</span>
-	<span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-rest_arg">...args</span>)</span> &#123;
-		<span class="hljs-keyword">if</span> (timer) clearTimeout(timer)
-		timer = setTimeout(() =&gt; &#123;
-			timer = <span class="hljs-literal">null</span>
-			fn.apply(<span class="hljs-keyword">this</span>, args)
-		&#125;, (delay + <span class="hljs-string">&#x27;&#x27;</span>) | <span class="hljs-number">0</span> || <span class="hljs-number">1000</span> / <span class="hljs-number">60</span>)
-	&#125;
-&#125;
-    * 原生 + React Hook</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const debounce = (fn, delay) =&gt; &#123;</span><br><span class="line">	let timer = null</span><br><span class="line">	return function (...args) &#123;</span><br><span class="line">		if (timer) clearTimeout(timer)</span><br><span class="line">		timer = setTimeout(() =&gt; &#123;</span><br><span class="line">			timer = null</span><br><span class="line">			fn.apply(this, args)</span><br><span class="line">		&#125;, (delay + &#x27;&#x27;) | 0 || 1000 / 60)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">    * 原生 + React Hook</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>JavaScript</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs zephir"><span class="hljs-keyword">const</span> useDebounce (<span class="hljs-function"><span class="hljs-keyword">fn</span>, <span class="hljs-title">delay</span>) =&gt; </span>&#123;
-	<span class="hljs-keyword">const</span> ref = useRef(<span class="hljs-function"><span class="hljs-keyword">fn</span>)</span>
-<span class="hljs-function">	<span class="hljs-title">useEffect</span><span class="hljs-params">(<span class="hljs-params">()</span> =&gt; &#123;</span></span>
-<span class="hljs-params"><span class="hljs-function">		ref.current = fn</span></span>
-<span class="hljs-params"><span class="hljs-function">	&#125;)</span></span>
-<span class="hljs-function">	<span class="hljs-title">return</span> <span class="hljs-title">useCallback</span><span class="hljs-params">(</span></span>
-<span class="hljs-params"><span class="hljs-function">	debounce<span class="hljs-params">(<span class="hljs-params">(...args)</span> =&gt; ref.current<span class="hljs-params">(...args)</span>, delay)</span>,</span></span>
-<span class="hljs-params"><span class="hljs-function">	[delay]</span></span>
-<span class="hljs-params"><span class="hljs-function">	)</span></span>
-<span class="hljs-function">&#125;</span></code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const useDebounce (fn, delay) =&gt; &#123;</span><br><span class="line">	const ref = useRef(fn)</span><br><span class="line">	useEffect(() =&gt; &#123;</span><br><span class="line">		ref.current = fn</span><br><span class="line">	&#125;)</span><br><span class="line">	return useCallback(</span><br><span class="line">	debounce((...args) =&gt; ref.current(...args), delay),</span><br><span class="line">	[delay]</span><br><span class="line">	)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="React-17-对事件处理做了哪些改进？"><a href="#React-17-对事件处理做了哪些改进？" class="headerlink" title="React 17 对事件处理做了哪些改进？"></a>React 17 对事件处理做了哪些改进？</h3><h4 id="面试高频指数：★-★-☆-☆-☆-14"><a href="#面试高频指数：★-★-☆-☆-☆-14" class="headerlink" title="面试高频指数：★ ★ ☆ ☆ ☆"></a>面试高频指数：★ ★ ☆ ☆ ☆</h4><ul>
 <li>更改事件委托<ul>
@@ -2265,12 +1976,7 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <ul>
 <li>JavaScript</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs JavaScript"><span class="hljs-keyword">const</span> style = &#123;
-	[<span class="hljs-number">2</span> &gt; <span class="hljs-number">1</span> ? <span class="hljs-string">&#x27;fontSize&#x27;</span> : <span class="hljs-string">&#x27;lineHeight&#x27;</span>] : <span class="hljs-number">2</span> &gt; <span class="hljs-number">1</span> ? <span class="hljs-number">12</span> : <span class="hljs-number">1</span>
-&#125; <span class="hljs-comment">// &#123; fontSize: 12 &#125;</span>
-<span class="hljs-keyword">function</span> <span class="hljs-title function_">Component</span> () &#123;
-	<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&#123;style&#125;</span>&gt;</span>Hello World!<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span> <span class="hljs-comment">// style=&quot;font-size: 12px&quot;</span>
-&#125;</code></pre></div>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> style = &#123;</span><br><span class="line">	[<span class="number">2</span> &gt; <span class="number">1</span> ? <span class="string">&#x27;fontSize&#x27;</span> : <span class="string">&#x27;lineHeight&#x27;</span>] : <span class="number">2</span> &gt; <span class="number">1</span> ? <span class="number">12</span> : <span class="number">1</span></span><br><span class="line">&#125; <span class="comment">// &#123; fontSize: 12 &#125;</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Component</span> () &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&#123;style&#125;</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span> <span class="comment">// style=&quot;font-size: 12px&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>Class</li>
@@ -2279,35 +1985,21 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <ul>
 <li>JavaScript</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs JavaScript"><span class="hljs-keyword">const</span> className = <span class="hljs-number">2</span> &gt; <span class="hljs-number">1</span> ? <span class="hljs-string">&#x27;menu-active&#x27;</span> : <span class="hljs-string">&#x27;menu&#x27;</span>
-<span class="hljs-keyword">function</span> <span class="hljs-title function_">Component</span> () &#123;
-	<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&#123;className&#125;</span>&gt;</span>Hello World!<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span> <span class="hljs-comment">// class=&quot;menu-active&quot;</span>
-&#125;</code></pre></div>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> className = <span class="number">2</span> &gt; <span class="number">1</span> ? <span class="string">&#x27;menu-active&#x27;</span> : <span class="string">&#x27;menu&#x27;</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Component</span> () &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&#123;className&#125;</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span> <span class="comment">// class=&quot;menu-active&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>CSS-in-JS</li>
 </ul>
 <p>以styled-components 为例</p>
-<div class="code-wrapper"><pre><code class="hljs asciidoc"><span class="hljs-bullet">* </span>模板字符串</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 模板字符串</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>JavaScript</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs JavaScript"><span class="hljs-keyword">const</span> <span class="hljs-title class_">Button</span> = styled.<span class="hljs-property">button</span><span class="hljs-string">`</span>
-<span class="hljs-string">background: <span class="hljs-subst">$&#123;props =&gt; props.primary ? <span class="hljs-string">&#x27;palevioletred&#x27;</span> : <span class="hljs-string">&#x27;white&#x27;</span>&#125;</span>,</span>
-<span class="hljs-string">`</span> <span class="hljs-comment">// background: palevioletred</span>
-<span class="hljs-keyword">function</span> <span class="hljs-title function_">Component</span> () &#123;
-	<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Button</span>&gt;</span>Hello World!<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span></span>
-&#125;
-* <span class="hljs-title class_">JavaScript</span> 对象</code></pre></div>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Button</span> = styled.<span class="property">button</span><span class="string">`</span></span><br><span class="line"><span class="string">background: <span class="subst">$&#123;props =&gt; props.primary ? <span class="string">&#x27;palevioletred&#x27;</span> : <span class="string">&#x27;white&#x27;</span>&#125;</span>,</span></span><br><span class="line"><span class="string">`</span> <span class="comment">// background: palevioletred</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Component</span> () &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Button</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line">* <span class="title class_">JavaScript</span> 对象</span><br></pre></td></tr></table></figure>
 
 <p>- </p>
-<div class="code-wrapper"><pre><code class="hljs JavaScript"><span class="hljs-keyword">const</span> <span class="hljs-title class_">Button</span> = styled.<span class="hljs-title function_">div</span>(<span class="hljs-function"><span class="hljs-params">props</span> =&gt;</span> (&#123;
-	<span class="hljs-attr">background</span>: props.<span class="hljs-property">primary</span> ? <span class="hljs-string">&#x27;palevioletred&#x27;</span> : <span class="hljs-string">&#x27;white&#x27;</span>
-&#125;)); <span class="hljs-comment">// background: palevioletred</span>
-<span class="hljs-keyword">function</span> <span class="hljs-title function_">Component</span> () &#123;
-	<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Button</span>&gt;</span>Hello World!<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span></span>
-	&#125;</code></pre></div>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Button</span> = styled.<span class="title function_">div</span>(<span class="function"><span class="params">props</span> =&gt;</span> (&#123;</span><br><span class="line">	<span class="attr">background</span>: props.<span class="property">primary</span> ? <span class="string">&#x27;palevioletred&#x27;</span> : <span class="string">&#x27;white&#x27;</span></span><br><span class="line">&#125;)); <span class="comment">// background: palevioletred</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Component</span> () &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Button</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">Button</span>&gt;</span></span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="如何合并多个内联样式"><a href="#如何合并多个内联样式" class="headerlink" title="如何合并多个内联样式?"></a>如何合并多个内联样式?</h3><h4 id="面试高频指数：★-☆-☆-☆-☆-8"><a href="#面试高频指数：★-☆-☆-☆-☆-8" class="headerlink" title="面试高频指数：★ ☆ ☆ ☆ ☆"></a>面试高频指数：★ ☆ ☆ ☆ ☆</h4><p><code>style</code>采用小驼峰命名属性的 JavaScript 对象</p>
 <p>任何合并 JavaScript 对象的方法都可以用于合并内联样式</p>
@@ -2317,11 +2009,7 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <li><p>JavaScript</p>
 </li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> backgroundStyle = &#123; <span class="hljs-attr">background</span>: <span class="hljs-string">&#x27;red&#x27;</span> &#125;
-<span class="hljs-keyword">const</span> colorStyle = &#123; <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;red&#x27;</span> &#125;
-<span class="hljs-keyword">function</span> <span class="hljs-title function_">Component</span> () &#123;
-	<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&#123;&#123;</span> <span class="hljs-attr">...backgroundStyle</span>, <span class="hljs-attr">...colorStyle</span> &#125;&#125;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
-&#125;</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const backgroundStyle = &#123; background: &#x27;red&#x27; &#125;</span><br><span class="line">const colorStyle = &#123; color: &#x27;red&#x27; &#125;</span><br><span class="line">function Component () &#123;</span><br><span class="line">	return &lt;div style=&#123;&#123; ...backgroundStyle, ...colorStyle &#125;&#125;&gt;&lt;/div&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>Object.assign</p>
@@ -2329,11 +2017,7 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <li><p>JavaScript</p>
 </li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> backgroundStyle = &#123; <span class="hljs-attr">background</span>: <span class="hljs-string">&#x27;red&#x27;</span> &#125;
-<span class="hljs-keyword">const</span> colorStyle = &#123; <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;red&#x27;</span> &#125;
-<span class="hljs-keyword">function</span> <span class="hljs-title function_">Component</span> () &#123;
-	<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&#123;Object.assign(backgroundStyle,</span> <span class="hljs-attr">colorStyle</span>)&#125;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
-&#125;</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const backgroundStyle = &#123; background: &#x27;red&#x27; &#125;</span><br><span class="line">const colorStyle = &#123; color: &#x27;red&#x27; &#125;</span><br><span class="line">function Component () &#123;</span><br><span class="line">	return &lt;div style=&#123;Object.assign(backgroundStyle, colorStyle)&#125;&gt;&lt;/div&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>遍历赋值</p>
@@ -2341,12 +2025,7 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <li><p>JavaScript</p>
 </li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> backgroundStyle = &#123; <span class="hljs-attr">background</span>: <span class="hljs-string">&#x27;red&#x27;</span> &#125;
-<span class="hljs-keyword">const</span> colorStyle = &#123; <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;red&#x27;</span> &#125;
-<span class="hljs-title class_">Object</span>.<span class="hljs-title function_">keys</span>(colorStyle).<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">key</span> =&gt;</span> backgroundStyle[key] = colorStyle[key])
-<span class="hljs-keyword">function</span> <span class="hljs-title function_">Component</span> () &#123;
-	<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&#123;backgroundStyle&#125;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
-&#125;</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const backgroundStyle = &#123; background: &#x27;red&#x27; &#125;</span><br><span class="line">const colorStyle = &#123; color: &#x27;red&#x27; &#125;</span><br><span class="line">Object.keys(colorStyle).forEach(key =&gt; backgroundStyle[key] = colorStyle[key])</span><br><span class="line">function Component () &#123;</span><br><span class="line">	return &lt;div style=&#123;backgroundStyle&#125;&gt;&lt;/div&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="如何模块化样式，如何避免样式名冲突-？"><a href="#如何模块化样式，如何避免样式名冲突-？" class="headerlink" title="如何模块化样式，如何避免样式名冲突 ？"></a>如何模块化样式，如何避免样式名冲突 ？</h3><h4 id="面试高频指数：★-★-☆-☆-☆-15"><a href="#面试高频指数：★-★-☆-☆-☆-15" class="headerlink" title="面试高频指数：★ ★ ☆ ☆ ☆"></a>面试高频指数：★ ★ ☆ ☆ ☆</h4><p>（1）什么是 CSS 模块化？</p>
 <p>CSS 模块化是将 CSS 规则 拆分成相对独立的模块，便于开发者在项目中更有效率地组织 CSS</p>
@@ -2502,7 +2181,7 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <li><p>shell</p>
 </li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs cmake">npm <span class="hljs-keyword">install</span> eslint-plugin-react-hooks -D</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install eslint-plugin-react-hooks -D</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>ESLint 配置</p>
@@ -2510,29 +2189,19 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <li><p>JSON</p>
 </li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs awk">&#123;
-	<span class="hljs-string">&quot;plugin&quot;</span>: [
-	<span class="hljs-regexp">//</span> ...
-	<span class="hljs-string">&quot;react-hooks&quot;</span>
-	],
-	<span class="hljs-string">&quot;rules&quot;</span>: &#123;
-		<span class="hljs-regexp">//</span> ...
-		<span class="hljs-string">&quot;react-hooks/rules-of-hooks&quot;</span>: <span class="hljs-string">&quot;error&quot;</span>, <span class="hljs-regexp">//</span> 检查 Hook 规则
-		<span class="hljs-string">&quot;react-hooks/exhaustive-deps&quot;</span>: <span class="hljs-string">&quot;warn&quot;</span> <span class="hljs-regexp">//</span> 检查 effect 依赖
-	&#125;
-&#125;</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;plugin&quot;: [</span><br><span class="line">	// ...</span><br><span class="line">	&quot;react-hooks&quot;</span><br><span class="line">	],</span><br><span class="line">	&quot;rules&quot;: &#123;</span><br><span class="line">		// ...</span><br><span class="line">		&quot;react-hooks/rules-of-hooks&quot;: &quot;error&quot;, // 检查 Hook 规则</span><br><span class="line">		&quot;react-hooks/exhaustive-deps&quot;: &quot;warn&quot; // 检查 effect 依赖</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="useMemo-和-useCallback-的区别是？"><a href="#useMemo-和-useCallback-的区别是？" class="headerlink" title="useMemo 和 useCallback 的区别是？"></a>useMemo 和 useCallback 的区别是？</h3><h4 id="面试高频指数：★-★-☆-☆-☆-18"><a href="#面试高频指数：★-★-☆-☆-☆-18" class="headerlink" title="面试高频指数：★ ★ ☆ ☆ ☆"></a>面试高频指数：★ ★ ☆ ☆ ☆</h4><p>useMemo</p>
 <ul>
 <li>JavaScript</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs reasonml">const memoizedValue = use<span class="hljs-constructor">Memo(()</span> =&gt; compute<span class="hljs-constructor">ExpensiveValue(<span class="hljs-params">a</span>, <span class="hljs-params">b</span>)</span>, <span class="hljs-literal">[<span class="hljs-identifier">a</span>, <span class="hljs-identifier">b</span>]</span>)</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const memoizedValue = useMemo(() =&gt; computeExpensiveValue(a, b), [a, b])</span><br></pre></td></tr></table></figure>
 
 <p>返回一个<code>memoized</code>值，把”创建”函数和依赖项数组作为参数传入 useMemo，它仅会在某个依赖项改变时才重新计算 memoized 值。这种优化有助于避免在每次渲染时都进行高开销计算。<br>useCallback</p>
 <ul>
 <li>JavaScript</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs reasonml">const memoizedCallback = use<span class="hljs-constructor">Callback(()</span> =&gt; &#123; <span class="hljs-keyword">do</span><span class="hljs-constructor">Something(<span class="hljs-params">a</span>, <span class="hljs-params">b</span>)</span> &#125;, <span class="hljs-literal">[<span class="hljs-identifier">a</span>, <span class="hljs-identifier">b</span>]</span>)</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const memoizedCallback = useCallback(() =&gt; &#123; doSomething(a, b) &#125;, [a, b])</span><br></pre></td></tr></table></figure>
 
 <p>返回一个<code>memoized</code>回调函数，把内联回调函数及依赖项数组作为参数传入 useCallback，它将返回该回调函数的 memoized 版本，该回调函数仅在某个依赖项改变时才会更新。<br>useCallback 可看作函数组件的<code>shouldCompoentUpdate</code>，使用引用相等性避免非必要渲染</p>
 <p>useCallback 返回的是函数，useMemo 返回的是值，也可以是函数</p>
@@ -2541,7 +2210,7 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <ul>
 <li>JavaScript</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs pf"><span class="hljs-keyword">const</span> [<span class="hljs-keyword">state</span>, dispatch] = useReducer(reducer, initialArg, init)</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const [state, dispatch] = useReducer(reducer, initialArg, init)</span><br></pre></td></tr></table></figure>
 
 <p>useReducer 是 useState 的替代方案，它接收一个形如<code>(state, action) =&gt; newState</code>的 reducer，返回当前的 state 及其配套的<code>dispatch</code>方法<br>useReducer 比 useState 更适用于某些场景</p>
 <ul>
@@ -2559,12 +2228,7 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <ul>
 <li>JavaScript</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs javascript"><span class="hljs-title function_">useLayoutEffect</span>(<span class="hljs-function">() =&gt;</span> &#123;
-	<span class="hljs-comment">// add effect</span>
-	<span class="hljs-keyword">return</span> <span class="hljs-title function_">cleanup</span>(<span class="hljs-params"></span>) &#123;
-		<span class="hljs-comment">// clean effect</span>
-	&#125;
-&#125;)</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">useLayoutEffect(() =&gt; &#123;</span><br><span class="line">	// add effect</span><br><span class="line">	return cleanup() &#123;</span><br><span class="line">		// clean effect</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 <p>相同</p>
 <ul>
@@ -2598,22 +2262,14 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <ul>
 <li>JavaScript</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs angelscript"><span class="hljs-keyword">const</span> <span class="hljs-built_in">ref</span>Container = useRef(initialValue)</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const refContainer = useRef(initialValue)</span><br></pre></td></tr></table></figure>
 
 <p>useRef 返回一个可变的 ref 对象，其<code>.current</code>属性被初始化传入参数<code>initialValue</code><br>返回的 ref 对象在组件的整个生命周期保持不变</p>
 <p>Refs</p>
 <ul>
 <li>JavaScript</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Component</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>&#123;
-	constructor(props) &#123;
-		<span class="hljs-keyword">super</span>(props)
-		<span class="hljs-keyword">this</span>.myRef = <span class="hljs-type">React</span>.createRef()
-	&#125;
-	render() &#123;
-		<span class="hljs-keyword">return</span> &lt;div ref=&#123;<span class="hljs-keyword">this</span>.myRef&#125; /&gt;
-	&#125;
-&#125;</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Component extends React.Component &#123;</span><br><span class="line">	constructor(props) &#123;</span><br><span class="line">		super(props)</span><br><span class="line">		this.myRef = React.createRef()</span><br><span class="line">	&#125;</span><br><span class="line">	render() &#123;</span><br><span class="line">		return &lt;div ref=&#123;this.myRef&#125; /&gt;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Refs 使用 <code>React.createRef()</code> 创建的，并通过 <code>ref</code> 属性附加到 React 元素<br>当 ref 被传递给 <code>render</code> 中的元素时，对节点的引用可以在 ref 的 <code>current</code> 属性中被访问</p>
 <p>区别</p>
@@ -2622,7 +2278,7 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <li><p>函数组件可用</p>
 </li>
 <li><p>用途多样，</p>
-<div class="code-wrapper"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">useRef</span><span class="hljs-params">()</span></span></code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useRef()</span><br></pre></td></tr></table></figure>
 
 <p>创建一个普通 Javascript 对象，每次渲染时返回同一个 ref 对象</p>
 <ul>
@@ -2635,7 +2291,7 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <li><p>class 组件或 HTML 元素，函数组件无实例，不可用</p>
 </li>
 <li><p>用途单一，</p>
-<div class="code-wrapper"><pre><code class="hljs asciidoc"><span class="hljs-title">.current</span></code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.current</span><br></pre></td></tr></table></figure>
 
 <p>属性为实例的引用，根据节点的类型不同</p>
 <ul>
@@ -2847,7 +2503,7 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <li><p>plain</p>
 </li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> install react@experimental react-dom@experimental</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install react@experimental react-dom@experimental</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>开启 Concurrent 模式<ul>
@@ -2938,24 +2594,7 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <ul>
 <li>JavaScript</li>
 </ul>
-<div class="code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">export</span> const SyncLanePriority: LanePriority = <span class="hljs-number">17</span>
-<span class="hljs-attribute">export</span> const SyncBatchedLanePriority: LanePriority = <span class="hljs-number">16</span>
-<span class="hljs-attribute">const</span> InputDiscreteHydrationLanePriority: LanePriority = <span class="hljs-number">15</span>
-<span class="hljs-attribute">export</span> const InputDiscreteLanePriority: LanePriority = <span class="hljs-number">14</span>
-<span class="hljs-attribute">const</span> InputContinuousHydrationLanePriority: LanePriority = <span class="hljs-number">13</span>
-<span class="hljs-attribute">export</span> const InputContinuousLanePriority: LanePriority = <span class="hljs-number">12</span>
-<span class="hljs-attribute">const</span> DefaultHydrationLanePriority: LanePriority = <span class="hljs-number">11</span>
-<span class="hljs-attribute">export</span> const DefaultLanePriority: LanePriority = <span class="hljs-number">10</span>
-<span class="hljs-attribute">const</span> TransitionShortHydrationLanePriority: LanePriority = <span class="hljs-number">9</span>
-<span class="hljs-attribute">export</span> const TransitionShortLanePriority: LanePriority = <span class="hljs-number">8</span>
-<span class="hljs-attribute">const</span> TransitionLongHydrationLanePriority: LanePriority = <span class="hljs-number">7</span>
-<span class="hljs-attribute">export</span> const TransitionLongLanePriority: LanePriority = <span class="hljs-number">6</span>
-<span class="hljs-attribute">const</span> RetryLanePriority: LanePriority = <span class="hljs-number">5</span>
-<span class="hljs-attribute">const</span> SelectiveHydrationLanePriority: LanePriority = <span class="hljs-number">4</span>
-<span class="hljs-attribute">const</span> IdleHydrationLanePriority: LanePriority = <span class="hljs-number">3</span>
-<span class="hljs-attribute">const</span> IdleLanePriority: LanePriority = <span class="hljs-number">2</span>
-<span class="hljs-attribute">const</span> OffscreenLanePriority: LanePriority = <span class="hljs-number">1</span>
-<span class="hljs-attribute">export</span> const NoLanePriority: LanePriority = <span class="hljs-number">0</span></code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">export const SyncLanePriority: LanePriority = 17</span><br><span class="line">export const SyncBatchedLanePriority: LanePriority = 16</span><br><span class="line">const InputDiscreteHydrationLanePriority: LanePriority = 15</span><br><span class="line">export const InputDiscreteLanePriority: LanePriority = 14</span><br><span class="line">const InputContinuousHydrationLanePriority: LanePriority = 13</span><br><span class="line">export const InputContinuousLanePriority: LanePriority = 12</span><br><span class="line">const DefaultHydrationLanePriority: LanePriority = 11</span><br><span class="line">export const DefaultLanePriority: LanePriority = 10</span><br><span class="line">const TransitionShortHydrationLanePriority: LanePriority = 9</span><br><span class="line">export const TransitionShortLanePriority: LanePriority = 8</span><br><span class="line">const TransitionLongHydrationLanePriority: LanePriority = 7</span><br><span class="line">export const TransitionLongLanePriority: LanePriority = 6</span><br><span class="line">const RetryLanePriority: LanePriority = 5</span><br><span class="line">const SelectiveHydrationLanePriority: LanePriority = 4</span><br><span class="line">const IdleHydrationLanePriority: LanePriority = 3</span><br><span class="line">const IdleLanePriority: LanePriority = 2</span><br><span class="line">const OffscreenLanePriority: LanePriority = 1</span><br><span class="line">export const NoLanePriority: LanePriority = 0</span><br></pre></td></tr></table></figure>
 
 <h3 id="什么是-Redux"><a href="#什么是-Redux" class="headerlink" title="什么是 Redux ?"></a>什么是 Redux ?</h3><h4 id="面试高频指数：★-☆-☆-☆-☆-12"><a href="#面试高频指数：★-☆-☆-☆-☆-12" class="headerlink" title="面试高频指数：★ ☆ ☆ ☆ ☆"></a>面试高频指数：★ ☆ ☆ ☆ ☆</h4><p>Redux 是 JavaScript 应用的可预测状态容器</p>
 <ul>
@@ -3029,7 +2668,7 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <li><p>通过 <code>store.getState()</code> 获取最新状态</p>
 </li>
 <li><p>通过</p>
-<div class="code-wrapper"><pre><code class="hljs gcode">store.subscribe<span class="hljs-comment">()</span></code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">store.subscribe()</span><br></pre></td></tr></table></figure>
 
 <p>订阅状态更新</p>
 <ul>
@@ -3044,375 +2683,4 @@ const newComponent = <span class="hljs-module-access"><span class="hljs-module">
 <p>综上，Redux 与 Flux 都基于单向数据流，架构相似，但 Redux 默认应用只有唯一 Store，精简掉 Dispatcher，引入 Reducer 纯函数，通过返回新对象，而不是更改对象，更新状态。</p>
 <p>对比 Flux 的官方实现，Redux 的 API 更简洁，并且提供了如 <code>combineReducers</code>等工具函数及 <code>React-Toolkit</code> 工具集，以及对状态的撤销、重做和持久化等更复杂的功能。提供如 <code>React-Redux</code> 等简化 Redux 与其他第三方库的连接。</p>
 <p>Facebook 官方推荐在生产环境中使用代替 Flux。</p>
-
-                
-              </div>
-            
-            <hr/>
-            <div>
-              <div class="post-metas my-3">
-  
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/leetcode/" class="category-chain-item">leetcode</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E5%89%8D%E7%AB%AF/">#前端</a>
-      
-        <a href="/tags/React/">#React</a>
-      
-    </div>
-  
-</div>
-
-
-              
-  
-
-  <div class="license-box my-3">
-    <div class="license-title">
-      <div>前端通关手册-React</div>
-      <div>http://serendipity0321.github.com/2023/01/28/前端通关手册-React/</div>
-    </div>
-    <div class="license-meta">
-      
-        <div class="license-meta-item">
-          <div>作者</div>
-          <div>John Doe</div>
-        </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>发布于</div>
-          <div>2023年1月28日</div>
-        </div>
-      
-      
-      
-        <div class="license-meta-item">
-          <div>许可协议</div>
-          <div>
-            
-              
-              
-                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                    <i class="iconfont icon-by"></i>
-                  </span>
-                </a>
-              
-            
-          </div>
-        </div>
-      
-    </div>
-    <div class="license-icon iconfont"></div>
-  </div>
-
-
-
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2023/01/29/webpack%E6%94%BB%E7%95%A5/" title="webpack攻略">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">webpack攻略</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2023/01/28/HTML%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="HTML学习记录">
-                        <span class="hidden-mobile">HTML学习记录</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
-            </div>
-
-            
-          </article>
-        </div>
-      </div>
-    </div>
-
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header">
-    <i class="iconfont icon-list"></i>
-    <span>目录</span>
-  </p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-
-
-  </aside>
-
-
-    </div>
-  </div>
-</div>
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-    
-
-    
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-    </div>
-  
-  
-  
-  
-</div>
-
-  </footer>
-
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
-
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
-    var toc = jQuery('#toc');
-    if (toc.length === 0 || !window.tocbot) { return; }
-    var boardCtn = jQuery('#board-ctn');
-    var boardTop = boardCtn.offset().top;
-
-    window.tocbot.init(Object.assign({
-      tocSelector     : '#toc-body',
-      contentSelector : '.markdown-body',
-      linkClass       : 'tocbot-link',
-      activeLinkClass : 'tocbot-active-link',
-      listClass       : 'tocbot-list',
-      isCollapsedClass: 'tocbot-is-collapsed',
-      collapsibleClass: 'tocbot-is-collapsible',
-      scrollSmooth    : true,
-      includeTitleTags: true,
-      headingsOffset  : -boardTop,
-    }, CONFIG.toc));
-    if (toc.find('.toc-list-item').length > 0) {
-      toc.css('visibility', 'visible');
-    }
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('tocbot' in window) {
-        tocbot.refresh();
-        var toc = jQuery('#toc');
-        if (toc.length === 0 || !tocbot) {
-          return;
-        }
-        if (toc.find('.toc-list-item').length > 0) {
-          toc.css('visibility', 'visible');
-        }
-      }
-    });
-  });
-</script>
-
-
-  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
-
-  <script>Fluid.plugins.codeWidget();</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
-    window.anchors.options = {
-      placement: CONFIG.anchorjs.placement,
-      visible  : CONFIG.anchorjs.visible
-    };
-    if (CONFIG.anchorjs.icon) {
-      window.anchors.options.icon = CONFIG.anchorjs.icon;
-    }
-    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-    var res = [];
-    for (var item of el) {
-      res.push('.markdown-body > ' + item.trim());
-    }
-    if (CONFIG.anchorjs.placement === 'left') {
-      window.anchors.options.class = 'anchorjs-link-left';
-    }
-    window.anchors.add(res.join(', '));
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('anchors' in window) {
-        anchors.removeAll();
-        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-        var res = [];
-        for (var item of el) {
-          res.push('.markdown-body > ' + item.trim());
-        }
-        if (CONFIG.anchorjs.placement === 'left') {
-          anchors.options.class = 'anchorjs-link-left';
-        }
-        anchors.add(res.join(', '));
-      }
-    });
-  });
-</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
-    Fluid.plugins.fancyBox();
-  });
-</script>
-
-
-  <script>Fluid.plugins.imageCaption();</script>
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
-
-
-  
-
-  <noscript>
-    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
-  </noscript>
-</body>
-</html>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://serendipity0321.github.com">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://serendipity0321.github.com/2023/01/28/%E5%89%8D%E7%AB%AF%E9%80%9A%E5%85%B3%E6%89%8B%E5%86%8C-React/">http://serendipity0321.github.com/2023/01/28/%E5%89%8D%E7%AB%AF%E9%80%9A%E5%85%B3%E6%89%8B%E5%86%8C-React/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://serendipity0321.github.com" target="_blank">Hexo</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a><a class="post-meta__tags" href="/tags/React/">React</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2022/10/08/xzepUwCs3gKPWy2.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/01/29/webpack%E6%94%BB%E7%95%A5/" title="webpack攻略"><img class="cover" src="https://s2.loli.net/2022/10/08/xzepUwCs3gKPWy2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">webpack攻略</div></div></a></div><div class="next-post pull-right"><a href="/2023/01/28/HTML%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="HTML学习记录"><img class="cover" src="https://s2.loli.net/2022/12/31/qZrDP8nOQ4tGc6L.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">HTML学习记录</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/01/29/%E5%BE%AE%E5%89%8D%E7%AB%AF/" title="微前端"><img class="cover" src="https://s2.loli.net/2022/12/31/qZrDP8nOQ4tGc6L.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-29</div><div class="title">微前端</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2022/10/02/SRY7qntDHQe5l9F.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">51</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hello-React"><span class="toc-number">2.</span> <span class="toc-text">Hello, React :-)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React-%E5%BA%94%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">React 应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React-%E9%9D%A2%E8%AF%95%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">4.</span> <span class="toc-text">React 面试注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94-React-%E5%92%8C-Vue-%EF%BC%9F"><span class="toc-number">5.</span> <span class="toc-text">对比 React 和 Vue ？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-React"><span class="toc-number">6.</span> <span class="toc-text">什么是 React ?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94-React-%E5%92%8C-Angular"><span class="toc-number">7.</span> <span class="toc-text">对比 React 和 Angular ?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%A0%E8%AE%A4%E4%B8%BA-React-%E7%9A%84%E7%BC%BA%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">8.</span> <span class="toc-text">你认为 React 的缺点是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A3%B0%E6%98%8E%E5%BC%8F%E7%BC%96%E7%A8%8B%EF%BC%9F"><span class="toc-number">9.</span> <span class="toc-text">什么是声明式编程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%EF%BC%9F"><span class="toc-number">10.</span> <span class="toc-text">什么是函数式编程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC-%E5%92%8C-MVVM-%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%EF%BC%9F"><span class="toc-number">11.</span> <span class="toc-text">MVC 和 MVVM 的区别是？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E7%BB%84%E7%BB%87-React-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%EF%BC%9F"><span class="toc-number">12.</span> <span class="toc-text">如何组织 React 项目文件结构？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E7%BB%84%E7%BB%87-React-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%EF%BC%9F-1"><span class="toc-number">13.</span> <span class="toc-text">如何组织 React 项目文件结构？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React-18-%E9%83%BD%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%9F"><span class="toc-number">14.</span> <span class="toc-text">React 18 都有哪些新特性？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-JSX-%EF%BC%9F"><span class="toc-number">15.</span> <span class="toc-text">什么是 JSX ？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%8E%A8%E8%8D%90%E5%9C%A8-React-%E4%B8%AD%E4%BD%BF%E7%94%A8-JSX-%EF%BC%9F"><span class="toc-number">16.</span> <span class="toc-text">为什么推荐在 React 中使用 JSX ？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88-JSX-%E5%8F%AF%E4%BB%A5%E6%9C%89%E6%95%88%E9%99%8D%E4%BD%8E-XSS-%E9%A3%8E%E9%99%A9%EF%BC%9F"><span class="toc-number">17.</span> <span class="toc-text">为什么 JSX 可以有效降低 XSS 风险？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%9C%A8-JSX-%E4%B8%AD%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93%EF%BC%9F"><span class="toc-number">18.</span> <span class="toc-text">如何在 JSX 中条件渲染？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%9C%A8-JSX-%E4%B8%AD%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6%EF%BC%9F"><span class="toc-number">19.</span> <span class="toc-text">如何在 JSX 中循环控制？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88-JSX-%E4%B8%AD-class-%E5%8F%98%E6%88%90%E4%BA%86-className"><span class="toc-number">20.</span> <span class="toc-text">为什么 JSX 中 class 变成了 className ?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-React-%E7%BB%84%E4%BB%B6%EF%BC%9F"><span class="toc-number">21.</span> <span class="toc-text">什么是 React 组件？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React-%E7%BB%84%E4%BB%B6%E5%88%86%E6%88%90%E5%93%AA%E5%87%A0%E7%B1%BB%EF%BC%9F"><span class="toc-number">22.</span> <span class="toc-text">React 组件分成哪几类？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E7%BB%84%E4%BB%B6%E5%92%8C%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%EF%BC%9F"><span class="toc-number">23.</span> <span class="toc-text">类组件和函数组件的区别是？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%97%E6%8E%A7%E7%BB%84%E4%BB%B6%E5%92%8C%E9%9D%9E%E5%8F%97%E6%8E%A7%E7%BB%84%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%EF%BC%9F"><span class="toc-number">24.</span> <span class="toc-text">受控组件和非受控组件的区别是？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%86"><span class="toc-number">24.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ★ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6%EF%BC%9F"><span class="toc-number">25.</span> <span class="toc-text">什么是高阶组件？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Pure-Components-%EF%BC%9F"><span class="toc-number">26.</span> <span class="toc-text">什么是 Pure Components ？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%95%E7%A4%BA%E7%BB%84%E4%BB%B6%E5%92%8C%E5%AE%B9%E5%99%A8%E7%BB%84%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%EF%BC%9F"><span class="toc-number">27.</span> <span class="toc-text">展示组件和容器组件的区别是？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%8A%AB%E6%8C%81-React-%E7%BB%84%E4%BB%B6%E6%8F%90%E9%AB%98%E7%BB%84%E4%BB%B6%E5%A4%8D%E7%94%A8%E5%BA%A6%EF%BC%9F"><span class="toc-number">28.</span> <span class="toc-text">如何劫持 React 组件提高组件复用度？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA-React-%E7%BB%84%E4%BB%B6%EF%BC%9F"><span class="toc-number">29.</span> <span class="toc-text">如何设计一个 React 组件？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React-%E7%BB%84%E4%BB%B6%E4%B8%8E-Web-Components-%E5%85%B1%E5%AD%98%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E6%98%AF%EF%BC%9F"><span class="toc-number">30.</span> <span class="toc-text">React 组件与 Web Components 共存的最佳实践是？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-React-%E7%9A%84%E7%8A%B6%E6%80%81%EF%BC%9F"><span class="toc-number">31.</span> <span class="toc-text">什么是 React 的状态？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-%E2%98%86"><span class="toc-number">31.1.</span> <span class="toc-text">面试高频指数：★ ☆ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-React-%E7%9A%84%E7%8A%B6%E6%80%81%E6%8F%90%E5%8D%87%EF%BC%9F"><span class="toc-number">32.</span> <span class="toc-text">什么是 React 的状态提升？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E5%92%8C%E5%B1%9E%E6%80%A7%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">33.</span> <span class="toc-text">状态和属性的区别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%8A%A8%E6%80%81%E7%9A%84%E7%8A%B6%E6%80%81%E5%90%8D%E7%A7%B0%EF%BC%9F"><span class="toc-number">34.</span> <span class="toc-text">如何创建动态的状态名称？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setState-%E6%94%AF%E6%8C%81%E5%93%AA%E4%BA%9B%E7%94%A8%E6%B3%95%EF%BC%9F"><span class="toc-number">35.</span> <span class="toc-text">setState 支持哪些用法？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86"><span class="toc-number">35.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setState-%E5%92%8C-replaceState-%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%EF%BC%9F"><span class="toc-number">36.</span> <span class="toc-text">setState 和 replaceState 的区别是？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-%E2%98%86-1"><span class="toc-number">36.1.</span> <span class="toc-text">面试高频指数：★ ☆ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96-setState%EF%BC%8C%E5%87%8F%E5%B0%91%E4%B8%8D%E5%BF%85%E8%A6%81%E6%9B%B4%E6%96%B0%EF%BC%9F"><span class="toc-number">37.</span> <span class="toc-text">如何优化 setState，减少不必要更新？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-1"><span class="toc-number">37.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%93-State-%E5%80%BC%E4%B8%BA-Object-%E6%97%B6%EF%BC%8C%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96%EF%BC%9F"><span class="toc-number">38.</span> <span class="toc-text">当 State 值为 Object 时，如何优化？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-2"><span class="toc-number">38.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-React-%E7%9A%84%E5%B1%9E%E6%80%A7%EF%BC%9F"><span class="toc-number">39.</span> <span class="toc-text">什么是 React 的属性？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-%E2%98%86-2"><span class="toc-number">39.1.</span> <span class="toc-text">面试高频指数：★ ☆ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E7%9B%B4%E6%8E%A5%E4%BF%AE%E6%94%B9%E5%B1%9E%E6%80%A7%EF%BC%9F"><span class="toc-number">40.</span> <span class="toc-text">为什么不能直接修改属性？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-%E2%98%86-3"><span class="toc-number">40.1.</span> <span class="toc-text">面试高频指数：★ ☆ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%B1%9E%E6%80%A7%E4%BC%A0%E9%80%92%E7%BB%84%E4%BB%B6%E6%9C%AC%E8%BA%AB%E7%9A%84%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">41.</span> <span class="toc-text">通过属性传递组件本身的方法有哪些？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-3"><span class="toc-number">41.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-key-%E5%B1%9E%E6%80%A7%E6%9C%89%E5%93%AA%E4%BA%9B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9F"><span class="toc-number">42.</span> <span class="toc-text">使用 key 属性有哪些注意事项？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86"><span class="toc-number">42.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%9C%A8-React-%E4%B8%AD%E8%BF%9B%E8%A1%8C%E9%9D%99%E6%80%81%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5%EF%BC%9F"><span class="toc-number">43.</span> <span class="toc-text">如何在 React 中进行静态类型检查？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-1"><span class="toc-number">43.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E9%99%90%E5%88%B6%E6%9F%90%E4%B8%AA%E5%B1%9E%E6%80%A7%E6%98%AF%E5%BF%85%E9%A1%BB%E7%9A%84%EF%BC%9F"><span class="toc-number">44.</span> <span class="toc-text">如何限制某个属性是必须的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E5%B1%9E%E6%80%A7%E7%9A%84%E9%BB%98%E8%AE%A4%E5%80%BC%EF%BC%9F"><span class="toc-number">45.</span> <span class="toc-text">如何设置属性的默认值？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-2"><span class="toc-number">45.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React-%E6%98%AF%E5%90%A6%E6%94%AF%E6%8C%81-HTML-%E5%B1%9E%E6%80%A7%EF%BC%9F"><span class="toc-number">46.</span> <span class="toc-text">React 是否支持 HTML 属性？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-4"><span class="toc-number">46.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React-%E6%98%AF%E5%90%A6%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%EF%BC%9F"><span class="toc-number">47.</span> <span class="toc-text">React 是否支持自定义属性？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-5"><span class="toc-number">47.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1"><span class="toc-number"></span> <span class="toc-text">通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#React-%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">React 父子组件通信有哪些方法？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%85"><span class="toc-number">1.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ★ ★</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88-React-%E6%98%AF%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">为什么 React 是单向数据流？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-3"><span class="toc-number">2.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Context-%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">什么是 Context ？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%86-1"><span class="toc-number">3.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ★ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-ContextType"><span class="toc-number">4.</span> <span class="toc-text">什么是 ContextType ?</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-4"><span class="toc-number">4.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96-Context-%EF%BC%9F"><span class="toc-number">5.</span> <span class="toc-text">如何优化 Context ？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-6"><span class="toc-number">5.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Ref-%E8%BD%AC%E5%8F%91%EF%BC%9F"><span class="toc-number">6.</span> <span class="toc-text">什么是 Ref 转发？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-7"><span class="toc-number">6.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B2%E6%9F%93"><span class="toc-number"></span> <span class="toc-text">渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#React-%E8%BF%94%E5%9B%9E%E7%A9%BA%E5%AF%B9%E8%B1%A1%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">React 返回空对象有哪些方法？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96%E4%B8%8D%E5%BF%85%E8%A6%81%E7%9A%84%E6%B8%B2%E6%9F%93%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">如何优化不必要的渲染？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%85-1"><span class="toc-number">2.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ★ ★</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React-%E5%A6%82%E4%BD%95%E6%B8%B2%E6%9F%93-HTML-%EF%BC%8C%E6%9C%89%E4%BB%80%E4%B9%88%E9%A3%8E%E9%99%A9%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">React 如何渲染 HTML ，有什么风险？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-%E2%98%86-4"><span class="toc-number">3.1.</span> <span class="toc-text">面试高频指数：★ ☆ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%BC%95%E5%85%A5%E5%9F%BA%E4%BA%8E-Fiber-%E5%8D%8F%E8%B0%83%E5%99%A8%E7%9A%84%E5%BC%82%E6%AD%A5%E6%B8%B2%E6%9F%93%EF%BC%9F"><span class="toc-number">4.</span> <span class="toc-text">React 为什么要引入基于 Fiber 协调器的异步渲染？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-5"><span class="toc-number">4.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-React-Fiber"><span class="toc-number">5.</span> <span class="toc-text">什么是 React Fiber ?</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-8"><span class="toc-number">5.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React-Fiber-%E5%BC%82%E6%AD%A5%E6%B8%B2%E6%9F%93%E5%88%86%E4%B8%BA%E5%93%AA%E5%87%A0%E4%B8%AA%E9%98%B6%E6%AE%B5%EF%BC%8C%E5%AF%B9%E5%BA%94%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">6.</span> <span class="toc-text">React Fiber 异步渲染分为哪几个阶段，对应生命周期是什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-9"><span class="toc-number">6.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number"></span> <span class="toc-text">生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#React-%E7%BB%84%E4%BB%B6%E6%9C%89%E5%93%AA%E4%BA%9B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">React 组件有哪些生命周期方法？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-6"><span class="toc-number">1.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React-%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%8F%AF%E5%88%86%E4%B8%BA%E5%93%AA%E4%BA%9B%E9%98%B6%E6%AE%B5%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">React 组件的生命周期可分为哪些阶段？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-10"><span class="toc-number">2.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82%E5%BA%94%E5%9C%A8%E5%93%AA%E4%BA%9B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%87%8C%E8%B0%83%E7%94%A8%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">异步数据请求应在哪些生命周期里调用？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%86-2"><span class="toc-number">3.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ★ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#useEffect-useLayoutEffect-%E4%B8%8E%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB%E6%98%AF%EF%BC%9F"><span class="toc-number">4.</span> <span class="toc-text">useEffect useLayoutEffect 与生命周期的对应关系是？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%86-3"><span class="toc-number">4.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ★ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-constructor-%E4%B8%AD%E4%BD%BF%E7%94%A8-super-%E7%9A%84%E6%84%8F%E4%B9%89%E6%98%AF%EF%BC%9F"><span class="toc-number">5.</span> <span class="toc-text">在 constructor 中使用 super 的意义是？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-11"><span class="toc-number">5.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94-React-Hook-%E4%B8%8E%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">6.</span> <span class="toc-text">对比 React Hook 与生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-12"><span class="toc-number">6.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86"><span class="toc-number"></span> <span class="toc-text">事件处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-React-%E5%90%88%E6%88%90%E4%BA%8B%E4%BB%B6%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">什么是 React 合成事件？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%86-4"><span class="toc-number">1.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ★ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%9C%A8-React-%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E9%98%BB%E6%AD%A2%E9%BB%98%E8%AE%A4%E8%A1%8C%E4%B8%BA%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">如何在 React 事件处理阻止默认行为？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3-%E7%B1%BB%E7%BB%84%E4%BB%B6-%E4%B8%AD%EF%BC%8C%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E7%9A%84-this-%E4%B8%BA-undefined-%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">如何解决 类组件 中，事件处理的 this 为 undefined 的问题？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BC%A0%E5%8F%82%E7%BB%99%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0%EF%BC%9F"><span class="toc-number">4.</span> <span class="toc-text">如何传参给事件处理函数？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-%E2%98%86-5"><span class="toc-number">4.1.</span> <span class="toc-text">面试高频指数：★ ☆ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E9%98%BB%E6%AD%A2%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0%E8%A2%AB%E9%A2%91%E7%B9%81%E8%B0%83%E7%94%A8%EF%BC%9F"><span class="toc-number">5.</span> <span class="toc-text">如何阻止事件处理函数被频繁调用？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-13"><span class="toc-number">5.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React-17-%E5%AF%B9%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E5%81%9A%E4%BA%86%E5%93%AA%E4%BA%9B%E6%94%B9%E8%BF%9B%EF%BC%9F"><span class="toc-number">6.</span> <span class="toc-text">React 17 对事件处理做了哪些改进？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-14"><span class="toc-number">6.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B7%E5%BC%8F%E7%AE%A1%E7%90%86"><span class="toc-number"></span> <span class="toc-text">样式管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%9C%A8-React-%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%A0%B7%E5%BC%8F%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">如何在 React 中使用样式？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-%E2%98%86-6"><span class="toc-number">1.1.</span> <span class="toc-text">面试高频指数：★ ☆ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%8C%89%E6%9D%A1%E4%BB%B6%E5%8A%A0%E8%BD%BD%E6%A0%B7%E5%BC%8F%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">如何按条件加载样式？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-%E2%98%86-7"><span class="toc-number">2.1.</span> <span class="toc-text">面试高频指数：★ ☆ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AA%E5%86%85%E8%81%94%E6%A0%B7%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">如何合并多个内联样式?</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-%E2%98%86-8"><span class="toc-number">3.1.</span> <span class="toc-text">面试高频指数：★ ☆ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%A8%A1%E5%9D%97%E5%8C%96%E6%A0%B7%E5%BC%8F%EF%BC%8C%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E6%A0%B7%E5%BC%8F%E5%90%8D%E5%86%B2%E7%AA%81-%EF%BC%9F"><span class="toc-number">4.</span> <span class="toc-text">如何模块化样式，如何避免样式名冲突 ？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-15"><span class="toc-number">4.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-Hook"><span class="toc-number"></span> <span class="toc-text">React Hook</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-React-Hook"><span class="toc-number">1.</span> <span class="toc-text">什么是 React Hook?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-State-Hook%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">什么是 State Hook？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-7"><span class="toc-number">2.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Effect-Hook%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">什么是 Effect Hook？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-8"><span class="toc-number">3.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%B8%85%E9%99%A4-Effect-Hook-%E7%9A%84%E5%89%AF%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-number">4.</span> <span class="toc-text">如何清除 Effect Hook 的副作用？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%86-5"><span class="toc-number">4.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ★ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-Hook-%E9%9C%80%E8%A6%81%E9%81%B5%E5%BE%AA%E7%9A%84%E8%A7%84%E5%88%99%E6%98%AF%EF%BC%9F"><span class="toc-number">5.</span> <span class="toc-text">使用 Hook 需要遵循的规则是？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-16"><span class="toc-number">5.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%A0%A1%E9%AA%8C-Hook-%E6%98%AF%E5%90%A6%E9%81%B5%E5%BE%AA%E8%A7%84%E5%88%99%EF%BC%9F"><span class="toc-number">6.</span> <span class="toc-text">如何校验 Hook 是否遵循规则？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-17"><span class="toc-number">6.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#useMemo-%E5%92%8C-useCallback-%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%EF%BC%9F"><span class="toc-number">7.</span> <span class="toc-text">useMemo 和 useCallback 的区别是？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-18"><span class="toc-number">7.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#useReducer-%E5%92%8C-useState-%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%EF%BC%9F"><span class="toc-number">8.</span> <span class="toc-text">useReducer 和 useState 的区别是？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-9"><span class="toc-number">8.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#useLayoutEffect-%E5%92%8C-useEffect-%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%EF%BC%9F"><span class="toc-number">9.</span> <span class="toc-text">useLayoutEffect 和 useEffect 的区别是？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-10"><span class="toc-number">9.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#useRef-%E5%92%8C-Refs-%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%EF%BC%9F"><span class="toc-number">10.</span> <span class="toc-text">useRef 和 Refs 的区别是？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-19"><span class="toc-number">10.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89-Hook%EF%BC%9F"><span class="toc-number">11.</span> <span class="toc-text">如何自定义 Hook？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-20"><span class="toc-number">11.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%AF%E5%90%A6%E6%9C%89%E5%BF%85%E8%A6%81%E4%BD%BF%E7%94%A8-Hook-API-%E9%87%8D%E5%86%99%E6%89%80%E6%9C%89%E7%B1%BB%E7%BB%84%E4%BB%B6%EF%BC%9F"><span class="toc-number">12.</span> <span class="toc-text">是否有必要使用 Hook API 重写所有类组件？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-%E2%98%86-9"><span class="toc-number">12.1.</span> <span class="toc-text">面试高频指数：★ ☆ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#useState-%E8%BF%94%E5%9B%9E%E6%9B%B4%E6%96%B0-state-%E7%9A%84%E5%87%BD%E6%95%B0%E6%98%AF%E5%90%8C%E6%AD%A5%EF%BC%8C%E8%BF%98%E6%98%AF%E5%BC%82%E6%AD%A5%E7%9A%84%EF%BC%9F"><span class="toc-number">13.</span> <span class="toc-text">useState 返回更新 state 的函数是同步，还是异步的？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-21"><span class="toc-number">13.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">14.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Virtual-DOM"><span class="toc-number">15.</span> <span class="toc-text">什么是 Virtual DOM ?</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%85-2"><span class="toc-number">15.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ★ ★</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-React-Diff%EF%BC%8C%E5%AF%B9%E6%AF%94-Vue-Diff-%EF%BC%9F"><span class="toc-number">16.</span> <span class="toc-text">什么是 React Diff，对比 Vue Diff ？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%85-3"><span class="toc-number">16.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ★ ★</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-React-Concurrent-%E6%A8%A1%E5%BC%8F"><span class="toc-number">17.</span> <span class="toc-text">什么是 React Concurrent 模式?</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-%E2%98%86-10"><span class="toc-number">17.1.</span> <span class="toc-text">面试高频指数：★ ☆ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Suspense"><span class="toc-number">18.</span> <span class="toc-text">什么是 Suspense ?</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-%E2%98%86-11"><span class="toc-number">18.1.</span> <span class="toc-text">面试高频指数：★ ☆ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React-%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7%EF%BC%9F"><span class="toc-number">19.</span> <span class="toc-text">React 如何定义任务的优先级？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-11"><span class="toc-number">19.1.</span> <span class="toc-text">面试高频指数：★ ★ ★ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Redux"><span class="toc-number">20.</span> <span class="toc-text">什么是 Redux ?</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-%E2%98%86-12"><span class="toc-number">20.1.</span> <span class="toc-text">面试高频指数：★ ☆ ☆ ☆ ☆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Flux-%E5%92%8C-Redux-%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%EF%BC%9F"><span class="toc-number">21.</span> <span class="toc-text">Flux 和 Redux 的区别是？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%AB%98%E9%A2%91%E6%8C%87%E6%95%B0%EF%BC%9A%E2%98%85-%E2%98%85-%E2%98%86-%E2%98%86-%E2%98%86-22"><span class="toc-number">21.1.</span> <span class="toc-text">面试高频指数：★ ★ ☆ ☆ ☆</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/02/03/%E8%B7%AF%E7%94%B1%E5%8E%9F%E7%90%86/" title="路由原理"><img src="https://s2.loli.net/2022/10/08/xzepUwCs3gKPWy2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="路由原理"/></a><div class="content"><a class="title" href="/2023/02/03/%E8%B7%AF%E7%94%B1%E5%8E%9F%E7%90%86/" title="路由原理">路由原理</a><time datetime="2023-02-03T07:10:00.000Z" title="发表于 2023-02-03 15:10:00">2023-02-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/01/Node%20Webpack%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" title="Node Webpack 性能优化"><img src="https://s2.loli.net/2022/10/08/xzepUwCs3gKPWy2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Node Webpack 性能优化"/></a><div class="content"><a class="title" href="/2023/02/01/Node%20Webpack%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" title="Node Webpack 性能优化">Node Webpack 性能优化</a><time datetime="2023-02-01T07:40:20.000Z" title="发表于 2023-02-01 15:40:20">2023-02-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/01/SVG%E7%9A%84%E7%90%86%E8%A7%A3/" title="SVG的理解"><img src="https://s2.loli.net/2022/12/31/qZrDP8nOQ4tGc6L.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SVG的理解"/></a><div class="content"><a class="title" href="/2023/02/01/SVG%E7%9A%84%E7%90%86%E8%A7%A3/" title="SVG的理解">SVG的理解</a><time datetime="2023-02-01T07:38:55.000Z" title="发表于 2023-02-01 15:38:55">2023-02-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/01/CSS%E5%B8%83%E5%B1%80%E4%B9%8BGrid/" title="CSS布局之Grid"><img src="https://s2.loli.net/2022/10/08/xzepUwCs3gKPWy2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CSS布局之Grid"/></a><div class="content"><a class="title" href="/2023/02/01/CSS%E5%B8%83%E5%B1%80%E4%B9%8BGrid/" title="CSS布局之Grid">CSS布局之Grid</a><time datetime="2023-02-01T07:33:41.825Z" title="发表于 2023-02-01 15:33:41">2023-02-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/31/LeetCode%20%E7%B2%BE%E9%80%89%E7%AE%97%E6%B3%95%20200%20%E9%A2%98/" title="LeetCode 精选算法 200 题"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode 精选算法 200 题"/></a><div class="content"><a class="title" href="/2023/01/31/LeetCode%20%E7%B2%BE%E9%80%89%E7%AE%97%E6%B3%95%20200%20%E9%A2%98/" title="LeetCode 精选算法 200 题">LeetCode 精选算法 200 题</a><time datetime="2023-01-31T10:11:37.000Z" title="发表于 2023-01-31 18:11:37">2023-01-31</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By John Doe</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

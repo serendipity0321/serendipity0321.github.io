@@ -1,288 +1,161 @@
-
-
-<!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
-  <meta name="keywords" content="">
-  
-    <meta name="description" content="最近面试总能遇到有面试官问到let，const和var的区别，箭头函数与普通函数的区别等等等等，**各种区别**，我也能答出一二，但**恨不能答到完整，答全要点**,而且**结巴**，所以这里我就对此进行一些总结（翻看各种资料，只能算偏完整，缺失的还要靠大家评论补充，我再修改）。">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>面试的区别 | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="最近面试总能遇到有面试官问到let，const和var的区别，箭头函数与普通函数的区别等等等等，**各种区别**，我也能答出一二，但**恨不能答到完整，答全要点**,而且**结巴**，所以这里我就对此进行一些总结（翻看各种资料，只能算偏完整，缺失的还要靠大家评论补充，我再修改）。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试的区别">
 <meta property="og:url" content="http://serendipity0321.github.com/2023/01/29/%E9%9D%A2%E8%AF%95%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="最近面试总能遇到有面试官问到let，const和var的区别，箭头函数与普通函数的区别等等等等，**各种区别**，我也能答出一二，但**恨不能答到完整，答全要点**,而且**结巴**，所以这里我就对此进行一些总结（翻看各种资料，只能算偏完整，缺失的还要靠大家评论补充，我再修改）。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.loli.net/2023/01/29/XNKIymFPwi1OVle.jpg">
+<meta property="og:image" content="https://s2.loli.net/2022/12/31/qZrDP8nOQ4tGc6L.png">
 <meta property="article:published_time" content="2023-01-29T03:14:58.000Z">
 <meta property="article:modified_time" content="2023-01-29T03:30:01.369Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="面试">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://s2.loli.net/2023/01/29/XNKIymFPwi1OVle.jpg">
-  
-  
-  
-  <title>面试的区别 - Hexo</title>
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
-
-
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
-  
-
-
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"serendipity0321.github.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
-
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/12/31/qZrDP8nOQ4tGc6L.png"><link rel="shortcut icon" href="https://s2.loli.net/2022/10/08/k5M7H1NdmnZgtlY.png"><link rel="canonical" href="http://serendipity0321.github.com/2023/01/29/%E9%9D%A2%E8%AF%95%E7%9A%84%E5%8C%BA%E5%88%AB/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: John Doe","link":"链接: ","source":"来源: Hexo","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
     }
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '面试的区别',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-29 11:30:01'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-
-
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-
-<body>
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
   
-
-  <header>
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-
-<div class="header-inner" style="height: 80vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>serendipity&#39;s blog</strong>
-    </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                <span>首页</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>归档</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                <span>分类</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                <span>标签</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                <span>关于</span>
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <i class="iconfont icon-search"></i>
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
-              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
-            </a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  
-
-<div id="banner" class="banner" parallax=true
-     style="background: url('https://s2.loli.net/2023/01/29/XNKIymFPwi1OVle.jpg') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="面试的区别"></span>
-          
-        </div>
-
-        
-          
-  <div class="mt-3">
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-    
-      <span class="post-meta">
-        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-01-29 11:14" pubdate>
-          2023年1月29日 上午
-        </time>
-      </span>
-    
-  </div>
-
-  <div class="mt-1">
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-chart"></i>
-        
-          13k 字
-        
-      </span>
-    
-
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-clock-fill"></i>
-        
-        
-        
-          113 分钟
-        
-      </span>
-    
-
-    
-    
-  </div>
-
-
-        
-      </div>
-
-      
-        <div class="scroll-down-bar">
-          <i class="iconfont icon-arrowdown"></i>
-        </div>
-      
-    </div>
-  </div>
-</div>
-
-</div>
-
-  </header>
-
-  <main>
-    
-      
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-
-    </div>
-
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">面试的区别</h1>
-            
-            
-              <div class="markdown-body">
-                
-                <h2 id="1-箭头函数和普通函数的区别"><a href="#1-箭头函数和普通函数的区别" class="headerlink" title="1. 箭头函数和普通函数的区别"></a>1. 箭头函数和普通函数的区别</h2><p>a. 箭头函数和普通函数的样式不同，箭头函数语法更加简洁、清晰，箭头函数是<code>=&gt;</code>定义函数,普通函数是<code>function</code>定义函数。  </p>
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2022/10/02/SRY7qntDHQe5l9F.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">51</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2022/12/31/qZrDP8nOQ4tGc6L.png')"><nav id="nav"><span id="blog-info"><a href="/" title="Hexo"><img class="site-icon" src="https://s2.loli.net/2022/10/09/HjKDX7pioRmTVhe.png"/><span class="site-name">Hexo</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">面试的区别</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-29T03:14:58.000Z" title="发表于 2023-01-29 11:14:58">2023-01-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-29T03:30:01.369Z" title="更新于 2023-01-29 11:30:01">2023-01-29</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="面试的区别"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="1-箭头函数和普通函数的区别"><a href="#1-箭头函数和普通函数的区别" class="headerlink" title="1. 箭头函数和普通函数的区别"></a>1. 箭头函数和普通函数的区别</h2><p>a. 箭头函数和普通函数的样式不同，箭头函数语法更加简洁、清晰，箭头函数是<code>=&gt;</code>定义函数,普通函数是<code>function</code>定义函数。  </p>
 <p>b. 箭头函数会捕获其所在上下文的 this 值，作为自己的 this 值，定义的时候就确定并固定了。  </p>
 <p>c. 箭头函数不能作为构造函数使用，也不能使用new关键字(<code>因为箭头函数没有自己的this，它的this其实是继承了外层执行环境中的this，且this指向永远不会改变,作为构造函数其的this要是指向创建的新对象</code>)。  </p>
 <p>d. 箭头函数没有自己的arguments。在箭头函数中访问arguments实际上获得的是外层局部（函数）执行环境中的值。  </p>
@@ -294,10 +167,7 @@
 <p><strong>块级作用域方面</strong>：var不存在块级作用域,let和const存在块级作用域  </p>
 <p><strong>声明方面</strong>：var允许重复声明变量,let和const在同一作用域不允许重复声明变量。其中const声明一个只读的常量(因为如此，其声明时就一定要赋值，不然报错)。一旦声明，常量的值就不能改变。  </p>
 <p><strong>如何使const声明的对象内属性不可变，只可读呢？</strong><br>如果const声明了一个对象，对象里的属性是可以改变的。</p>
-<div class="code-wrapper"><pre><code class="hljs sqf">const obj=&#123;<span class="hljs-built_in">name</span>:<span class="hljs-string">&#x27;蟹黄&#x27;</span>&#125;;
-obj.<span class="hljs-built_in">name</span>=<span class="hljs-string">&#x27;同学&#x27;</span>;
-console.<span class="hljs-built_in">log</span>(obj.<span class="hljs-built_in">name</span>);<span class="hljs-comment">//同学</span>
-复制代码</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const obj=&#123;name:&#x27;蟹黄&#x27;&#125;;</span><br><span class="line">obj.name=&#x27;同学&#x27;;</span><br><span class="line">console.log(obj.name);//同学</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
 
 <p>因为const声明的obj只是保存着其对象的<strong>引用地址</strong>，只要地址不变，就不会出错。  </p>
 <p>使用<code>Object.freeze(obj)</code> 冻结obj,就能使其内的属性不可变,但它有局限，就是obj对象中要是有属性是对象，该对象内属性还能改变，要全不可变，就需要使用递归等方式一层一层全部冻结。</p>
@@ -306,10 +176,7 @@ console.<span class="hljs-built_in">log</span>(obj.<span class="hljs-built_in">n
 <p>另外number类型的数字和Bigint类型的数字<strong>不能</strong>混合计算。</p>
 <p><code>12n+12;//报错</code></p>
 <h2 id="4-基本数据类型和引用数据类型的区别"><a href="#4-基本数据类型和引用数据类型的区别" class="headerlink" title="4. 基本数据类型和引用数据类型的区别"></a>4. 基本数据类型和引用数据类型的区别</h2><p><strong>基本数据类型：</strong><br>a. 基本数据类型的值是不可变的(重新赋值属于改变属性名的指向了，而不是对值进行操作),这里你就可以联想到，<code>是不是所有关于字符串和数字的方法</code>都是带有<code>返回值</code>的，而不是改变原字符串或数字。<br>例如</p>
-<div class="code-wrapper"><pre><code class="hljs arcade">let a=<span class="hljs-string">&#x27;abc&#x27;</span>;
-a.<span class="hljs-built_in">split</span>(<span class="hljs-string">&#x27;&#x27;</span>);
-<span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(a);<span class="hljs-comment">//abc</span>
-复制代码</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let a=&#x27;abc&#x27;;</span><br><span class="line">a.split(&#x27;&#x27;);</span><br><span class="line">console.log(a);//abc</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
 
 <p>b. 基本数据类型不可以添加属性和方法，虽然不会报错，但也只是一瞬间转为了相应包装对象，操作完又转化回原基本数据类型，不会保存结果。  </p>
 <p>c. 基本数据类型的赋值是简单赋值,基本数据类型的比较是值的比较。  </p>
@@ -332,30 +199,12 @@ a.<span class="hljs-built_in">split</span>(<span class="hljs-string">&#x27;&#x27
 </ul>
 <h2 id="6-async-await对比promise的优缺点"><a href="#6-async-await对比promise的优缺点" class="headerlink" title="6. async await对比promise的优缺点"></a>6. async await对比promise的优缺点</h2><p><strong>async&#x2F;await优点</strong>：<br>a. 它做到了真正的串行的同步写法，代码阅读相对容易  </p>
 <p>b. 对于条件语句和其他流程语句比较友好，可以直接写到判断条件里面  </p>
-<div class="code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">a</span>(<span class="hljs-params"></span>) &#123;
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;
-      <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;
-        <span class="hljs-title function_">resolve</span>(<span class="hljs-number">222</span>)
-      &#125;, <span class="hljs-number">2222</span>)
-    &#125;)
-  &#125;;
-<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">f</span>(<span class="hljs-params"></span>) &#123;
-    <span class="hljs-keyword">try</span> &#123;
-      <span class="hljs-keyword">if</span> ( <span class="hljs-keyword">await</span> <span class="hljs-title function_">a</span>() === <span class="hljs-number">222</span>) &#123;
-        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;yes, it is!&#x27;</span>) <span class="hljs-comment">// 会打印</span>
-      &#125;
-    &#125; <span class="hljs-keyword">catch</span> (err) &#123;
-      <span class="hljs-comment">// ...</span>
-    &#125;
-  &#125;
-复制代码</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function a() &#123;</span><br><span class="line">    return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">      setTimeout(() =&gt; &#123;</span><br><span class="line">        resolve(222)</span><br><span class="line">      &#125;, 2222)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;;</span><br><span class="line">async function f() &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">      if ( await a() === 222) &#123;</span><br><span class="line">        console.log(&#x27;yes, it is!&#x27;) // 会打印</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; catch (err) &#123;</span><br><span class="line">      // ...</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
 
 <p>c. 处理复杂流程时，在代码清晰度方面有优势  </p>
 <p><strong>async&#x2F;await缺点</strong>：<br>a. 无法处理promise返回的reject对象，要借助try…catch…  </p>
 <p>b. 用 await 可能会导致性能问题，因为 await 会阻塞代码，也许之后的异步代码并不依赖于前者，但仍然需要等待前者完成，导致代码失去了并发性。</p>
-<div class="code-wrapper"><pre><code class="hljs scss"><span class="hljs-comment">//promise</span>
-Promise<span class="hljs-selector-class">.all</span>([ajax1(), <span class="hljs-built_in">ajax2</span>()])
-复制代码</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//promise</span><br><span class="line">Promise.all([ajax1(), ajax2()])</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
 
 <p>c. try…catch…内部的变量无法传递给下一个try…catch…,Promise和then&#x2F;catch内部定义的变量，能通过then链条的参数传递到下一个then&#x2F;catch，但是async&#x2F;await的try内部的变量，如果用let和const定义则无法传递到下一个try…catch…，只能在外层作用域先定义好。</p>
 <p><strong>但async&#x2F;await确确实实是解决了promise一些问题的。更加灵活的处理异步</strong>  </p>
@@ -392,65 +241,13 @@ Promise<span class="hljs-selector-class">.all</span>([ajax1(), <span class="hljs
 <p>g. <code>跨域支持上不同:</code>cookie支持跨域名访问(二级域名是可以共享cookie的)。session不支持跨域名访问。  </p>
 <h2 id="10-宏任务和微任务有什么区别"><a href="#10-宏任务和微任务有什么区别" class="headerlink" title="10. 宏任务和微任务有什么区别"></a>10. 宏任务和微任务有什么区别</h2><p>微任务和宏任务皆为异步任务，它们都属于一个队列，主要<strong>区别在于他们的执行顺序，Event Loop的走向和取值</strong>。  </p>
 <p><strong>宏任务和微任务的一些分配</strong></p>
-<div class="code-wrapper"><pre><code class="hljs coffeescript">         宏任务          浏览器         Node
-I/O      ✅✅
-<span class="hljs-built_in">setTimeout</span>✅✅
-<span class="hljs-built_in">setInterval</span>✅✅
-setImmediate    ❌✅
-requestAnimationFrame           ✅✅
-
-         微任务
-process.nextTick        ❌✅
-MutationObserver        ✅❌
-<span class="hljs-built_in">Promise</span>.<span class="hljs-keyword">then</span> <span class="hljs-keyword">catch</span> <span class="hljs-keyword">finally</span>              ✅✅
-复制代码</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">         宏任务          浏览器         Node</span><br><span class="line">I/O      ✅✅</span><br><span class="line">setTimeout✅✅</span><br><span class="line">setInterval✅✅</span><br><span class="line">setImmediate    ❌✅</span><br><span class="line">requestAnimationFrame           ✅✅</span><br><span class="line"></span><br><span class="line">         微任务</span><br><span class="line">process.nextTick        ❌✅</span><br><span class="line">MutationObserver        ✅❌</span><br><span class="line">Promise.then catch finally              ✅✅</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
 
 <p><strong>宏任务与微任务之间的执行顺序</strong>(同步任务-&gt;微任务-&gt;宏任务)<br>下面说说执行到宏任务后是怎么继续运行的<br>(这里声明下，整段js代码就是第一个大的宏任务，事件循环是由这第一个宏任务开始的，然后分出微任务，这里是为了理解微任务宏任务的执行区别就先跳过这第一层)  </p>
 <p><code>说一个很有名的银行例子</code>：银行柜台前排着一条队伍，都是存钱的人，存钱属于宏任务，这条队伍就是宏任务队列，当一个‘宏大爷’被叫到了自己的号码，就上前去–被处理，处理存钱业务时，‘宏大爷’<strong>突然</strong>想给自己的存款办个微理财(<code>微任务</code>)，那么银行职员就将他的需求添加到自己的微任务队列，大爷就不用再排队了，直接在存钱宏任务进行完后就处理衍生出来的微任务理财，办理财时大爷又说办个信用卡，那就又排到微任务队列里。<strong>但要是</strong>在此次存钱时‘宏大爷’说他还要存钱，且是他老伴要存钱，也是<code>宏任务</code>，但不好意思，需要取号到宏任务队列的后面排队（这里就是在宏任务进行时产生微任务和宏任务的处理方式）。  </p>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b68f33891a3e418696c2258e96441d7f~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b68f33891a3e418696c2258e96441d7f~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image"></p>
 <p>结合下面的题目理解理解（这里先不介绍node环境的事件循环的特殊地方，主要以浏览器环境，最好看看底下推荐的文章）：  </p>
-<div class="code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
-<span class="language-javascript">    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<span class="hljs-comment">//宏任务1</span></span>
-<span class="language-javascript">      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;1&#x27;</span>);</span>
-<span class="language-javascript">    &#125;);</span>
-<span class="language-javascript">    <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">resolve</span>) &#123;</span>
-<span class="language-javascript">      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;2&#x27;</span>);<span class="hljs-comment">//同步任务1</span></span>
-<span class="language-javascript">      <span class="hljs-title function_">resolve</span>();</span>
-<span class="language-javascript">    &#125;).<span class="hljs-title function_">then</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<span class="hljs-comment">//微任务1</span></span>
-<span class="language-javascript">      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;3&#x27;</span>);</span>
-<span class="language-javascript">    &#125;);</span>
-<span class="language-javascript">    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;4&#x27;</span>);<span class="hljs-comment">//同步任务2</span></span>
-<span class="language-javascript">    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<span class="hljs-comment">//宏任务2</span></span>
-<span class="language-javascript">      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;5&#x27;</span>);<span class="hljs-comment">//宏任务2中的同步任务</span></span>
-<span class="language-javascript">      <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">resolve</span>) &#123;</span>
-<span class="language-javascript">        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;6&#x27;</span>);<span class="hljs-comment">//宏任务2中的同步任务</span></span>
-<span class="language-javascript">        <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">resolve</span>) &#123;<span class="hljs-comment">//宏任务2中的微任务</span></span>
-<span class="language-javascript">            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;x1&#x27;</span>);</span>
-<span class="language-javascript">            <span class="hljs-title function_">resolve</span>();</span>
-<span class="language-javascript">          &#125;).<span class="hljs-title function_">then</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;</span>
-<span class="language-javascript">            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;X2&#x27;</span>);</span>
-<span class="language-javascript">          &#125;);</span>
-<span class="language-javascript">        <span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<span class="hljs-comment">//宏任务2中的宏任务</span></span>
-<span class="language-javascript">          <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;X3&#x27;</span>);</span>
-<span class="language-javascript">          <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">resolve</span>) &#123;<span class="hljs-comment">//宏任务2中的宏任务中的同步任务</span></span>
-<span class="language-javascript">            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;X4&#x27;</span>);</span>
-<span class="language-javascript">            <span class="hljs-title function_">resolve</span>();</span>
-<span class="language-javascript">          &#125;).<span class="hljs-title function_">then</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<span class="hljs-comment">//宏任务2中的宏任务中的微任务</span></span>
-<span class="language-javascript">            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;X5&#x27;</span>);</span>
-<span class="language-javascript">          &#125;);</span>
-<span class="language-javascript">        &#125;)</span>
-<span class="language-javascript">        <span class="hljs-title function_">resolve</span>();</span>
-<span class="language-javascript">      &#125;).<span class="hljs-title function_">then</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<span class="hljs-comment">//宏任务2中的微任务</span></span>
-<span class="language-javascript">        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;7&#x27;</span>);</span>
-<span class="language-javascript">      &#125;);</span>
-<span class="language-javascript">    &#125;)</span>
-<span class="language-javascript">    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<span class="hljs-comment">//宏任务3</span></span>
-<span class="language-javascript">      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;8&#x27;</span>);</span>
-<span class="language-javascript">    &#125;);</span>
-<span class="language-javascript">    <span class="hljs-comment">//（对于这段代码node环境和浏览器环境输出一致）</span></span>
-<span class="language-javascript">    <span class="hljs-comment">//输出答案：2,4,3,1,5,6,x1,x2,7,8,x3,x4,x5</span></span>
-<span class="language-javascript">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-复制代码</code></pre></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    setTimeout(function () &#123;//宏任务1</span><br><span class="line">      console.log(&#x27;1&#x27;);</span><br><span class="line">    &#125;);</span><br><span class="line">    new Promise(function (resolve) &#123;</span><br><span class="line">      console.log(&#x27;2&#x27;);//同步任务1</span><br><span class="line">      resolve();</span><br><span class="line">    &#125;).then(function () &#123;//微任务1</span><br><span class="line">      console.log(&#x27;3&#x27;);</span><br><span class="line">    &#125;);</span><br><span class="line">    console.log(&#x27;4&#x27;);//同步任务2</span><br><span class="line">    setTimeout(function () &#123;//宏任务2</span><br><span class="line">      console.log(&#x27;5&#x27;);//宏任务2中的同步任务</span><br><span class="line">      new Promise(function (resolve) &#123;</span><br><span class="line">        console.log(&#x27;6&#x27;);//宏任务2中的同步任务</span><br><span class="line">        new Promise(function (resolve) &#123;//宏任务2中的微任务</span><br><span class="line">            console.log(&#x27;x1&#x27;);</span><br><span class="line">            resolve();</span><br><span class="line">          &#125;).then(function () &#123;</span><br><span class="line">            console.log(&#x27;X2&#x27;);</span><br><span class="line">          &#125;);</span><br><span class="line">        setTimeout(function () &#123;//宏任务2中的宏任务</span><br><span class="line">          console.log(&#x27;X3&#x27;);</span><br><span class="line">          new Promise(function (resolve) &#123;//宏任务2中的宏任务中的同步任务</span><br><span class="line">            console.log(&#x27;X4&#x27;);</span><br><span class="line">            resolve();</span><br><span class="line">          &#125;).then(function () &#123;//宏任务2中的宏任务中的微任务</span><br><span class="line">            console.log(&#x27;X5&#x27;);</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;)</span><br><span class="line">        resolve();</span><br><span class="line">      &#125;).then(function () &#123;//宏任务2中的微任务</span><br><span class="line">        console.log(&#x27;7&#x27;);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">    setTimeout(function () &#123;//宏任务3</span><br><span class="line">      console.log(&#x27;8&#x27;);</span><br><span class="line">    &#125;);</span><br><span class="line">    //（对于这段代码node环境和浏览器环境输出一致）</span><br><span class="line">    //输出答案：2,4,3,1,5,6,x1,x2,7,8,x3,x4,x5</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
 
 <p>上面这个例子我为了测试，可能搞得有点长。。。</p>
 <p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903657264136200#heading-3" title="https://juejin.cn/post/6844903657264136200#heading-3">更多eventloop详细可看这篇文章</a></p>
@@ -597,352 +394,4 @@ MutationObserver        ✅❌
 </tbody></table>
 <p>希望各位看官指出其中的错误，我必改正！也请对其中的一些问题提出自己的一些看法。这里只是一些大概的总结，想要有最好的学习效果，还是对其中每有一个点进行系统的学习。</p>
 <p>笔者最近也在准备面试和寻找前端实习岗位中！wx：xieHB-frontend-178,加个微信一起学习😜，也希望有大佬介绍个内推和提出学习意见，感谢。哈哈！</p>
-
-                
-              </div>
-            
-            <hr/>
-            <div>
-              <div class="post-metas my-3">
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E9%9D%A2%E8%AF%95/">#面试</a>
-      
-    </div>
-  
-</div>
-
-
-              
-  
-
-  <div class="license-box my-3">
-    <div class="license-title">
-      <div>面试的区别</div>
-      <div>http://serendipity0321.github.com/2023/01/29/面试的区别/</div>
-    </div>
-    <div class="license-meta">
-      
-        <div class="license-meta-item">
-          <div>作者</div>
-          <div>John Doe</div>
-        </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>发布于</div>
-          <div>2023年1月29日</div>
-        </div>
-      
-      
-      
-        <div class="license-meta-item">
-          <div>许可协议</div>
-          <div>
-            
-              
-              
-                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                    <i class="iconfont icon-by"></i>
-                  </span>
-                </a>
-              
-            
-          </div>
-        </div>
-      
-    </div>
-    <div class="license-icon iconfont"></div>
-  </div>
-
-
-
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2023/01/29/%E5%B7%A9%E5%9B%BA%E5%9F%BA%E7%A1%80CSS%E7%9F%A5%E8%AF%86%E7%82%B9/" title="巩固基础CSS知识点">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">巩固基础CSS知识点</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2023/01/29/webpack%E6%94%BB%E7%95%A5/" title="webpack攻略">
-                        <span class="hidden-mobile">webpack攻略</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
-            </div>
-
-            
-          </article>
-        </div>
-      </div>
-    </div>
-
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header">
-    <i class="iconfont icon-list"></i>
-    <span>目录</span>
-  </p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-
-
-  </aside>
-
-
-    </div>
-  </div>
-</div>
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-    
-
-    
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-    </div>
-  
-  
-  
-  
-</div>
-
-  </footer>
-
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
-
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
-    var toc = jQuery('#toc');
-    if (toc.length === 0 || !window.tocbot) { return; }
-    var boardCtn = jQuery('#board-ctn');
-    var boardTop = boardCtn.offset().top;
-
-    window.tocbot.init(Object.assign({
-      tocSelector     : '#toc-body',
-      contentSelector : '.markdown-body',
-      linkClass       : 'tocbot-link',
-      activeLinkClass : 'tocbot-active-link',
-      listClass       : 'tocbot-list',
-      isCollapsedClass: 'tocbot-is-collapsed',
-      collapsibleClass: 'tocbot-is-collapsible',
-      scrollSmooth    : true,
-      includeTitleTags: true,
-      headingsOffset  : -boardTop,
-    }, CONFIG.toc));
-    if (toc.find('.toc-list-item').length > 0) {
-      toc.css('visibility', 'visible');
-    }
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('tocbot' in window) {
-        tocbot.refresh();
-        var toc = jQuery('#toc');
-        if (toc.length === 0 || !tocbot) {
-          return;
-        }
-        if (toc.find('.toc-list-item').length > 0) {
-          toc.css('visibility', 'visible');
-        }
-      }
-    });
-  });
-</script>
-
-
-  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
-
-  <script>Fluid.plugins.codeWidget();</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
-    window.anchors.options = {
-      placement: CONFIG.anchorjs.placement,
-      visible  : CONFIG.anchorjs.visible
-    };
-    if (CONFIG.anchorjs.icon) {
-      window.anchors.options.icon = CONFIG.anchorjs.icon;
-    }
-    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-    var res = [];
-    for (var item of el) {
-      res.push('.markdown-body > ' + item.trim());
-    }
-    if (CONFIG.anchorjs.placement === 'left') {
-      window.anchors.options.class = 'anchorjs-link-left';
-    }
-    window.anchors.add(res.join(', '));
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('anchors' in window) {
-        anchors.removeAll();
-        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-        var res = [];
-        for (var item of el) {
-          res.push('.markdown-body > ' + item.trim());
-        }
-        if (CONFIG.anchorjs.placement === 'left') {
-          anchors.options.class = 'anchorjs-link-left';
-        }
-        anchors.add(res.join(', '));
-      }
-    });
-  });
-</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
-    Fluid.plugins.fancyBox();
-  });
-</script>
-
-
-  <script>Fluid.plugins.imageCaption();</script>
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
-
-
-  
-
-  <noscript>
-    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
-  </noscript>
-</body>
-</html>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://serendipity0321.github.com">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://serendipity0321.github.com/2023/01/29/%E9%9D%A2%E8%AF%95%E7%9A%84%E5%8C%BA%E5%88%AB/">http://serendipity0321.github.com/2023/01/29/%E9%9D%A2%E8%AF%95%E7%9A%84%E5%8C%BA%E5%88%AB/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://serendipity0321.github.com" target="_blank">Hexo</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%9D%A2%E8%AF%95/">面试</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2022/12/31/qZrDP8nOQ4tGc6L.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/01/29/%E5%B7%A9%E5%9B%BA%E5%9F%BA%E7%A1%80CSS%E7%9F%A5%E8%AF%86%E7%82%B9/" title="巩固基础CSS知识点"><img class="cover" src="https://s2.loli.net/2022/10/08/xzepUwCs3gKPWy2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">巩固基础CSS知识点</div></div></a></div><div class="next-post pull-right"><a href="/2023/01/29/webpack%E6%94%BB%E7%95%A5/" title="webpack攻略"><img class="cover" src="https://s2.loli.net/2022/10/08/xzepUwCs3gKPWy2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">webpack攻略</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/01/19/Vue%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/" title="Vue面试题总结"><img class="cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-19</div><div class="title">Vue面试题总结</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2022/10/02/SRY7qntDHQe5l9F.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">51</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E5%92%8C%E6%99%AE%E9%80%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.</span> <span class="toc-text">1. 箭头函数和普通函数的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-var%EF%BC%8Clet%E5%92%8Cconst%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.</span> <span class="toc-text">2. var，let和const之间的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Bigint%E5%92%8CNumber%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.</span> <span class="toc-text">3. Bigint和Number的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.</span> <span class="toc-text">4. 基本数据类型和引用数据类型的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-defer%E5%92%8Casync%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">5.</span> <span class="toc-text">5. defer和async的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%8B%E5%88%B0%E8%BF%99%E9%87%8C%EF%BC%8C%E5%B0%B1%E8%83%BD%E7%9F%A5%E9%81%93%E5%85%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%9C%E7%94%A8%E4%BA%86"><span class="toc-number">6.</span> <span class="toc-text">看到这里，就能知道其的一些作用了</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-async-await%E5%AF%B9%E6%AF%94promise%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">7.</span> <span class="toc-text">6. async await对比promise的优缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-get%E5%92%8Cpost%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">8.</span> <span class="toc-text">7. get和post的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E7%94%A8%E6%A1%86%E6%9E%B6%E5%92%8C%E4%B8%8D%E7%94%A8%E6%A1%86%E6%9E%B6%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%8Cvue%E5%92%8Creact%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">9.</span> <span class="toc-text">8. 用框架和不用框架的区别，vue和react的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-cookies%E5%92%8Csession%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">10.</span> <span class="toc-text">9. cookies和session的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%BE%AE%E4%BB%BB%E5%8A%A1%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="toc-number">11.</span> <span class="toc-text">10. 宏任务和微任务有什么区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-fetch-Ajax-axios%E5%8C%BA%E5%88%AB"><span class="toc-number">12.</span> <span class="toc-text">11. fetch,Ajax,axios区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-TCP%E5%92%8CUDP%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">13.</span> <span class="toc-text">12. TCP和UDP的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-js%E4%B8%AD%E7%9A%84%E5%A0%86%E5%92%8C%E6%A0%88-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="toc-number">14.</span> <span class="toc-text">13. js中的堆和栈,栈和队列有什么区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-WebSocket%E5%92%8CHTTP%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="toc-number">15.</span> <span class="toc-text">14. WebSocket和HTTP有什么区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-http%E5%92%8Chttps%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">16.</span> <span class="toc-text">15. http和https的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-px-em-rem-vw-vh%E5%8C%BA%E5%88%AB"><span class="toc-number">17.</span> <span class="toc-text">16. px,em,rem,vw,vh区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-wepack%E4%B8%ADloader%E5%92%8Cplugin%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">18.</span> <span class="toc-text">17. wepack中loader和plugin的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-bind-call-apply%E5%8C%BA%E5%88%AB"><span class="toc-number">19.</span> <span class="toc-text">18. bind call apply区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19-301-%E5%92%8C-302-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="toc-number">20.</span> <span class="toc-text">19. 301 和 302 有什么区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20-%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">21.</span> <span class="toc-text">20. 进程线程的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#21-JavaScript%E5%92%8Ctypescript%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">22.</span> <span class="toc-text">21. JavaScript和typescript的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-localstorage%E3%80%81sessionstorage%E3%80%81cookie%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">23.</span> <span class="toc-text">22. localstorage、sessionstorage、cookie的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-http-1-0-x2F-1-1-x2F-2-0%E7%9A%84%E4%B8%8D%E5%90%8C"><span class="toc-number">24.</span> <span class="toc-text">23. http 1.0&#x2F; 1.1&#x2F; 2.0的不同</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-MongoDB%E5%92%8CMySQL%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">25.</span> <span class="toc-text">24. MongoDB和MySQL的区别</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/02/03/%E8%B7%AF%E7%94%B1%E5%8E%9F%E7%90%86/" title="路由原理"><img src="https://s2.loli.net/2022/10/08/xzepUwCs3gKPWy2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="路由原理"/></a><div class="content"><a class="title" href="/2023/02/03/%E8%B7%AF%E7%94%B1%E5%8E%9F%E7%90%86/" title="路由原理">路由原理</a><time datetime="2023-02-03T07:10:00.000Z" title="发表于 2023-02-03 15:10:00">2023-02-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/01/Node%20Webpack%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" title="Node Webpack 性能优化"><img src="https://s2.loli.net/2022/10/08/xzepUwCs3gKPWy2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Node Webpack 性能优化"/></a><div class="content"><a class="title" href="/2023/02/01/Node%20Webpack%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" title="Node Webpack 性能优化">Node Webpack 性能优化</a><time datetime="2023-02-01T07:40:20.000Z" title="发表于 2023-02-01 15:40:20">2023-02-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/01/SVG%E7%9A%84%E7%90%86%E8%A7%A3/" title="SVG的理解"><img src="https://s2.loli.net/2022/12/31/qZrDP8nOQ4tGc6L.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SVG的理解"/></a><div class="content"><a class="title" href="/2023/02/01/SVG%E7%9A%84%E7%90%86%E8%A7%A3/" title="SVG的理解">SVG的理解</a><time datetime="2023-02-01T07:38:55.000Z" title="发表于 2023-02-01 15:38:55">2023-02-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/01/CSS%E5%B8%83%E5%B1%80%E4%B9%8BGrid/" title="CSS布局之Grid"><img src="https://s2.loli.net/2022/10/08/xzepUwCs3gKPWy2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CSS布局之Grid"/></a><div class="content"><a class="title" href="/2023/02/01/CSS%E5%B8%83%E5%B1%80%E4%B9%8BGrid/" title="CSS布局之Grid">CSS布局之Grid</a><time datetime="2023-02-01T07:33:41.825Z" title="发表于 2023-02-01 15:33:41">2023-02-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/31/LeetCode%20%E7%B2%BE%E9%80%89%E7%AE%97%E6%B3%95%20200%20%E9%A2%98/" title="LeetCode 精选算法 200 题"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LeetCode 精选算法 200 题"/></a><div class="content"><a class="title" href="/2023/01/31/LeetCode%20%E7%B2%BE%E9%80%89%E7%AE%97%E6%B3%95%20200%20%E9%A2%98/" title="LeetCode 精选算法 200 题">LeetCode 精选算法 200 题</a><time datetime="2023-01-31T10:11:37.000Z" title="发表于 2023-01-31 18:11:37">2023-01-31</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By John Doe</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
